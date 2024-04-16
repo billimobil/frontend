@@ -17,7 +17,7 @@ const Registration = ({setUser}) => {
 
     function register(event) {
         event.preventDefault()
-        axios.get("http://localhost:81/api/v1/register", {
+        axios.get("http://188.225.74.17:8080/api/v1/register", {
             params: {
                 "email": email,
                 "password": password,

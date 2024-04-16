@@ -41,7 +41,7 @@ function App() {
             <Navbar user={user}/>
             <div className="main">
                 <Routes>
-                    <Route path="/" element={<Main/>}/>
+                    <Route path="/" element={<Main user={user}/>}/>
                     <Route path="/exit" element={<Exit setUser={setUser}/>}/>
                     <Route path="/register" element={<Registration setUser={setUser}/>}/>
                     <Route path="/login" element={<Login setUser={setUser}/>}/>

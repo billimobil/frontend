@@ -5,12 +5,16 @@ import axios from "axios";
 import Button from "../components/UI/Button/Button";
 import {NavLink, useNavigate} from "react-router-dom";
 
-const Main = () => {
+const Main = ({user}) => {
     const navigate = useNavigate();
     const [professions, setProfessions] = useState([])
     const [error, setError] = useState('')
     useEffect(()=>{
-        axios.get("http://localhost:81/api/v1/getProfessions").then(response=>{
+        axios.get("http://188.225.74.17:8080/api/v1/getProfessions", {
+            params: {
+                session_token: user.session_token,
+            }
+        }).then(response=>{
             setProfessions(response.data.data)
             console.log(professions)
         }).catch(err=>setError(error.response.data.error))

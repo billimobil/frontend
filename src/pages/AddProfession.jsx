@@ -10,7 +10,7 @@ const AddProfession = () => {
     const [description, setDescription] = useState('')
     const [error, setError] = useState('')
     function submit(e) {
-        axios.get("http://localhost:81/api/v1/createProfession", {
+        axios.get("http://188.225.74.17:8080/api/v1/createProfession", {
             params: {
                 name: name,
                 description: description

@@ -24,7 +24,7 @@ const LightReactionTest = ({user}) => {
     function startTest() { // TODO fix bug that appears when start button is pressed few times
         if (i <= 0) {
             // TODO тут отправляем результаты на бэк, ждем их сохранения и идем смотреть результаты
-            axios.get("http://localhost:81/api/v1/saveTestResult", {
+            axios.get("http://188.225.74.17:8080/api/v1/saveTestResult", {
                 params: {
                     user_id: user.id,
                     test_id: 1,

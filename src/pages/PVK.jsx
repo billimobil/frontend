@@ -11,7 +11,7 @@ const Pvk = () => {
     const [clicked, setClicked] = useState([])
 
     useEffect(()=>{
-        axios.get("http://localhost:81/api/v1/getProfession", {
+        axios.get("http://188.225.74.17:8080/api/v1/getProfession", {
             params: {
                 id: id,
             }
@@ -21,7 +21,7 @@ const Pvk = () => {
             setError(e.response.data.error)
         })
 
-        axios.get("http://localhost:81/api/v1/getPVKList").then(response=>{
+        axios.get("http://188.225.74.17:8080/api/v1/getPVKList").then(response=>{
             setPVK(response.data.data)
         }).catch(err=>{
             setError(err)

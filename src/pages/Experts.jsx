@@ -6,7 +6,7 @@ const Experts = () => {
     const [experts, setExperts] = useState([])
     const [error, setError] = useState('')
     useEffect(()=>{
-        axios.get("http://localhost:81/api/v1/getExperts").then(response=>{
+        axios.get("http://188.225.74.17:8080/api/v1/getExperts").then(response=>{
             setExperts(response.data.data)
             console.log(JSON.stringify(response.data.data))
         }).catch(err=>{

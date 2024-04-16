@@ -12,7 +12,7 @@ export default class TMDBService {
         if (genre !== 0) {
             params.genre = genre
         }
-        const response = await axios.get(`http://localhost:81/api/v1/movies`, {
+        const response = await axios.get(`http://188.225.74.17:8080/api/v1/movies`, {
             params: params
         })
         if (response.status !== 200) {
@@ -22,7 +22,7 @@ export default class TMDBService {
         return response.data
     }
     static async getMovieByID(movieID) {
-        const response = await axios.get(`http://localhost:81/api/v1/movies/`+movieID)
+        const response = await axios.get(`http://188.225.74.17:8080/api/v1/movies/`+movieID)
         if (response.status !== 200) {
             throw new APIError(response.message)
         }
