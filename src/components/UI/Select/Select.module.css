@@ -1,0 +1,40 @@
+.filter {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid white;
+    height: 2em;
+    width: fit-content;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    background: #292c37;
+    /*box-shadow: var(0 0 #0000;,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);*/
+}
+
+.filter__dropdown {
+    background: #292c37;
+    height: 100%;
+    width: fit-content;
+    transition: color 0.1s;
+    border: 0;
+    outline: 0;
+    appearance: none;
+    padding-left: 2em;
+    padding-right: 1em;
+}
+
+.filter__icon {
+    position: absolute;
+    justify-self: left;
+    pointer-events: none;
+    padding: inherit;
+    content: "";
+    min-width: 1em;
+    min-height: 1em;
+    max-height: 50%;
+}
+
+.filter__icon_right {
+    right: 0.1em;
+}

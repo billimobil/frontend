@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    /*margin-bottom: 30vh;*/
+}
+
+p {
+    color: black;
+    margin-bottom: 6vh;
+}
+
+a > p {
+    color: white;
+    margin: 0
+}

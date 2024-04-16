@@ -1,0 +1,32 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 4em;
+    align-items: flex-start;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+.left > h1 {
+    align-self: flex-start;
+}
+
+.profession__pic {
+    min-height: 400px;
+}
+
+.pvk__block {
+    border-top: 1px solid black;
+}
+
+.pvk__item {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid black;
+}

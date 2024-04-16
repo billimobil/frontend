@@ -1,0 +1,50 @@
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 750px;
+}
+
+.head {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: blue;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.pvk__block {
+    width: 100%;
+    /*overflow-y: scroll;*/
+}
+.pvk {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.pvk__name {
+
+}
+
+.pvk > p {
+    max-height: 50px;
+    border: 1px black solid;
+    padding: 1em;
+}
+
+.pvk__name {
+    width: 650px;
+}
+
+input {
+    max-width: 50px;
+    max-height: 50px;
+    padding: 1.4em;
+}

@@ -1,0 +1,10 @@
+.frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 265px;
+    width: 650px;
+    font-size: 80px;
+    border: 1px solid black;
+    margin-bottom: 0.2em;
+}

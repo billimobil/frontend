@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    min-width: 600px;
+}
+
+h1 {
+    align-self: center;
+}
+
+.table {
+    width: 100%;
+}
+.row {
+    min-height: 50px;
+    width: 100%;
+    min-width: 100%;
+    border: 1px solid black;
+}
