@@ -24,7 +24,7 @@ const Results = () => {
                 <div className={cs.tests__block}>Движущийся круг</div>
                 <div className={cs.tests__block}>Три движущихся круга</div>
             </div>
-        </div>
-};
+        </div>)
+}
 
 export default Results;

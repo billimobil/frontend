@@ -20,7 +20,6 @@ import MovingObjectTest from "./pages/tests/MovingObjectTest/MovingObjectTest";
 import UserTestsResults from "./pages/adminPanel/UserTestsResults/UserTestsResults";
 import AddProfession from "./pages/AddProfession";
 import Profession from "./pages/Profession";
-import ConcreteResults from "./pages/ConcreteResults";
 
 function App() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
@@ -53,7 +52,6 @@ function App() {
                             <Route path="/addProfession" element={<AddProfession/>}/>
                             <Route path="/professions/:id" element={<Profession/>}/>
                             <Route path="/professions/:id/pvk" element={<PVK/>}/>
-                            <Route path="/results/:test_id" element={<ConcreteResults/>}/>
                             <Route path="/tests" element={<Tests/>}/>
                             <Route path="/experts"  element={<Experts/>}/>
                             <Route path="/light-reaction-test"  element={<LightReactionTest user={user}/>}/>
