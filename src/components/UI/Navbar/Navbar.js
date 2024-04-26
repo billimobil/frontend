@@ -24,7 +24,7 @@ const Navbar = ({user}) => {
                             :
                             <>
                                 <NavLink className={cs.header__nav__link} to="/tests">Тесты</NavLink>
-                                <NavLink className={cs.header__nav__link} to="/tests">Результаты тестов</NavLink>
+                                <NavLink className={cs.header__nav__link} to="/ResultsOfPerson">Результаты тестов</NavLink>
                                 <NavLink className={cs.header__nav__link} to="/pvk">ПВК</NavLink>
                                 <NavLink className={cs.header__nav__link} to="/experts">Эксперты</NavLink>
                                 <NavLink className={cs.header__nav__link} to="/exit">Выйти</NavLink>
