@@ -23,7 +23,7 @@ import Profession from "./pages/Profession";
 import ResultsOfPerson from "./pages/ResultsOfPerson";
 import InfoGraphPage from "./pages/InfoGraphPage";
 import GraphPage from "./pages/GraphPage";
-
+import UpdateProfession from "./pages/UpdateProfession";
 function App() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
     useEffect(()=>{
@@ -52,6 +52,7 @@ function App() {
 
                     {user ?
                         <>
+                            <Route path="/updateProfession/:id?" element={<UpdateProfession user={user} />} />
                             <Route path="/addProfession" element={<AddProfession/>}/>
                             <Route path="/professions/:id" element={<Profession/>}/>
                             <Route path="/professions/:id/pvk" element={<PVK/>}/>
