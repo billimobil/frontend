@@ -20,6 +20,7 @@ import MovingObjectTest from "./pages/tests/MovingObjectTest/MovingObjectTest";
 import UserTestsResults from "./pages/adminPanel/UserTestsResults/UserTestsResults";
 import AddProfession from "./pages/AddProfession";
 import Profession from "./pages/Profession";
+import ResultsOfPerson from "./pages/ResultsOfPerson";
 import InfoGraphPage from "./pages/InfoGraphPage";
 import GraphPage from "./pages/GraphPage";
 
@@ -63,6 +64,7 @@ function App() {
                             <Route path="/sound-addition-test"  element={<SoundAdditionTest/>}/>
                             <Route path="/moving-object-test"  element={<MovingObjectTest/>}/>
                             <Route path="/results"  element={<Results/>}/>
+                            <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>
 
                             <Route path="/admin/user-tests-results"  element={<UserTestsResults/>}/>
                             <Route path="/admin/graph" element={<InfoGraphPage/>}/>
