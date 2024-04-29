@@ -21,7 +21,8 @@ import UserTestsResults from "./pages/adminPanel/UserTestsResults/UserTestsResul
 import AddProfession from "./pages/AddProfession";
 import Profession from "./pages/Profession";
 import ResultsOfPerson from "./pages/ResultsOfPerson";
-
+import InfoGraphPage from "./pages/InfoGraphPage";
+import GraphPage from "./pages/GraphPage";
 
 function App() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
@@ -66,6 +67,8 @@ function App() {
                             <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>
 
                             <Route path="/admin/user-tests-results"  element={<UserTestsResults/>}/>
+                            <Route path="/admin/graph" element={<InfoGraphPage/>}/>
+                            <Route path="/admin/graph/:id" element={<GraphPage/>}/>
                         </>
                         :
                         <>
