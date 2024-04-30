@@ -1,0 +1,291 @@
+.div,
+.div * {
+  box-sizing: border-box;
+}
+.div {
+  background: #0e0e0e;
+  height: 1080px;
+  position: relative;
+  overflow: hidden;
+}
+.rectangle47 {
+  background: #0e0e0e;
+  width: 1920px;
+  height: 65px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.div2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+  position: absolute;
+  left: calc(50% - -859px);
+  top: 23px;
+  width: 45px;
+  height: 24px;
+}
+.experts {
+  color: #ffffff;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+  position: absolute;
+  left: calc(50% - -611px);
+  top: 28px;
+  width: 69px;
+  height: 24px;
+}
+.div3 {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 312px);
+  top: 149px;
+  width: 624px;
+  height: 45px;
+}
+.div4 {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 460px);
+  top: 234px;
+  width: 921px;
+}
+.one2Cm {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 58px);
+  top: 443px;
+  width: 118px;
+}
+.rectangle33 {
+  background: #fcfcfc;
+  width: 1824px;
+  height: 1px;
+  position: absolute;
+  left: 40px;
+  top: 214px;
+}
+.div5 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+  position: absolute;
+  left: calc(50% - -611px);
+  top: 23px;
+  width: 69px;
+  height: 24px;
+}
+.rectangle68 {
+  border-style: solid;
+  border-color: #fcfcfc;
+  border-width: 1px;
+  width: 650px;
+  height: 50px;
+  position: absolute;
+  left: calc(50% - 324px);
+  top: 858px;
+}
+.div6 {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 174px);
+  top: 867px;
+  width: 348px;
+  height: 31px;
+}
+.div7 {
+  color: #fcfcfc;
+  text-align: center;  /* left Был */
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 106px);
+  top: 745px;
+  width: 251px; /* +40 */
+  height: 24px;
+}
+.div8 {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 99px);
+  top: 795px;
+  width: 32px;
+  height: 24px;
+}
+
+.div9 {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - -68px);
+  top: 795px;
+  width: 32px;
+  height: 24px;
+}
+.minutesRectangle {
+  color: white;
+  border-style: solid;
+  border-color: #c0c0c0;
+  border-width: 1px;
+  width: 44px;
+  height: 27px;
+  position: absolute;
+  left: 895px; /* +50 */
+  top: 793px;
+}
+.secondsRectangle {
+  color: white;
+  border-style: solid;
+  border-color: #c0c0c0;
+  border-width: 1px;
+  width: 44px;
+  height: 27px;
+  position: absolute;
+  left: 1062px; /* +50 */
+  top: 793px;
+}
+.centralRectangle {
+  border-style: solid;
+  border-color: #fcfcfc;
+  border-width: 1px;
+  width: 1361px;
+  height: 23px;
+  position: absolute;
+  left: 279px;
+  top: calc(50% - -2px);
+}
+/*.redEllipse {*/
+/*  background: #f80000;*/
+/*  border-radius: 50%;*/
+/*  width: 80px;*/
+/*  height: 80px;*/
+/*  position: absolute;*/
+/*  left: calc(50% - 39px);*/
+/*  top: calc(50% - 26px);*/
+/*}*/
+/*.greenEllipse {*/
+/*  background: #59fe20;*/
+/*  border-radius: 50%;*/
+/*  width: 80px;*/
+/*  height: 80px;*/
+/*  position: absolute;*/
+/*  left: calc(50% - -100px);*/
+/*  top: calc(50% - 26px);*/
+/*}*/
+.logo {
+  width: 153px;
+  height: 23px;
+  position: absolute;
+  left: 39px;
+  top: 33px;
+  overflow: visible;
+}
+.redEllipse {
+  background-color: #f80000;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: calc(50% - 39px);
+  top: calc(50% - 26px);
+}
+
+.greenEllipse {
+  background-color: #59fe20;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: calc(50% - 39px); /* Это значение можно подстроить под ваш макет */
+  top: calc(50% - 26px); /* Это значение можно подстроить под ваш макет */
+}
+.timeLasts {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 75px);
+  top: 963px;
+  width: 150px;
+  height: 24px;
+}
+/*.startButton {*/
+/*  background-color: #4CAF50; !* Цвет фона *!*/
+/*  border: none; !* Убираем границу *!*/
+/*  color: white; !* Цвет текста *!*/
+/*  padding: 15px 32px; !* Отступы *!*/
+/*  text-align: center; !* Выравнивание текста по центру *!*/
+/*  text-decoration: none; !* Убираем подчеркивание *!*/
+/*  display: inline-block; !* Позволяет задать ширину и высоту кнопки *!*/
+/*  font-size: 16px; !* Размер текста *!*/
+/*  margin: 4px 2px; !* Внешние отступы *!*/
+/*  cursor: pointer; !* Изменение формы указателя мыши при наведении на кнопку *!*/
+/*  border-radius: 10px; !* Закругление углов *!*/
+/*}*/
+.startButton {
+  border-style: solid;
+  border-color: #fcfcfc;
+  border-width: 1px;
+  width: 650px;
+  height: 50px;
+  position: absolute;
+  left: calc(50% - 325px);
+  top: 858px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.lineUnderTestName {
+  background: #fcfcfc;
+  width: 1822px;
+  height: 1px;
+  position: absolute;
+  left: 40px;
+  top: 214px;
+}
+.vector {
+  width: 153px;
+  height: 23px;
+  position: absolute;
+  left: 40px;
+  top: 21px;
+  overflow: visible;
+}
