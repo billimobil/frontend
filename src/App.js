@@ -16,7 +16,7 @@ import Results from "./pages/Results";
 import LightComplexReactionTest from "./pages/tests/LightComplexReactionTest/LightComplexReactionTest";
 import VisualAdditionTest from "./pages/tests/VisualAdditionTest/VisualAdditionTest";
 import SoundAdditionTest from "./pages/tests/SoundAdditionTest/SoundAdditionTest";
-import MovingObjectTest from "./pages/tests/MovingObjectTest/MovingObjectTest";
+import MovingObjectTest from "./pages/tests/SimpleMovingObjectTest/SimpleMovingObjectTest";
 import UserTestsResults from "./pages/adminPanel/UserTestsResults/UserTestsResults";
 import AddProfession from "./pages/AddProfession";
 import Profession from "./pages/Profession";
