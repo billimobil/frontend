@@ -16,7 +16,8 @@ import Results from "./pages/Results";
 import LightComplexReactionTest from "./pages/tests/LightComplexReactionTest/LightComplexReactionTest";
 import VisualAdditionTest from "./pages/tests/VisualAdditionTest/VisualAdditionTest";
 import SoundAdditionTest from "./pages/tests/SoundAdditionTest/SoundAdditionTest";
-import MovingObjectTest from "./pages/tests/MovingObjectTest/MovingObjectTest";
+import MovingObjectTest from "./pages/tests/SimpleMovingObjectTest/SimpleMovingObjectTest";
+import MovingObjectWithFollowing from "./pages/tests/MovingObjectWithFollowing/MovingObjectWithFollowing";
 import UserTestsResults from "./pages/adminPanel/UserTestsResults/UserTestsResults";
 import AddProfession from "./pages/AddProfession";
 import Profession from "./pages/Profession";
@@ -58,12 +59,13 @@ function App() {
                             <Route path="/professions/:id/pvk" element={<PVK/>}/>
                             <Route path="/tests" element={<Tests/>}/>
                             <Route path="/experts"  element={<Experts/>}/>
-                            <Route path="/light-reaction-test"  element={<LightReactionTest user={user}/>}/>
-                            <Route path="/light-complex-reaction-test"  element={<LightComplexReactionTest/>}/>
-                            <Route path="/sound-reaction-test"  element={<SoundReactionTest/>}/>
-                            <Route path="/visual-addition-test"  element={<VisualAdditionTest/>}/>
-                            <Route path="/sound-addition-test"  element={<SoundAdditionTest/>}/>
-                            <Route path="/moving-object-test"  element={<MovingObjectTest/>}/>
+                            <Route path="/light-reaction-test"  element={<LightReactionTest user={user} />}/>
+                            <Route path="/light-complex-reaction-test"  element={<LightComplexReactionTest user={user} />}/>
+                            <Route path="/sound-reaction-test"  element={<SoundReactionTest user={user} />}/>
+                            <Route path="/visual-addition-test"  element={<VisualAdditionTest user={user} />}/>
+                            <Route path="/sound-addition-test"  element={<SoundAdditionTest user={user} />}/>
+                            <Route path="/moving-object-test"  element={<MovingObjectTest user={user} />}/>
+                            <Route path="/moving-object-with-following"  element={<MovingObjectWithFollowing user={user} />}/>
                             <Route path="/results"  element={<Results/>}/>
                             <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>
 

@@ -1,0 +1,225 @@
+.div,
+.div * {
+  box-sizing: border-box;
+}
+.div {
+  background: #0e0e0e;
+  height: 1080px;
+  position: relative;
+  overflow: hidden;
+}
+.topRect {
+  background: #0e0e0e;
+  width: 1920px;
+  height: 65px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.testName {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 241px);
+  top: 149px;
+  width: 483px;
+  height: 45px;
+}
+.task {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 429px);
+  top: 234px;
+  width: 858px;
+}
+.distance {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 39px); /* 59 */
+  top: 478px;
+  width: 118px;
+}
+.lineUnderTestName {
+  background: #fcfcfc;
+  width: 1822px;
+  height: 1px;
+  position: absolute;
+  left: 40px;
+  top: 214px;
+}
+.div2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+  position: absolute;
+  left: calc(50% - -611px);
+  top: 28px;
+  width: 69px;
+  height: 24px;
+}
+.div3 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+  position: absolute;
+  left: calc(50% - -858px);
+  top: 28px;
+  width: 45px;
+  height: 24px;
+}
+.startButton {
+  border-style: solid;
+  border-color: #fcfcfc;
+  border-width: 1px;
+  width: 650px;
+  height: 50px;
+  position: absolute;
+  left: calc(50% - 325px);
+  top: 778px;
+  cursor: pointer;
+}
+.startButton:hover {
+  background-color: #f0f0f0;
+}
+
+.startButton:active {
+  background-color: #c0c0c0;
+}
+.div4 {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 174px);
+  top: 788px;
+  width: 348px;
+  height: 31px;
+}
+.div5 {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 105px);
+  top: 669px;
+  width: 211px;
+  height: 24px;
+}
+.div6 {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 95px);
+  top: 715px;
+  width: 32px;
+  height: 24px;
+}
+.minutesRectangle {
+  color: white;
+  border-style: solid;
+  border-color: #c0c0c0;
+  border-width: 1px;
+  width: 44px;
+  height: 27px;
+  position: absolute;
+  left: 907px;
+  top: 713px;
+}
+.div7 {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - -11px);
+  top: 715px;
+  width: 32px;
+  height: 24px;
+}
+.secondsRectangle {
+  color: white;
+  border-style: solid;
+  border-color: #c0c0c0;
+  border-width: 1px;
+  width: 44px;
+  height: 27px;
+  position: absolute;
+  left: 1019px;
+  top: 713px;
+}
+.mainRect {
+  border-style: solid;
+  border-color: #fcfcfc;
+  border-width: 1px;
+  width: 1361px;
+  height: 23px;
+  position: absolute;
+  left: 280px;
+  top: calc(50% - -19px);
+}
+.redEllipse {
+  background: #f80000;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: calc(50% - 39px);
+  top: calc(50% - 9px);
+}
+.medianReactionTime {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 325px);
+  top: 870px;
+  width: 245px;
+  height: 24px;
+}
+.timeLeft {
+  color: #fcfcfc;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - -175px);
+  top: 867px;
+  width: 150px;
+  height: 24px;
+}
+.vector {
+  width: 153px;
+  height: 23px;
+  position: absolute;
+  left: 40px;
+  top: 21px;
+  overflow: visible;
+}
