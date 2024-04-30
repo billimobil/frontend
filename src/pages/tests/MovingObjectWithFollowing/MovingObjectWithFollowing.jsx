@@ -10,7 +10,7 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
     const [redCircleDirection, setRedCircleDirection] = useState(1); // направление движения красного кружка (1 - вправо, -1 - влево)
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(15);
-    const [distanceHistory, setDistanceHistory] = useState([]); // массив для сохранения истории дистанций
+    const [distanceHistory, setDistanceHistory] = useState([]); // массив для сохранения истории дистанций TODO: отправлять на бек
     const [lastRecordedTime, setLastRecordedTime] = useState(0); // последнее записанное время
 
     useEffect(() => {
@@ -132,4 +132,4 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
         </div>
     );
 };
-//TODO сделать отправку результатов на бекенд (посмотреть где лежит всё)
+export default MovingObjectWithFollowing;
