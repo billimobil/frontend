@@ -17,6 +17,7 @@ import LightComplexReactionTest from "./pages/tests/LightComplexReactionTest/Lig
 import VisualAdditionTest from "./pages/tests/VisualAdditionTest/VisualAdditionTest";
 import SoundAdditionTest from "./pages/tests/SoundAdditionTest/SoundAdditionTest";
 import MovingObjectTest from "./pages/tests/SimpleMovingObjectTest/SimpleMovingObjectTest";
+import MovingObjectWithFollowing from "./pages/tests/MovingObjectWithFollowing/MovingObjectWithFollowing";
 import UserTestsResults from "./pages/adminPanel/UserTestsResults/UserTestsResults";
 import AddProfession from "./pages/AddProfession";
 import Profession from "./pages/Profession";
@@ -64,6 +65,7 @@ function App() {
                             <Route path="/visual-addition-test"  element={<VisualAdditionTest/>}/>
                             <Route path="/sound-addition-test"  element={<SoundAdditionTest/>}/>
                             <Route path="/moving-object-test"  element={<MovingObjectTest/>}/>
+                            <Route path="/moving-object-with-following"  element={<MovingObjectWithFollowing/>}/>
                             <Route path="/results"  element={<Results/>}/>
                             <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>
 
