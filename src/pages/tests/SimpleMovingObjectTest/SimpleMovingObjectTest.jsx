@@ -96,3 +96,5 @@ export const SimpleMovingObjectTest = ({ className, ...props }) => {
         </div>
     );
 };
+
+export default SimpleMovingObjectTest;
