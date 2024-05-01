@@ -1,7 +1,7 @@
 import React from 'react';
 import cs from "./PageNotFound.module.css"
 import {NavLink} from "react-router-dom";
-import Button from "../components/UI/Button/Button";
+import Button from "../../components/UI/Button/Button";
 const PageNotFound = () => {
     return (
         <div className={cs.wrapper}>

@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import cs from './Profession.module.css'
 import {useParams} from "react-router-dom";
-import img1 from "../assets/images/1.jpg";
+import img1 from "../../assets/images/1.jpg";
 import axios from "axios";
 const Profession = () => {
     const {id} = useParams()

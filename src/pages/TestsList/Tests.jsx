@@ -24,7 +24,6 @@ const Tests = () => {
                 </NavLink>
                 <div className={cs.tests__block}>Движущийся круг</div>
                 <div className={cs.tests__block}>Три движущихся круга</div>
-                <script src="https://code.responsivevoice.org/responsivevoice.js?key=SepBoBuy"></script>
             </div>
         </div>
     );

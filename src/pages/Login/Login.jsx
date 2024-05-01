@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import cs from "./Login.module.css"
-import Input from "../components/UI/Input/Input";
-import Button from "../components/UI/Button/Button";
+import Input from "../../components/UI/Input/Input";
+import Button from "../../components/UI/Button/Button";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 const Login = ({setUser}) => {

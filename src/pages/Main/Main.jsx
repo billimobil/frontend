@@ -1,8 +1,8 @@
-import img1 from "../assets/images/1.jpg"
+import img1 from "../../assets/images/1.jpg"
 import React, {useCallback, useEffect, useId, useState} from 'react';
 import cs from './Main.module.css'
 import axios from "axios";
-import Button from "../components/UI/Button/Button";
+import Button from "../../components/UI/Button/Button";
 import {NavLink, useNavigate} from "react-router-dom";
 
 const Main = ({user}) => {

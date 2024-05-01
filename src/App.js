@@ -1,30 +1,30 @@
 import './App.css';
 import {BrowserRouter, matchRoutes, Navigate, Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from "react";
-import Main from "./pages/Main";
+import Main from "./pages/Main/Main";
 import Navbar from "./components/UI/Navbar/Navbar";
-import Registration from "./pages/Registration";
-import Login from "./pages/Login";
-import Experts from "./pages/Experts";
-import PageNotFound from "./pages/PageNotFound";
-import Exit from "./pages/Exit";
-import PVK from "./pages/PVK";
-import Tests from "./pages/Tests";
+import Registration from "./pages/Registration/Registration";
+import Login from "./pages/Login/Login";
+import Experts from "./pages/Experts/Experts";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import Exit from "./pages/Exit/Exit";
+import PVK from "./pages/PVK/PVK";
+import Tests from "./pages/TestsList/Tests";
 import LightReactionTest from "./pages/tests/LightReactionTest/LightReactionTest";
 import SoundReactionTest from "./pages/tests/SoundReactionTest/SoundReactionTest";
-import Results from "./pages/Results";
+import Results from "./pages/Results/Results";
 import LightComplexReactionTest from "./pages/tests/LightComplexReactionTest/LightComplexReactionTest";
 import VisualAdditionTest from "./pages/tests/VisualAdditionTest/VisualAdditionTest";
 import SoundAdditionTest from "./pages/tests/SoundAdditionTest/SoundAdditionTest";
 import MovingObjectTest from "./pages/tests/SimpleMovingObjectTest/SimpleMovingObjectTest";
 import MovingObjectWithFollowing from "./pages/tests/MovingObjectWithFollowing/MovingObjectWithFollowing";
 import UserTestsResults from "./pages/adminPanel/UserTestsResults/UserTestsResults";
-import AddProfession from "./pages/AddProfession";
-import Profession from "./pages/Profession";
-import ResultsOfPerson from "./pages/ResultsOfPerson";
-import InfoGraphPage from "./pages/InfoGraphPage";
-import GraphPage from "./pages/GraphPage";
-import UpdateProfession from "./pages/UpdateProfession";
+import AddProfession from "./pages/AddProfession/AddProfession";
+import Profession from "./pages/Profession/Profession";
+import ResultsOfPerson from "./pages/ResultsOfPerson/ResultsOfPerson";
+import InfoGraphPage from "./pages/InfoGraph/InfoGraphPage";
+import GraphPage from "./pages/Graph/GraphPage";
+import UpdateProfession from "./pages/UpdateProfession/UpdateProfession";
 function App() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
     useEffect(()=>{
@@ -34,10 +34,6 @@ function App() {
         }
         console.log(JSON.stringify(user))
         localStorage.setItem("user", JSON.stringify(user))
-    }, [user])
-
-    useEffect(()=>{
-        console.log(user)
     }, [user])
     return (
         <BrowserRouter>
@@ -54,7 +50,7 @@ function App() {
                     {user ?
                         <>
                             <Route path="/updateProfession/:id?" element={<UpdateProfession user={user} />} />
-                            <Route path="/addProfession" element={<AddProfession/>}/>
+                            <Route path="/addProfession" element={<AddProfession user={user}/>}/>
                             <Route path="/professions/:id" element={<Profession/>}/>
                             <Route path="/professions/:id/pvk" element={<PVK/>}/>
                             <Route path="/tests" element={<Tests/>}/>

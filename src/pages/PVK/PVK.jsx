@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import cs from './PVK.module.css'
-import Button from "../components/UI/Button/Button";
+import Button from "../../components/UI/Button/Button";
 import axios from "axios";
 import {useParams} from "react-router-dom";
 const Pvk = () => {

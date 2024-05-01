@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import cs from './AddProfession.module.css'
-import Input from "../components/UI/Input/Input";
-import Button from "../components/UI/Button/Button";
+import Input from "../../components/UI/Input/Input";
+import Button from "../../components/UI/Button/Button";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
-const AddProfession = () => {
+const AddProfession = ({user}) => {
     const navigate = useNavigate()
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
@@ -13,7 +13,8 @@ const AddProfession = () => {
         axios.get("http://188.225.74.17:8080/api/v1/createProfession", {
             params: {
                 name: name,
-                description: description
+                description: description,
+                session_token: user.session_token,
             }
         }).then(response=>{
             if (response.data.ok !== true) {
