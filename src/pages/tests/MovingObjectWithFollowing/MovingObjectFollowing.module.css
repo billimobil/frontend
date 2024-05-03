@@ -5,6 +5,7 @@
 .div {
   background: #0e0e0e;
   height: 1080px;
+  width: 1920px;
   position: relative;
   overflow: hidden;
 }
@@ -258,6 +259,21 @@
 /*  cursor: pointer; !* Изменение формы указателя мыши при наведении на кнопку *!*/
 /*  border-radius: 10px; !* Закругление углов *!*/
 /*}*/
+/*.startButton {*/
+/*  border-style: solid;*/
+/*  border-color: #fcfcfc;*/
+/*  border-width: 1px;*/
+/*  width: 650px;*/
+/*  height: 50px;*/
+/*  position: absolute;*/
+/*  left: calc(50% - 325px);*/
+/*  top: 858px;*/
+/*  background-color: #4CAF50;*/
+/*  color: white;*/
+/*  font-size: 16px;*/
+/*  cursor: pointer;*/
+/*  border-radius: 10px;*/
+/*!*}*! старая кнопка*/
 .startButton {
   border-style: solid;
   border-color: #fcfcfc;
@@ -266,12 +282,15 @@
   height: 50px;
   position: absolute;
   left: calc(50% - 325px);
-  top: 858px;
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
+  top: 778px;
   cursor: pointer;
-  border-radius: 10px;
+}
+.startButton:hover {
+  background-color: #f0f0f0;
+}
+
+.startButton:active {
+  background-color: #c0c0c0;
 }
 .lineUnderTestName {
   background: #fcfcfc;
