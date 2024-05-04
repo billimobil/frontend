@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styles from "./MovingObjectTest.module.css";
 
-export const SimpleMovingObjectTest = ({ className, ...props }) => {
+export const MovingObjectTest = ({ className, ...props }) => {
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(15);
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
     const [distance, setDistance] = useState(0);
     const [isTestRunning, setIsTestRunning] = useState(false);
-    const [redCirclePosition, setRedCirclePosition] = useState({ x: window.innerWidth / 2 - 39 + 15, y: window.innerHeight / 2 - 9 + 45 }); // начальное положение красного кружка TODO: сделать нормальным блять
+    const [redCirclePosition, setRedCirclePosition] = useState({ x: window.innerWidth / 2 - 39 + 5, y: window.innerHeight / 2.2 }); // начальное положение красного кружка TODO: сделать нормальным блять
     const [redCircleDirection, setRedCircleDirection] = useState(1); // направление движения красного кружка: 1 вправо, -1 влево
     const [timeLeft, setTimeLeft] = useState(0); // в секундах (криво-косо, типо не в секундах, но в них) TODO: исправить
     //TODO сделать запись в массив и отправку на бекенд
@@ -55,7 +55,7 @@ export const SimpleMovingObjectTest = ({ className, ...props }) => {
 
     return (
         <div className={styles.div + " " + className} onMouseMove={handleMouseMove}>
-            <div className={styles.topRect}></div>
+            {/*<div className={styles.topRect}></div>*/}
             <div className={styles.testName}>Оценка аналогово слежения</div>
             <div className={styles.task}>
                 Ваша задача: следить курсором за движущимся объектом, стремясь держать
@@ -63,10 +63,10 @@ export const SimpleMovingObjectTest = ({ className, ...props }) => {
             </div>
             <div className={styles.distance}>Дистанция: {distance.toFixed(2)}</div>
             <div className={styles.lineUnderTestName}></div>
-            <div className={styles.div2}>Эксперты</div>
-            <div className={styles.div3}>Выйти</div>
-            <div className={styles.startButton} onClick={startTest}></div>
-            <div className={styles.div4}>Нажмите чтобы начать тестирование</div>
+            {/*<div className={styles.div2}>Эксперты</div>*/}
+            {/*<div className={styles.div3}>Выйти</div>*/}
+            <div className={styles.startButton} onClick={startTest}>Нажмите чтобы начать тестирование</div>
+            {/*<div className={styles.div4}>Нажмите чтобы начать тестирование</div>*/}
             <div className={styles.div5}>Выберите длительность теста</div>
             <div className={styles.div6}>мин:</div>
             <input
@@ -92,9 +92,9 @@ export const SimpleMovingObjectTest = ({ className, ...props }) => {
             </div>
             {/*TODO:сделать норм таймер*/}
             <div className={styles.timeLeft}>Осталось секунд: {Math.floor(timeLeft / 60)} мин {timeLeft % 60} сек</div>
-            <img className={styles.vector} src="vector0.svg"/>
+            {/*<img className={styles.vector} src="vector0.svg"/>*/}
         </div>
     );
 };
 
-export default SimpleMovingObjectTest;
+export default MovingObjectTest;

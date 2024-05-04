@@ -5,17 +5,18 @@
 .div {
   background: #0e0e0e;
   height: 1080px;
+  width: 1920px;
   position: relative;
   overflow: hidden;
 }
-.topRect {
-  background: #0e0e0e;
-  width: 1920px;
-  height: 65px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
+/*.topRect {*/
+/*  background: #0e0e0e;*/
+/*  width: 1920px;*/
+/*  height: 65px;*/
+/*  position: absolute;*/
+/*  left: 0px;*/
+/*  top: 0px;*/
+/*}*/
 .testName {
   color: #fcfcfc;
   text-align: left;
@@ -23,8 +24,8 @@
   font-size: 36px;
   font-weight: 500;
   position: absolute;
-  left: calc(50% - 241px);
-  top: 149px;
+  left: calc(50% - 236px);
+  top: calc(50% - 410px);
   width: 483px;
   height: 45px;
 }
@@ -36,7 +37,7 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 429px);
-  top: 234px;
+  top: calc(50% - 344px);
   width: 858px;
 }
 .distance {
@@ -46,8 +47,8 @@
   font-size: 15px;
   font-weight: 500;
   position: absolute;
-  left: calc(50% - 39px); /* 59 */
-  top: 478px;
+  left: calc(50% - 49px); /* 59 */
+  top: calc(10% + 268px);
   width: 118px;
 }
 .lineUnderTestName {
@@ -55,8 +56,8 @@
   width: 1822px;
   height: 1px;
   position: absolute;
-  left: 40px;
-  top: 214px;
+  left: calc(4% - 36px);
+  top: calc(50% - 367px);
 }
 .div2 {
   color: #ffffff;
@@ -90,6 +91,12 @@
   border-width: 1px;
   width: 650px;
   height: 50px;
+  text-align: center;
+  line-height: 45px;
+  color: white;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
   position: absolute;
   left: calc(50% - 325px);
   top: 778px;
@@ -102,18 +109,18 @@
 .startButton:active {
   background-color: #c0c0c0;
 }
-.div4 {
-  color: #fcfcfc;
-  text-align: left;
-  font-family: "TtInterfaces-Medium", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  position: absolute;
-  left: calc(50% - 174px);
-  top: 788px;
-  width: 348px;
-  height: 31px;
-}
+/*.div4 {*/
+/*  color: #fcfcfc;*/
+/*  text-align: left;*/
+/*  font-family: "TtInterfaces-Medium", sans-serif;*/
+/*  font-size: 20px;*/
+/*  font-weight: 500;*/
+/*  position: absolute;*/
+/*  left: calc(50% - 174px);*/
+/*  top: 778px;*/
+/*  width: 348px;*/
+/*  height: 31px;*/
+/*!*}*! от текста, который больше не используется*/
 .div5 {
   color: #fcfcfc;
   text-align: left;
@@ -122,7 +129,7 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 105px);
-  top: 669px;
+  top: calc(60% - 99px);
   width: 211px;
   height: 24px;
 }
@@ -134,20 +141,9 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 95px);
-  top: 715px;
+  top: calc(60% - -15px);
   width: 32px;
   height: 24px;
-}
-.minutesRectangle {
-  color: white;
-  border-style: solid;
-  border-color: #c0c0c0;
-  border-width: 1px;
-  width: 44px;
-  height: 27px;
-  position: absolute;
-  left: 907px;
-  top: 713px;
 }
 .div7 {
   color: #fcfcfc;
@@ -156,10 +152,21 @@
   font-size: 15px;
   font-weight: 500;
   position: absolute;
-  left: calc(50% - -11px);
-  top: 715px;
+  left: calc(50% + 22px);
+  top: calc(60% - -15px);
   width: 32px;
   height: 24px;
+}
+.minutesRectangle {
+  color: white;
+  border-style: solid;
+  border-color: #c0c0c0; /* #c0c0c0 */
+  border-width: 1px;
+  width: 44px;
+  height: 27px;
+  position: absolute;
+  left: calc(94% - 907px);
+  top: calc(50% + 115px);
 }
 .secondsRectangle {
   color: white;
@@ -169,9 +176,8 @@
   width: 44px;
   height: 27px;
   position: absolute;
-  left: 1019px;
-  top: 713px;
-}
+  left: calc(50% + 52px);
+  top: calc(50% + 115px);}
 .mainRect {
   border-style: solid;
   border-color: #fcfcfc;
@@ -179,8 +185,8 @@
   width: 1361px;
   height: 23px;
   position: absolute;
-  left: 280px;
-  top: calc(50% - -19px);
+  left: calc(0% - -280px);
+  top: calc(50% - 59px);
 }
 .redEllipse {
   background: #f80000;
@@ -189,7 +195,7 @@
   height: 80px;
   position: absolute;
   left: calc(50% - 39px);
-  top: calc(50% - 9px);
+  top: calc(50% - 49px);
 }
 .medianReactionTime {
   color: #fcfcfc;
