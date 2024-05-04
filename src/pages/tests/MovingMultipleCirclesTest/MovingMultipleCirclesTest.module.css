@@ -1,0 +1,199 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 200px;
+    width: 200px;
+    border: 3px solid black;
+    border-radius: 50%;
+}
+
+.object {
+    height: 15px;
+    width: 15px;
+    background: red;
+    /*border: 3px solid black;*/
+    border-radius: 50%;
+
+}
+
+
+@keyframes GFG1 {
+    0% {
+        transform: rotate(0deg) translateY(100px);
+    }
+    0% {
+        transform: rotate(50deg) translateY(100px);
+    }
+    30% {
+        transform: rotate(0deg) translateY(100px);
+    }
+    50% {
+        transform: rotate(200deg) translateY(100px);
+    }
+    80% {
+        transform: rotate(360deg) translateY(100px);
+    }
+    100% {
+        transform: rotate(250deg) translateY(100px);
+    }
+}
+
+@keyframes GFG2 {
+    0% {
+        transform: rotate(0deg) translateY(100px);
+    }
+    30% {
+        transform: rotate(50deg) translateY(100px);
+    }
+    50% {
+        transform: rotate(-80deg) translateY(100px);
+    }
+    80% {
+        transform: rotate(150deg) translateY(100px);
+    }
+    100% {
+        transform: rotate(100deg) translateY(100px);
+    }
+}
+
+@keyframes GFG3 {
+    0% {
+        transform: rotate(0deg) translateY(100px);
+    }
+    30% {
+        transform: rotate(150deg) translateY(100px);
+    }
+    50% {
+        transform: rotate(120deg) translateY(100px);
+    }
+    80% {
+        transform: rotate(360deg) translateY(100px);
+    }
+    100% {
+        transform: rotate(-50deg) translateY(100px);
+    }
+}
+
+
+.crossline {
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    margin-left: 200px;
+    /*border: 3px solid black;*/
+}
+
+.crossline1 {
+}
+.crossline2 {
+}
+.crossline3 {
+}
+
+.color1 {
+    background: #F80000;
+}
+.color2 {
+    background: #1400FF;
+}
+.color3 {
+    background: #59FE20;
+}
+
+.object1  {
+    animation: GFG1 5s infinite cubic-bezier(0.47, -0.44, 0.49, 1.46) alternate-reverse;
+    animation-play-state: paused;
+}
+
+.object2 {
+    animation: GFG2 5s infinite cubic-bezier(0.47, -0.44, 0.49, 1.46) alternate-reverse;
+    animation-play-state: paused;
+}
+
+.object3 {
+    animation: GFG3 5s infinite cubic-bezier(0.47, -0.44, 0.49, 1.46) alternate-reverse;
+    animation-play-state: paused;
+}
+
+.helper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.center {
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+}
+
+h1 {
+    display: flex;
+    border-bottom: none;
+}
+
+.underline {
+    font-size: inherit;
+    padding-bottom: 0.1em;
+    border-bottom: 2px solid black;
+}
+
+hr {
+    margin-top: 1em;
+    width: 100%;
+    min-height: 3px;
+    background-color: black;
+}
+
+.key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border: black 1px solid;
+}
+
+.stats {
+    display: flex;
+    margin-top: 3em;
+    justify-content: space-between;
+    width: 650px;
+}
+
+.time_inputs_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.time_input {
+    padding: 0;
+    height: 30px;
+    width: 50px;
+}
+
+.circles__block {
+    display: inline-flex;
+    justify-content: center;
+    gap: 10em;
+    margin: 2em;
+    width: 100%;
+}

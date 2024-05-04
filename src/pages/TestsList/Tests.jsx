@@ -22,8 +22,12 @@ const Tests = () => {
                 <NavLink to="/visual-addition-test">
                     <div className={cs.tests__block}>Визуальное сложение</div>
                 </NavLink>
-                <div className={cs.tests__block}>Движущийся круг</div>
-                <div className={cs.tests__block}>Три движущихся круга</div>
+                <NavLink to="/moving-circle-test">
+                    <div className={cs.tests__block}>Движущийся круг</div>
+                </NavLink>
+                <NavLink to="/moving-multiple-circles-test">
+                    <div className={cs.tests__block}>Три движущихся круга</div>
+                </NavLink>
             </div>
         </div>
     );

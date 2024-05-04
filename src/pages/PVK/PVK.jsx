@@ -11,6 +11,7 @@ const Pvk = () => {
     const [clicked, setClicked] = useState([])
 
     useEffect(()=>{
+        console.log(id)
         axios.get("http://188.225.74.17:8080/api/v1/getProfession", {
             params: {
                 id: id,
@@ -48,6 +49,13 @@ const Pvk = () => {
 
     return (
         <div className={cs.wrapper}>
+            {
+                error ?
+                    <div className="error">
+                        {error}
+                    </div>
+                    : <></>
+            }
             {profession ?
             <>
                 <div className={cs.head}>
@@ -55,13 +63,7 @@ const Pvk = () => {
                     <p>Распределите ПВК по степени значимости по вашему мнению</p>
                 </div>
 
-                {
-                    error ?
-                        <div className="error">
-                            {error}
-                        </div>
-                        : <></>
-                }
+
                 {
                     pvk.map(elem=>(
                         <a key={elem.id} onClick={(e)=>{
@@ -80,7 +82,7 @@ const Pvk = () => {
                 </Button>
             </>
             :
-            <></>
+            <>Загружаем данные....</>
             }
         </div>
     );

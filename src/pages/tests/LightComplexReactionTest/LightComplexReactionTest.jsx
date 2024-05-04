@@ -56,8 +56,6 @@ const LightReactionTest = () => {
         var start = performance.now()
         document.addEventListener('keydown', onKeyHandler);
         function onKeyHandler(e) {
-            document.removeEventListener('keydown', onKeyHandler)
-
             let map = {
                 "#FF0000": 65,
                 "#1400FF": 83,
@@ -67,8 +65,10 @@ const LightReactionTest = () => {
             callback(timeSpent)
             if (e.keyCode === map[color]) {
                 setSymbol('✅')
+                document.removeEventListener('keydown', onKeyHandler)
             } else if ([65, 83, 68].includes(e.keyCode)) {
                 setSymbol('❌')
+                document.removeEventListener('keydown', onKeyHandler)
             }
 
             answers.push(e.keyCode === map[color])

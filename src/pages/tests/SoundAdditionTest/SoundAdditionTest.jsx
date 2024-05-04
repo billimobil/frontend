@@ -3,8 +3,9 @@ import cs from "../LightReactionTest/LightReactionTest.module.css";
 import Button from "../../../components/UI/Button/Button";
 import {useNavigate} from "react-router-dom";
 import {useAudio} from "../../../hooks/useAudio";
+import axios from "axios";
 
-const SoundReactionTest = () => {
+const SoundReactionTest = ({user}) => {
     const navigate = useNavigate();
 
     let [a, b, odd] = [0, 0, false]
@@ -42,9 +43,21 @@ const SoundReactionTest = () => {
         setTimeout(()=>{audio2.play()}, 1200)
         setTimeout(()=>{audio3.play()}, 1600)
 
-        console.log("i", i, answers)
+        // TODO: звуки не перестают играть, и нажатия W/D не перестают считываться после выхода из этой страницы
         if (i <= 0) {
             // TODO тут отправляем результаты на бэк, ждем их сохранения и идем смотреть результаты
+            setTestStarted(false);
+            axios.get("http://188.225.74.17:8080/api/v1/saveUserTestResult", {
+                params: {
+                    user_id: user.id,
+                    session_token: user.session_token,
+                    test_id: 29,
+                    attempts: JSON.stringify(answers),
+                    reactions: JSON.stringify(reactionsMs)
+                }
+            }).then(resp=>{
+                navigate("/results");
+            })
             navigate("/results");
             setReactionsMs([]);
             return;

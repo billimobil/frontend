@@ -25,6 +25,8 @@ import ResultsOfPerson from "./pages/ResultsOfPerson/ResultsOfPerson";
 import InfoGraphPage from "./pages/InfoGraph/InfoGraphPage";
 import GraphPage from "./pages/Graph/GraphPage";
 import UpdateProfession from "./pages/UpdateProfession/UpdateProfession";
+import MovingCircleTest from "./pages/tests/MovingCircleTest/MovingCircleTest";
+import MovingMultipleCirclesTest from "./pages/tests/MovingMultipleCirclesTest/MovingMultipleCirclesTest";
 function App() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
     useEffect(()=>{
@@ -32,7 +34,6 @@ function App() {
             localStorage.clear()
             return;
         }
-        console.log(JSON.stringify(user))
         localStorage.setItem("user", JSON.stringify(user))
     }, [user])
     return (
@@ -55,13 +56,18 @@ function App() {
                             <Route path="/professions/:id/pvk" element={<PVK/>}/>
                             <Route path="/tests" element={<Tests/>}/>
                             <Route path="/experts"  element={<Experts/>}/>
+                            {/*<Route path="/pvk"  element={<PVK/>}/>*/}
+
                             <Route path="/light-reaction-test"  element={<LightReactionTest user={user} />}/>
                             <Route path="/light-complex-reaction-test"  element={<LightComplexReactionTest user={user} />}/>
                             <Route path="/sound-reaction-test"  element={<SoundReactionTest user={user} />}/>
                             <Route path="/visual-addition-test"  element={<VisualAdditionTest user={user} />}/>
                             <Route path="/sound-addition-test"  element={<SoundAdditionTest user={user} />}/>
+                            <Route path="/moving-circle-test"  element={<MovingCircleTest user={user}/>}/>
+                            <Route path="/moving-multiple-circles-test"  element={<MovingMultipleCirclesTest user={user}/>}/>
                             <Route path="/moving-object-test"  element={<MovingObjectTest user={user} />}/>
                             <Route path="/moving-object-with-following"  element={<MovingObjectWithFollowing user={user} />}/>
+
                             <Route path="/results"  element={<Results/>}/>
                             <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>
 

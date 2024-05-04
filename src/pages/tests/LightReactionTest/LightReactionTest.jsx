@@ -19,14 +19,14 @@ const LightReactionTest = ({user}) => {
         }
     }
 
-    let i = 1
+    let i = 15
     const [signalsCount, setSignalsCount] = useState(i)
     function startTest() { // TODO fix bug that appears when start button is pressed few times
         if (i <= 0) {
-            // TODO тут отправляем результаты на бэк, ждем их сохранения и идем смотреть результаты
-            axios.get("http://188.225.74.17:8080/api/v1/saveTestResult", {
+            axios.get("http://188.225.74.17:8080/api/v1/saveUserTestResult", {
                 params: {
                     user_id: user.id,
+                    session_token: user.session_token,
                     test_id: 1,
                     attempts: JSON.stringify(answers),
                     reactions: JSON.stringify(reactionsMs)
@@ -70,7 +70,7 @@ const LightReactionTest = ({user}) => {
                 }
 
                 setColor('');
-                var timeSpent = performance.now() - start;
+                let timeSpent = Number((performance.now() - start).toFixed(0));
                 callback(timeSpent);
                 document.removeEventListener('keydown', onKeyHandler);
             }
