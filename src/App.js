@@ -27,6 +27,8 @@ import GraphPage from "./pages/Graph/GraphPage";
 import UpdateProfession from "./pages/UpdateProfession/UpdateProfession";
 import MovingCircleTest from "./pages/tests/MovingCircleTest/MovingCircleTest";
 import MovingMultipleCirclesTest from "./pages/tests/MovingMultipleCirclesTest/MovingMultipleCirclesTest";
+import ResultsOfTests from "./pages/ResultsOfTests/ResultsOfTests"
+import ResultsOfPersonTests from "./pages/ResultsOfPersonTests/ResultsOfPersonTests";
 function App() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
     useEffect(()=>{
@@ -70,7 +72,8 @@ function App() {
 
                             <Route path="/results"  element={<Results/>}/>
                             <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>
-
+                            <Route path="/ResultsOfTests" element={<ResultsOfTests user={user}/>}/>
+                            <Route path="/ResultsOfPersonTests/:test_id" element={<ResultsOfPersonTests user={user}/>}/>
                             <Route path="/admin/user-tests-results"  element={<UserTestsResults/>}/>
                             <Route path="/admin/graph" element={<InfoGraphPage/>}/>
                             <Route path="/admin/graph/:id" element={<GraphPage/>}/>
