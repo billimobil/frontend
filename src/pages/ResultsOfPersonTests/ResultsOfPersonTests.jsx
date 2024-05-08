@@ -43,9 +43,6 @@ function UserTestResults({ user }) {
                             Reactions: {result.Reactions.map((reaction) => reaction).join(", ")}
                         </div>
                         <div>Time: {formattedTime}</div>
-                        <Link to={`/TestDetail/${result.TestID}`}>
-                            <button className={cs.resultsOfItemBtn}>Подробнее</button>
-                        </Link>
                     </div>
                 );
             })}
