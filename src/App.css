@@ -15,8 +15,6 @@
 
 body {
   min-height: 100dvh;
-  padding-left: 40px;
-  padding-right: 40px;
 }
 
 .main {
@@ -41,6 +39,9 @@ u {
   height: 100%;
   min-height: 100dvh;
   width: 100%;
+
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 h1 {

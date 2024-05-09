@@ -7,8 +7,6 @@ import axios from "axios";
 const Login = ({setUser}) => {
     const navigate = useNavigate()
 
-    const [name, setName] = useState("")
-    const [surname, setSurname] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState('')
@@ -45,8 +43,8 @@ const Login = ({setUser}) => {
                         <div className="error">{error}</div>
                     : <></>
                 }
-                <Input value={email} setValue={setEmail} placeholder="Email"/>
-                <Input value={password} setValue={setPassword} placeholder="Пароль"/>
+                <Input type="email" value={email} setValue={setEmail} placeholder="Email"/>
+                <Input type="password" value={password} setValue={setPassword} placeholder="Пароль"/>
                 <Button onClick={login}>
                     <p className={cs.buttonText}>Войти</p>
                 </Button>

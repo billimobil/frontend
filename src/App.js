@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, matchRoutes, Navigate, Route, Routes, useLocation, useNavigate} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import Main from "./pages/Main/Main";
 import Navbar from "./components/UI/Navbar/Navbar";
@@ -45,14 +45,13 @@ function App() {
                     <Route path="/exit" element={<Exit setUser={setUser}/>}/>
                     <Route path="/register" element={<Registration setUser={setUser}/>}/>
                     <Route path="/login" element={<Login setUser={setUser}/>}/>
+                    <Route path="/professions/:id" element={<Profession/>}/>
 
                     <Route path="/*"  element={<PageNotFound/>}/>
-
-                    {user ?
+                    {user ? // Authorized section
                         <>
                             <Route path="/updateProfession/:id?" element={<UpdateProfession user={user} />} />
                             <Route path="/addProfession" element={<AddProfession user={user}/>}/>
-                            <Route path="/professions/:id" element={<Profession/>}/>
                             <Route path="/professions/:id/pvk" element={<PVK/>}/>
                             <Route path="/tests" element={<Tests/>}/>
                             <Route path="/experts"  element={<Experts/>}/>
