@@ -67,15 +67,15 @@ export const MovingObjectTest = ({ className, ...props }) => {
             {/*<div className={styles.div3}>Выйти</div>*/}
             <div className={styles.startButton} onClick={startTest}>Нажмите чтобы начать тестирование</div>
             {/*<div className={styles.div4}>Нажмите чтобы начать тестирование</div>*/}
-            <div className={styles.div5}>Выберите длительность теста</div>
-            <div className={styles.div6}>мин:</div>
+            <div className={styles.testDuration}>Выберите длительность теста</div>
+            <div className={styles.min}>мин:</div>
             <input
                 type="number"
                 className={styles.minutesRectangle}
                 value={minutes}
                 onChange={(e) => setMinutes(e.target.value)}
             />
-            <div className={styles.div7}>сек:</div>
+            <div className={styles.sec}>сек:</div>
             <input
                 type="number"
                 className={styles.secondsRectangle}
@@ -87,14 +87,14 @@ export const MovingObjectTest = ({ className, ...props }) => {
                 className={styles.redEllipse}
                 style={{ left: `${redCirclePosition.x}px`, top: `${redCirclePosition.y}px` }}
             ></div>
-            <div className={styles.medianReactionTime}>
-                Среднее время реакции: {" "}
-            </div>
+            {/*<div className={styles.medianReactionTime}>*/}
+            {/*    Среднее время реакции: {" "}*/}
+            {/*</div>*/}
             {/*TODO:сделать норм таймер*/}
             <div className={styles.timeLeft}>Осталось времени: {Math.floor(timeLeft / 60)} мин {timeLeft % 60} сек</div>
             {/*<img className={styles.vector} src="vector0.svg"/>*/}
         </div>
     );
 };
-
+//todo: исправить кружок
 export default MovingObjectTest;

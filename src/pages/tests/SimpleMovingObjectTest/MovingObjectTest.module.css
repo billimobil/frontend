@@ -47,8 +47,8 @@
   font-size: 15px;
   font-weight: 500;
   position: absolute;
-  left: calc(50% - 49px); /* 59 */
-  top: calc(10% + 268px);
+  left: calc(50% - 59px); /* 59 */
+  top: calc(10% + 208px);
   width: 118px;
 }
 .lineUnderTestName {
@@ -99,7 +99,7 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 325px);
-  top: calc(0% + 778px);
+  top: calc(50% + 48px);
   cursor: pointer;
 }
 .startButton:hover {
@@ -121,7 +121,7 @@
 /*  width: 348px;*/
 /*  height: 31px;*/
 /*!*}*! от текста, который больше не используется*/
-.div5 {
+.testDuration {
   color: #fcfcfc;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
@@ -129,11 +129,11 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 105px);
-  top: calc(60% - 99px);
-  width: 211px;
+  top: calc(60% - 165px);
+  width: 231px;
   height: 24px;
 }
-.div6 {
+.min {
   color: #fcfcfc;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
@@ -141,11 +141,11 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 95px);
-  top: calc(60% - -15px);
+  top: calc(60% - 125px);
   width: 32px;
   height: 24px;
 }
-.div7 {
+.sec {
   color: #fcfcfc;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
@@ -153,7 +153,7 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% + 22px);
-  top: calc(60% - -15px);
+  top: calc(60% - 125px);
   width: 32px;
   height: 24px;
 }
@@ -167,19 +167,19 @@
   padding: 0;
   position: absolute;
   left: calc(94% - 907px);
-  top: calc(50% + 122px);
+  top: calc(50% + -18px);
 }
 .secondsRectangle {
   color: black;
   border-style: solid;
   border-color: #c0c0c0;
-  border-width: 1px;
+  border-width: 2px;
   width: 44px;
   height: 27px;
   padding: 0;
   position: absolute;
-  left: calc(50% + 52px);
-  top: calc(50% + 122px);
+  left: calc(50% + 50px);
+  top: calc(50% + -18px);
 }
 .mainRect {
   border-style: solid;
@@ -189,7 +189,7 @@
   height: 23px;
   position: absolute;
   left: calc(0% - -280px);
-  top: calc(50% - 59px);
+  top: calc(50% - 129px);
 }
 .redEllipse {
   background: #f80000;
@@ -198,30 +198,30 @@
   height: 80px;
   position: absolute;
   left: calc(50% - 39px);
-  top: calc(50% - 49px);
+  top: calc(50% - 9px);
 }
-.medianReactionTime {
-  color: #fcfcfc;
-  text-align: left;
-  font-family: "TtInterfaces-Medium", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  position: absolute;
-  left: calc(50% - 325px);
-  top: 870px;
-  width: 245px;
-  height: 24px;
-}
+/*.medianReactionTime {*/
+/*  color: #fcfcfc;*/
+/*  text-align: left;*/
+/*  font-family: "TtInterfaces-Medium", sans-serif;*/
+/*  font-size: 15px;*/
+/*  font-weight: 500;*/
+/*  position: absolute;*/
+/*  left: calc(50% - 325px);*/
+/*  top: 870px;*/
+/*  width: 245px;*/
+/*  height: 24px;*/
+/*}*/
 .timeLeft {
   color: #fcfcfc;
-  text-align: left;
+  text-align: center;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 15px;
   font-weight: 500;
   position: absolute;
-  left: calc(50% - -175px);
-  top: 867px;
-  width: 150px;
+  left: calc(50% - 65px);
+  top: calc(50% - -117px);
+  width: 140px;
   height: 24px;
 }
 .vector {
