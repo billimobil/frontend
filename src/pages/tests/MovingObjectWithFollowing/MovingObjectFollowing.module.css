@@ -74,17 +74,17 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 58px);
-  top: calc(50% - 193px);
+  top: calc(50% - 243px);
   width: 118px;
 }
-.rectangle33 {
-  background: #fcfcfc;
-  width: 1824px;
-  height: 1px;
-  position: absolute;
-  left: 40px;
-  top: 214px;
-}
+/*.rectangle33 {*/
+/*  background: #fcfcfc;*/
+/*  width: 1824px;*/
+/*  height: 1px;*/
+/*  position: absolute;*/
+/*  left: 40px;*/
+/*  top: 214px;*/
+/*}*/ /* хуйня непонятная */
 .div5 {
   color: #ffffff;
   text-align: left;
@@ -127,12 +127,12 @@
   font-size: 15px;
   font-weight: 500;
   position: absolute;
-  left: calc(50% - 106px);
-  top: 745px;
+  left: calc(50% - 130px);
+  top: calc(50% - 15px);
   width: 251px; /* +40 */
   height: 24px;
 }
-.div8 {
+.min {
   color: #fcfcfc;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
@@ -140,12 +140,12 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 99px);
-  top: 795px;
+  top: calc(50% - -55px);
   width: 32px;
   height: 24px;
 }
 
-.div9 {
+.sec {
   color: #fcfcfc;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
@@ -153,7 +153,7 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - -68px);
-  top: 795px;
+  top: calc(50% - -55px);
   width: 32px;
   height: 24px;
 }
@@ -166,7 +166,7 @@
   height: 27px;
   position: absolute;
   left: 895px; /* +50 */
-  top: 793px;
+  top: calc(50% - -46px);
 }
 .secondsRectangle {
   color: white;
@@ -176,8 +176,8 @@
   width: 44px;
   height: 27px;
   position: absolute;
-  left: 1062px; /* +50 */
-  top: 793px;
+  left: 1056px; /* +50 */
+  top: calc(50% - -46px);
 }
 .centralRectangle {
   border-style: solid;
@@ -187,7 +187,7 @@
   height: 23px;
   position: absolute;
   left: calc(0% + 279px);
-  top: calc(50% - 42px);
+  top: calc(50% - 105px);
 }
 /*.redEllipse {*/
 /*  background: #f80000;*/
@@ -207,14 +207,14 @@
 /*  left: calc(50% - -100px);*/
 /*  top: calc(50% - 26px);*/
 /*}*/
-.logo {
-  width: 153px;
-  height: 23px;
-  position: absolute;
-  left: 39px;
-  top: 33px;
-  overflow: visible;
-}
+/*.logo {*/
+/*  width: 153px;*/
+/*  height: 23px;*/
+/*  position: absolute;*/
+/*  left: 39px;*/
+/*  top: 33px;*/
+/*  overflow: visible;*/
+/*}*/
 .redEllipse {
   background-color: #f80000;
   border-radius: 50%;
@@ -242,7 +242,7 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 75px);
-  top: 963px;
+  top: calc(50% + 193px);
   width: 150px;
   height: 24px;
 }
@@ -288,7 +288,7 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 325px);
-  top: calc(50% + 178px);
+  top: calc(50% + 118px);
   cursor: pointer;
 }
 .startButton:hover {
