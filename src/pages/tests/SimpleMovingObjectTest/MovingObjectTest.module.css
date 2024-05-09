@@ -160,24 +160,26 @@
 .minutesRectangle {
   color: black;
   border-style: solid;
-  border-color: #b01f1f; /* #c0c0c0 */
+  border-color: #c0c0c0; /* #c0c0c0 */
   border-width: 2px;
   width: 44px;
   height: 27px;
+  padding: 0;
   position: absolute;
   left: calc(94% - 907px);
-  top: calc(50% + 115px);
+  top: calc(50% + 122px);
 }
 .secondsRectangle {
-  color: white;
+  color: black;
   border-style: solid;
   border-color: #c0c0c0;
   border-width: 1px;
   width: 44px;
   height: 27px;
+  padding: 0;
   position: absolute;
   left: calc(50% + 52px);
-  top: calc(50% + 115px);
+  top: calc(50% + 122px);
 }
 .mainRect {
   border-style: solid;

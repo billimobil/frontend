@@ -158,26 +158,31 @@
   height: 24px;
 }
 .minutesRectangle {
-  color: white;
+  color: black;
   border-style: solid;
   border-color: #c0c0c0;
   border-width: 1px;
-  width: 44px;
-  height: 27px;
+  width: 50px;
+  height: 30px;
   position: absolute;
   left: 895px; /* +50 */
-  top: calc(50% - -46px);
+  top: calc(50% - -52px);
+  padding: 0;
+  /*height: 30px;*/
+  /*width: 50px;*/
 }
 .secondsRectangle {
   color: white;
   border-style: solid;
   border-color: #c0c0c0;
   border-width: 1px;
-  width: 44px;
-  height: 27px;
+  width: 50px;
+  height: 30px;
   position: absolute;
   left: 1056px; /* +50 */
-  top: calc(50% - -46px);
+  top: calc(50% - -52px);
+  padding: 0;
+
 }
 .centralRectangle {
   border-style: solid;

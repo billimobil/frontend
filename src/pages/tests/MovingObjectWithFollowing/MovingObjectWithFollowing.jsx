@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from "./MovingObjectFollowing.module.css";
+import Input from "../../../components/UI/Input/Input";
 
 export const MovingObjectWithFollowing = ({ className, ...props }) => {
     const [speed, setSpeed] = useState(5); // увеличили скорость красного кружка
@@ -105,6 +106,14 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
             {/* поля для ввода минут и секунд */}
             <div className={styles.durationOfTest}>Выберите длительность теста</div>
             <div className={styles.min}>мин:</div>
+            {/*<div>*/}
+            {/*    <Input*/}
+            {/*        type="number"*/}
+            {/*        className={styles.minutesRectangle}*/}
+            {/*        value={minutes}*/}
+            {/*        onChange={(e) => setMinutes(e.target.value)}*/}
+            {/*    ></Input>*/}
+            {/*</div>*/}
             <input
                 type="number"
                 className={styles.minutesRectangle}
