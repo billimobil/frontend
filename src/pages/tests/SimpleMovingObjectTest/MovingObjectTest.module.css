@@ -99,7 +99,7 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 325px);
-  top: 778px;
+  top: calc(0% + 778px);
   cursor: pointer;
 }
 .startButton:hover {
@@ -158,10 +158,10 @@
   height: 24px;
 }
 .minutesRectangle {
-  color: white;
+  color: black;
   border-style: solid;
-  border-color: #c0c0c0; /* #c0c0c0 */
-  border-width: 1px;
+  border-color: #b01f1f; /* #c0c0c0 */
+  border-width: 2px;
   width: 44px;
   height: 27px;
   position: absolute;
@@ -177,7 +177,8 @@
   height: 27px;
   position: absolute;
   left: calc(50% + 52px);
-  top: calc(50% + 115px);}
+  top: calc(50% + 115px);
+}
 .mainRect {
   border-style: solid;
   border-color: #fcfcfc;
