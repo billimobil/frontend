@@ -28,6 +28,12 @@ const Tests = () => {
                 <NavLink to="/moving-multiple-circles-test">
                     <div className={cs.tests__block}>Три движущихся круга</div>
                 </NavLink>
+                <NavLink to="/moving-object-test">
+                    <div className={cs.tests__block}>Слежение за кругом</div>
+                </NavLink>
+                <NavLink to="/moving-object-with-following">
+                    <div className={cs.tests__block}>Преследование круга</div>
+                </NavLink>
             </div>
         </div>
     );

@@ -30,20 +30,20 @@
   width: 45px;
   height: 24px;
 }
-.experts {
-  color: #ffffff;
-  text-align: left;
-  font-family: "TtInterfaces-Medium", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: underline;
-  position: absolute;
-  left: calc(50% - -611px);
-  top: 28px;
-  width: 69px;
-  height: 24px;
-}
-.div3 {
+/*.experts {*/
+/*  color: #ffffff;*/
+/*  text-align: left;*/
+/*  font-family: "TtInterfaces-Medium", sans-serif;*/
+/*  font-size: 15px;*/
+/*  font-weight: 500;*/
+/*  text-decoration: underline;*/
+/*  position: absolute;*/
+/*  left: calc(50% - -611px);*/
+/*  top: 28px;*/
+/*  width: 69px;*/
+/*  height: 24px;*/
+/*}*/
+.testName {
   color: #fcfcfc;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
@@ -51,11 +51,11 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 312px);
-  top: 149px;
+  top: calc(50% - 449px);
   width: 624px;
   height: 45px;
 }
-.div4 {
+.testDescription {
   color: #fcfcfc;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
@@ -63,10 +63,10 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 460px);
-  top: 234px;
+  top: calc(50% - 364px);
   width: 921px;
 }
-.one2Cm {
+.distance {
   color: #fcfcfc;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
@@ -74,7 +74,7 @@
   font-weight: 500;
   position: absolute;
   left: calc(50% - 58px);
-  top: 443px;
+  top: calc(50% - 193px);
   width: 118px;
 }
 .rectangle33 {
@@ -120,7 +120,7 @@
   width: 348px;
   height: 31px;
 }
-.div7 {
+.durationOfTest {
   color: #fcfcfc;
   text-align: center;  /* left Был */
   font-family: "TtInterfaces-Medium", sans-serif;
@@ -186,8 +186,8 @@
   width: 1361px;
   height: 23px;
   position: absolute;
-  left: 279px;
-  top: calc(50% - -2px);
+  left: calc(0% + 279px);
+  top: calc(50% - 42px);
 }
 /*.redEllipse {*/
 /*  background: #f80000;*/
@@ -222,7 +222,7 @@
   height: 80px;
   position: absolute;
   left: calc(50% - 39px);
-  top: calc(50% - 26px);
+  top: calc(50% - 16px);
 }
 
 .greenEllipse {
@@ -231,8 +231,8 @@
   width: 80px;
   height: 80px;
   position: absolute;
-  left: calc(50% - 39px); /* Это значение можно подстроить под ваш макет */
-  top: calc(50% - 26px); /* Это значение можно подстроить под ваш макет */
+  left: calc(50% - 39px);
+  top: calc(50% - 16px);
 }
 .timeLasts {
   color: #fcfcfc;
@@ -280,9 +280,15 @@
   border-width: 1px;
   width: 650px;
   height: 50px;
+  text-align: center;
+  line-height: 45px;
+  color: white;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
   position: absolute;
   left: calc(50% - 325px);
-  top: 778px;
+  top: calc(50% + 178px);
   cursor: pointer;
 }
 .startButton:hover {
@@ -297,8 +303,8 @@
   width: 1822px;
   height: 1px;
   position: absolute;
-  left: 40px;
-  top: 214px;
+  left: calc(40px);
+  top: calc(50% - 394px);
 }
 .vector {
   width: 153px;

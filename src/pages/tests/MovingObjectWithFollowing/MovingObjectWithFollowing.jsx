@@ -89,21 +89,21 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
 
     return (
         <div className={styles.div + " " + className} onMouseMove={handleMouseMove}>
-            <div className={styles.rectangle47}></div>
-            <div className={styles.experts}>Эксперты</div>
-            <div className={styles.div2}>Выйти</div>
-            <div className={styles.div3}>Оценка слежения с преследованием</div>
+            {/*<div className={styles.rectangle47}></div>*/}
+            {/*<div className={styles.experts}>Эксперты</div>*/}
+            {/*<div className={styles.div2}>Выйти</div>*/}
+            <div className={styles.testName}>Оценка слежения с преследованием</div>
             <div className={styles.lineUnderTestName}></div>
-            <div className={styles.div4}>
+            <div className={styles.testDescription}>
                 Ваша задача: следить курсором за движущимся объектом, стремясь держать
                 зеленый кружок как можно ближе к центру объекта
             </div>
             <div className={styles.centralRectangle}></div>
             <div
-                className={styles.one2Cm}>Дистанция: {Math.abs(redCirclePosition.x - greenCirclePosition.x).toFixed(2)}px
+                className={styles.distance}>Дистанция: {Math.abs(redCirclePosition.x - greenCirclePosition.x).toFixed(2)}px
             </div>
             {/* поля для ввода минут и секунд */}
-            <div className={styles.div7}>Выберите длительность теста</div>
+            <div className={styles.durationOfTest}>Выберите длительность теста</div>
             <div className={styles.div8}>мин:</div>
             <input
                 type="number"
@@ -119,16 +119,17 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
                 onChange={(e) => setSeconds(e.target.value)}
             />
             {/* eсловный рендеринг для кнопки запуска теста */}
-            {!isTestRunning && (
-                <button className={styles.startButton} onClick={startTest}>Нажмите чтобы начать тестирование</button>
-            )}
+            {/*{!isTestRunning && (*/}
+            {/*    <button className={styles.startButton} onClick={startTest}>Нажмите чтобы начать тестирование</button>*/}
+            {/*)}*/}
+            <div className={styles.startButton} onClick={startTest}>Нажмите чтобы начать тестирование</div>
             {/* отображение красного и зеленого кружков */}
             <div className={styles.redEllipse}
                  style={{left: `${redCirclePosition.x}px`, top: `${redCirclePosition.y}px`}}></div>
             <div className={styles.greenEllipse}
                  style={{left: `${greenCirclePosition.x}px`, top: `${greenCirclePosition.y}px`}}></div>
             <div className={styles.timeLasts}>Осталось секунд: {timeLeft}</div>
-            <img className={styles.vector} src="vector0.svg"/>
+            {/*<img className={styles.vector} src="vector0.svg"/>*/}
         </div>
     );
 };
