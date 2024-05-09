@@ -1,6 +1,7 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
     width: 100%;
     height: 100%;
     align-items: center;
@@ -16,10 +17,36 @@
 
 .resultsPerson_block {
     display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 10px;
     justify-content: center;
     align-items: center;
     width: 310px;
     height: 200px;
     border: 1px black solid;
     font-size: 24px;
+}
+  
+.contentTopLeft {
+    position: absolute;
+    margin-bottom: 1000000px;
+    top: 10px;
+    left: 10px
+    
+}
+
+.contentBottomRight {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.buttonResult {
+    border: none;
+    background: none;
+    text-decoration: underline;
+    color: #333;
+    cursor: pointer;
+    padding: 5px 10px;
 }
