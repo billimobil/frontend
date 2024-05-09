@@ -56,7 +56,7 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
                 });
                 // записываем дистанцию каждые 2 секунды (можно сменить)
                 const currentTime = (minutes * 60 + seconds) - timeLeft;
-                if (currentTime - lastRecordedTime >= 2) {
+                if (currentTime - lastRecordedTime >= 2) { // массив стрингами заполнен todo: сделать интовым
                     const distance = Math.abs(redCirclePosition.x - greenCirclePosition.x).toFixed(2);
                     setDistanceHistory(prevHistory => [...prevHistory, distance]);
                     setLastRecordedTime(currentTime);
@@ -104,14 +104,14 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
             </div>
             {/* поля для ввода минут и секунд */}
             <div className={styles.durationOfTest}>Выберите длительность теста</div>
-            <div className={styles.div8}>мин:</div>
+            <div className={styles.min}>мин:</div>
             <input
                 type="number"
                 className={styles.minutesRectangle}
                 value={minutes}
                 onChange={(e) => setMinutes(e.target.value)}
             />
-            <div className={styles.div9}>сек:</div>
+            <div className={styles.sec}>сек:</div>
             <input
                 type="number"
                 className={styles.secondsRectangle}
