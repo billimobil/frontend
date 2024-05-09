@@ -1,8 +1,7 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useState} from 'react';
 import cs from "../LightReactionTest/LightReactionTest.module.css";
 import Button from "../../../components/UI/Button/Button";
 import {useNavigate} from "react-router-dom";
-import {useAudio} from "../../../hooks/useAudio";
 import axios from "axios";
 
 const SoundReactionTest = ({user}) => {

@@ -19,7 +19,7 @@ function ResultsOfPersons({ user }) {
                 setUsers(resp.data.data);
             })
             .catch((e) => {
-                console.error(e);
+                console.error(e.response.data.error);
             });
     }, [user.session_token]); // Зависимость для useEffect
 

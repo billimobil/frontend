@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useState} from 'react';
 import cs from "../LightReactionTest/LightReactionTest.module.css";
 import Button from "../../../components/UI/Button/Button";
 import {useAudio} from "../../../hooks/useAudio";
@@ -96,11 +96,6 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function getRandomColor() {
-    const colors = ["blue", "yellow", "red"];
-    return colors[Math.floor(Math.random() * colors.length)];
 }
 
 export default SoundReactionTest;
