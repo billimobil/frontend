@@ -91,7 +91,7 @@ export const MovingObjectTest = ({ className, ...props }) => {
                 Среднее время реакции: {" "}
             </div>
             {/*TODO:сделать норм таймер*/}
-            <div className={styles.timeLeft}>Осталось секунд: {Math.floor(timeLeft / 60)} мин {timeLeft % 60} сек</div>
+            <div className={styles.timeLeft}>Осталось времени: {Math.floor(timeLeft / 60)} мин {timeLeft % 60} сек</div>
             {/*<img className={styles.vector} src="vector0.svg"/>*/}
         </div>
     );
