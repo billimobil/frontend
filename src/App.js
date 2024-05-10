@@ -54,11 +54,9 @@ function App() {
                         <>
                             <Route path="/updateProfession/:id?" element={<UpdateProfession user={user} />} />
                             <Route path="/addProfession" element={<AddProfession user={user}/>}/>
-                            <Route path="/professions/:id/pvk" element={<PVK/>}/>
                             <Route path="/tests" element={<Tests/>}/>
                             <Route path="/experts"  element={<Experts/>}/>
-                            {/*<Route path="/pvk"  element={<PVK/>}/>*/}
-
+                            <Route path="/PVK/:id?"  element={<PVK user={user}/>}/>
                             <Route path="/light-reaction-test"  element={<LightReactionTest user={user} />}/>
                             <Route path="/light-complex-reaction-test"  element={<LightComplexReactionTest user={user} />}/>
                             <Route path="/sound-reaction-test"  element={<SoundReactionTest user={user} />}/>
