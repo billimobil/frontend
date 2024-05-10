@@ -4,7 +4,7 @@ import Button from '../../components/UI/Button/Button';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-const Pvk = () => {
+const Pvk = ({user}) => {
     const { id } = useParams();
     const [profession, setProfession] = useState(null);
     const [pvk, setPVK] = useState([]);
@@ -13,10 +13,10 @@ const Pvk = () => {
 
     useEffect(() => {
         console.log(id);
-        axios
-            .get('http://188.225.74.17:8080/api/v1/getProfession', {
+        axios.get(`http://188.225.74.17:8080/api/v1/PVKProfession`, {
                 params: {
                     id: id,
+                    session_token: user.session_token,
                 },
             })
             .then((resp) => {
