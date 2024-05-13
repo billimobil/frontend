@@ -26,13 +26,15 @@ const Main = ({user}) => {
             }
             <div className={cs.professions}>
                 {professions.map(elem=>(
-                    <NavLink to={`/professions/`+elem.id}>
-                        <div className={cs.profession}>
-                            <h2>{elem.name}</h2>
+                    <>
+                        <NavLink to={`/professions/`+elem.id}>
+                            <div className={cs.profession}>
+                                <h2>{elem.name}</h2>
                                 <p>{elem.description}</p>
                                 <img src={img1}/>
-                        </div>
-                    </NavLink>
+                            </div></NavLink>
+                        <NavLink to={"/updateProfession/"+elem.id}><Button>Редактировать</Button></NavLink>
+                    </>
                 ))}
             </div>
             <Button onClick={()=>{
