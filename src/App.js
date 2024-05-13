@@ -29,6 +29,7 @@ import MovingCircleTest from "./pages/tests/MovingCircleTest/MovingCircleTest";
 import MovingMultipleCirclesTest from "./pages/tests/MovingMultipleCirclesTest/MovingMultipleCirclesTest";
 import ResultsOfTests from "./pages/ResultsOfTests/ResultsOfTests"
 import ResultsOfPersonTests from "./pages/ResultsOfPersonTests/ResultsOfPersonTests";
+import AttentionAndConcentrationTest from "./pages/tests/AttentionAndConcentrationTest/AttentionAndConcentrationTest";
 function App() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
     useEffect(()=>{
@@ -66,6 +67,7 @@ function App() {
                             <Route path="/moving-multiple-circles-test"  element={<MovingMultipleCirclesTest user={user}/>}/>
                             <Route path="/moving-object-test"  element={<MovingObjectTest user={user} />}/>
                             <Route path="/moving-object-with-following"  element={<MovingObjectWithFollowing user={user} />}/>
+                            <Route path="/attention-and-concentration-test"  element={<AttentionAndConcentrationTest user={user} />}/>
 
                             <Route path="/results"  element={<Results/>}/>
                             <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>

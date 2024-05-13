@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from "./MovingObjectFollowing.module.css";
+import Input from "../../../components/UI/Input/Input";
 
 export const MovingObjectWithFollowing = ({ className, ...props }) => {
     const [speed, setSpeed] = useState(5); // увеличили скорость красного кружка
@@ -56,7 +57,7 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
                 });
                 // записываем дистанцию каждые 2 секунды (можно сменить)
                 const currentTime = (minutes * 60 + seconds) - timeLeft;
-                if (currentTime - lastRecordedTime >= 2) {
+                if (currentTime - lastRecordedTime >= 2) { // массив стрингами заполнен todo: сделать интовым
                     const distance = Math.abs(redCirclePosition.x - greenCirclePosition.x).toFixed(2);
                     setDistanceHistory(prevHistory => [...prevHistory, distance]);
                     setLastRecordedTime(currentTime);
@@ -104,14 +105,22 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
             </div>
             {/* поля для ввода минут и секунд */}
             <div className={styles.durationOfTest}>Выберите длительность теста</div>
-            <div className={styles.div8}>мин:</div>
+            <div className={styles.min}>мин:</div>
+            {/*<div>*/}
+            {/*    <Input*/}
+            {/*        type="number"*/}
+            {/*        className={styles.minutesRectangle}*/}
+            {/*        value={minutes}*/}
+            {/*        onChange={(e) => setMinutes(e.target.value)}*/}
+            {/*    ></Input>*/}
+            {/*</div>*/}
             <input
                 type="number"
                 className={styles.minutesRectangle}
                 value={minutes}
                 onChange={(e) => setMinutes(e.target.value)}
             />
-            <div className={styles.div9}>сек:</div>
+            <div className={styles.sec}>сек:</div>
             <input
                 type="number"
                 className={styles.secondsRectangle}
