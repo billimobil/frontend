@@ -151,7 +151,7 @@ export const AttentionAndConcentrationTest = ({ className, ...props }) => {
     const concentrationCheckStart = () => {
         if (examplesLeft <= initialExamplesLeft && Math.random() < 0.5 && concCheckCount < 2) {
             updateConcCheckCount()
-            setConcentrationNumber(Math.ceil(Math.random() * 10))
+            setConcentrationNumber(Math.floor(Math.random() * 10))
             setConcentrationChecking(true)
         } else {
             setConcentrationChecking(false)
