@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import cs from '../LightReactionTest/LightReactionTest.module.css'
+import Button from "../../../components/UI/Button/Button";
 // Example image sources
 const imageSources = [
   'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg',
