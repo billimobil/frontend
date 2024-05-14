@@ -3,12 +3,7 @@ import cs from '../LightReactionTest/LightReactionTest.module.css'
 import Button from "../../../components/UI/Button/Button";
 // Example image sources
 const imageSources = [
-  'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg',
-  'img6.jpg', 'img7.jpg', 'img8.jpg', 'img9.jpg', 'img10.jpg',
-  'img11.jpg', 'img12.jpg', 'img13.jpg', 'img14.jpg', 'img15.jpg',
-  'img16.jpg', 'img17.jpg', 'img18.jpg', 'img19.jpg', 'img20.jpg',
-  'img21.jpg', 'img22.jpg', 'img23.jpg', 'img24.jpg', 'img25.jpg',
-  'img26.jpg', 'img27.jpg', 'img28.jpg', 'img29.jpg', 'img30.jpg'
+  '../src/assets/images/..'
 ];
 
 // Utility function to shuffle an array
