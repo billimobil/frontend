@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import cs from '../LightReactionTest/LightReactionTest.module.css'
 // Example image sources
 const imageSources = [
   'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg',
