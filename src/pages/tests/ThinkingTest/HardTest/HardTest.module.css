@@ -1,0 +1,60 @@
+/* MissingPieceTest.module.css */
+
+/* Стили для контейнера */
+.wrapper {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto; /* Центрирование */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Заголовок */
+  h1 {
+    text-align: center; /* Центрируем заголовок */
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Изображение с вырезом */
+  .cutoutImage {
+    display: block;
+    margin: 0 auto; /* Центрируем изображение */
+    width: 300px; /* Ширина изображения */
+    height: 300px; /* Высота изображения */
+    background-color: white; /* Белый фон */
+  }
+  
+  /* Стили для деталей */
+  .pieces {
+    display: flex;
+    justify-content: space-around; /* Распределяем детали по горизонтали */
+    margin-top: 20px; /* Отступ сверху */
+  }
+  
+  /* Стили для отдельной детали */
+  .piece {
+    width: 80px;
+    height: 80px;
+    cursor: pointer; /* Курсор в виде руки при наведении */
+    transition: transform 0.3s ease; /* Анимация при наведении */
+  }
+  
+  .piece:hover {
+    transform: scale(1.1); /* Увеличение при наведении */
+  }
+  
+  /* Стили для выбранной детали */
+  .selected {
+    border: 2px solid blue; /* Выделение выбранного элемента */
+  }
+  
+  /* Стили для отображения результата */
+  .result {
+    text-align: center; /* Центрируем результат */
+    color: #333;
+    font-weight: bold; /* Жирный шрифт */
+    margin-top: 20px; /* Отступ сверху */
+  }
+  

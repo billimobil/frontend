@@ -1,0 +1,22 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_348_989" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="60" height="60">
+<rect width="60" height="60" fill="#FCFCFC"/>
+</mask>
+<g mask="url(#mask0_348_989)">
+<rect x="-2" y="-63" width="125" height="125" fill="#3F0FFF"/>
+<rect x="10" y="-51" width="100" height="100" fill="#FA0FFF"/>
+<rect x="23" y="-38" width="75" height="75" fill="#3F0FFF"/>
+<rect x="35" y="-26" width="50" height="50" fill="#FA0FFF"/>
+<rect x="47" y="-14" width="25" height="25" fill="#FCFCFC"/>
+</g>
+<mask id="mask1_348_989" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="60" height="60">
+<rect width="60" height="60" fill="#FCFCFC"/>
+</mask>
+<g mask="url(#mask1_348_989)">
+<rect x="-2" y="-63" width="125" height="125" fill="#3F0FFF"/>
+<rect x="10" y="-51" width="100" height="100" fill="#FA0FFF"/>
+<rect x="23" y="-38" width="75" height="75" fill="#3F0FFF"/>
+<rect x="35" y="-26" width="50" height="50" fill="#FA0FFF"/>
+<rect x="47" y="-14" width="25" height="25" fill="#FCFCFC"/>
+</g>
+</svg>

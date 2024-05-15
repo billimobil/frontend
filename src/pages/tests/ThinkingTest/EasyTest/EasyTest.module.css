@@ -1,0 +1,48 @@
+/* ComparisonTest.module.css */
+
+/* Стили для контейнера */
+.wrapper {
+    padding: 20px;
+    max-width: 600px;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  
+  /* Заголовок */
+  h1 {
+    text-align: center; /* Центрируем заголовок */
+    color: #342b2b;
+    margin-bottom: 20px;
+  }
+  
+  /* Стили для кнопок */
+.startButton {
+    padding: 10px 20px;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .buttonNumber {
+    padding: 10px 20px;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #B5B8B1;
+  }
+  
+  /* Стили для раздела с числами */
+  .numbers {
+    display: flex;
+    justify-content: space-around; /* Распределение кнопок */
+    margin-bottom: 20px;
+  }
+  

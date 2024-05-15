@@ -1,0 +1,20 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_348_939" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="60" height="60">
+<rect width="60" height="60" fill="#FCFCFC"/>
+</mask>
+<g mask="url(#mask0_348_939)">
+<rect width="5" height="60" fill="#3F0FFF"/>
+<rect x="55" width="5" height="60" fill="#3F0FFF"/>
+<rect x="11" width="5" height="60" fill="#3F0FFF"/>
+<rect x="22" width="5" height="60" fill="#3F0FFF"/>
+<rect x="33" width="5" height="60" fill="#3F0FFF"/>
+<rect x="44" width="5" height="60" fill="#3F0FFF"/>
+<rect width="60" height="60" fill="#FCFCFC"/>
+<rect width="5" height="60" fill="#3F0FFF"/>
+<rect x="55" width="5" height="60" fill="#3F0FFF"/>
+<rect x="11" width="5" height="60" fill="#3F0FFF"/>
+<rect x="22" width="5" height="60" fill="#3F0FFF"/>
+<rect x="33" width="5" height="60" fill="#3F0FFF"/>
+<rect x="44" width="5" height="60" fill="#3F0FFF"/>
+</g>
+</svg>
