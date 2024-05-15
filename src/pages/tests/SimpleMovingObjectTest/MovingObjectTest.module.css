@@ -198,7 +198,7 @@
   height: 80px;
   position: absolute;
   left: calc(50% - 39px);
-  top: calc(50% - 9px);
+  top: calc(50% - 9px); /* - 9px */
 }
 /*.medianReactionTime {*/
 /*  color: #fcfcfc;*/
