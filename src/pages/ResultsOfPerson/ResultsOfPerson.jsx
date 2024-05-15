@@ -19,7 +19,7 @@ function ResultsOfPersons({ user }) {
                 setUsers(resp.data.data);
             })
             .catch((e) => {
-                console.error(e.response.data.error);
+                console.error(e);
             });
     }, [user.session_token]); // Зависимость для useEffect
 
@@ -37,7 +37,7 @@ function ResultsOfPersons({ user }) {
                     </div>
                     
                     <div className={cs.contentBottomRight}>
-                        <Link className={cs.buttonResult} to="/ResultsOfTests">Результаты тестов</Link>
+                        <Link className={cs.buttonResult} to={`/ResultsOfTests/${person.id}`}>Результаты тестов</Link>
                     </div>
                 </div>
             ))}

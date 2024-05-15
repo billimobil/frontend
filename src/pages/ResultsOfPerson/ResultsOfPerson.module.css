@@ -30,10 +30,8 @@
   
 .contentTopLeft {
     position: absolute;
-    margin-bottom: 1000000px;
     top: 10px;
     left: 10px
-    
 }
 
 .contentBottomRight {

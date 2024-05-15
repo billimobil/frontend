@@ -1,77 +1,72 @@
-import React, { useState, useEffect } from "react";
-import cs from "./ResultsOfPersonTests.module.css";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import cs from "./ResultsOfPersonTests.module.css";
 
-function UserTestResults({ user }) {
-    const { test_id } = useParams();
-    const [testResults, setTestResults] = useState([]);
+const ResultsOfPersonTests = ({ user }) => {
+    // Получаем параметры user_id и test_id из URL
+    const { user_id, test_id } = useParams(); 
+
+    const [results, setResults] = useState([]);
 
     useEffect(() => {
         axios
             .get("http://188.225.74.17:8080/api/v1/getUserTestResults", {
                 params: {
                     session_token: user.session_token,
-                    test_id: test_id,
+                    test_id,
+                    user_id,
                 },
             })
             .then((resp) => {
                 if (resp.data.ok) {
-                    setTestResults(resp.data.data);
+                    setResults(resp.data.data);
                 } else {
-                    console.error("Ошибка: ответ не ок");
+                    console.error("Ошибка при получении результатов тестов");
                 }
             })
             .catch((e) => {
-                console.error("Ошибка при получении данных:", e);
+                console.error("Ошибка при запросе данных:", e);
             });
-    }, [user.session_token, test_id]);
+    }, [user.session_token, user_id, test_id]);
 
     return (
         <div className={cs.wrapper}>
-            <h1>Результаты тестов</h1>
-            {testResults.map((result, index) => {
-                const formattedTime = new Date(result.Time * 1000).toLocaleString(); 
-
-                return (
-                    <div className={cs.resultsPerson_block} key={index}>
+            <h1>Результаты тестов для пользователя с ID: {user_id}</h1> {/* Используем полученный user_id */}
+            {results.length === 0 ? (
+                <p>Нет результатов для данного пользователя и теста.</p> // Если нет данных
+            ) : (
+                results.map((result, index) => (
+                    <div key={index} className={cs.resultBlock}>
                         <div>Название теста: {getTestName(result.TestID)}</div>
-                        <div>
-                            Attempts: {result.Attempts.map((attempt) => (attempt ? '1' : '0')).join(", ")}
-                        </div>
-                        <div>
-                            Reactions: {result.Reactions.map((reaction) => reaction).join(", ")}
-                        </div>
-                        <div>Time: {formattedTime}</div>
+                        <div>Попытки: {result.Attempts.map((a) => (a ? "1" : "0")).join(", ")}</div>
+                        <div>Реакции: {result.Reactions.map((r) => r).join(", ")}</div>
+                        <div>Время: {new Date(result.Time * 1000).toLocaleString()}</div>
                     </div>
-                );
-            })}
+                ))
+            )}
         </div>
     );
-}
+};
 
-function getTestName(test_id){
-    if(test_id === 1){
-        return 'реакция на свет';
-    }
-    if(test_id === 2){
-        return 'простой звук';
-    }
-    if(test_id === 3){
-        return 'цветовой тест';
-    }
-    if(test_id === 29){
-        return 'сложные звуки';
-    }
-    if(test_id === 5){
-        return 'визуальное сложение';
-    }
-    if(test_id === 28){
-        return 'движущийся круг';
-    }
-    if(test_id === 7){
-        return 'три движущийхся круга';
+// Функция для определения названия теста по его ID
+function getTestName(test_id) {
+    switch (test_id) {
+        case 1:
+            return "Реакция на свет";
+        case 2:
+            return "Простой звук";
+        case 3:
+            return "Цветовой тест";
+        case 29:
+            return "Сложные звуки";
+        case 10:
+            return "Визуальное сложение";
+        case 28:
+            return "Движущийся круг";
+        default:
+            return "Неизвестный тест";
     }
 }
 
-export default UserTestResults;
+export default ResultsOfPersonTests;

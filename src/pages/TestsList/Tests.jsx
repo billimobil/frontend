@@ -34,6 +34,12 @@ const Tests = () => {
                 <NavLink to="/moving-object-with-following">
                     <div className={cs.tests__block}>Преследование круга</div>
                 </NavLink>
+                <NavLink to={"/easy-thinking-test"}>
+                    <div className={cs.tests__block}>Легкое мышление</div>
+                </NavLink>
+                <NavLink to={"/hard-thinking-test"}>
+                    <div className={cs.tests__block}>Сложное мышление</div>
+                </NavLink>
             </div>
         </div>
     );
