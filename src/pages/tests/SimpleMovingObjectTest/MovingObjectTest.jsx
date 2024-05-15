@@ -7,7 +7,7 @@ export const MovingObjectTest = ({ className, ...props }) => {
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
     const [distance, setDistance] = useState(0);
     const [isTestRunning, setIsTestRunning] = useState(false);
-    const [redCirclePosition, setRedCirclePosition] = useState({ x: window.innerWidth / 2 - 39 + 5, y: window.innerHeight / 2.2 }); // начальное положение красного кружка TODO: сделать нормальным блять
+    const [redCirclePosition, setRedCirclePosition] = useState({ x: window.innerWidth / 2 - 39 + 5, y: window.innerHeight / 1.94 }); // начальное положение красного кружка TODO: сделать нормальным блять
     const [redCircleDirection, setRedCircleDirection] = useState(1); // направление движения красного кружка: 1 вправо, -1 влево
     const [timeLeft, setTimeLeft] = useState(0); // в секундах (криво-косо, типо не в секундах, но в них) TODO: исправить
     //TODO сделать запись в массив и отправку на бекенд

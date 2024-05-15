@@ -58,7 +58,7 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
                 // записываем дистанцию каждые 2 секунды (можно сменить)
                 const currentTime = (minutes * 60 + seconds) - timeLeft;
                 if (currentTime - lastRecordedTime >= 2) { // массив стрингами заполнен todo: сделать интовым
-                    const distance = Math.abs(redCirclePosition.x - greenCirclePosition.x).toFixed(2);
+                    const distance = Number(Math.abs(redCirclePosition.x - greenCirclePosition.x).toFixed(2));
                     setDistanceHistory(prevHistory => [...prevHistory, distance]);
                     setLastRecordedTime(currentTime);
                 }

@@ -49,7 +49,6 @@ export const AttentionAndConcentrationTest = ({ className, ...props }) => {
             res = 1;
         }
 
-
         updateResult(res);
 
         concentrationCheckStart()
@@ -66,7 +65,6 @@ export const AttentionAndConcentrationTest = ({ className, ...props }) => {
             finishTest();
         }
     };
-
 
     useEffect(() => {
         if (!isTestRunning) return;
@@ -143,7 +141,6 @@ export const AttentionAndConcentrationTest = ({ className, ...props }) => {
         }
     }
 
-
     const updateConcCheckCount = () => {
         setConcCheckCount(prevConcCheckCount => prevConcCheckCount + 1)
     }
@@ -185,6 +182,7 @@ export const AttentionAndConcentrationTest = ({ className, ...props }) => {
                 <div className={styles.startAndCheckButton} onClick={handleConfirmationButtonClick}>Подтвердить</div>
             )}
             <div className={styles.examplesLeft}>Осталось примеров: {examplesLeft}</div>
+
             {isTestRunning && <div className={styles.timer}>Прошедшее время: {elapsedTime} сек.</div>}
 
             {isTestRunning && !concentrationChecking && (<div className={styles.numbersContainer}>

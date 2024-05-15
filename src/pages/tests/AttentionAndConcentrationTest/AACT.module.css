@@ -28,7 +28,7 @@
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 17px;
   font-weight: 500;
-  width: 780px;
+  width: calc(50% - 190px);
   position: absolute;
   left: calc(50% - 389px);
   top: calc(10% + 59px);
@@ -48,10 +48,10 @@
 }
 .lineUnderTestName {
   background: #fcfcfc;
-  width: 1840px;
+  width: calc(50% + 380px);
   height: 1px;
   position: absolute;
-  left: 40px;
+  left: calc(50% - 680px);
   top: 138px;
 }
 .startAndCheckButton {
