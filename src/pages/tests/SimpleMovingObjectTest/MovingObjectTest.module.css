@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 .div {
-  background: #0e0e0e;
+  background: #ffffff; /* #0e0e0e */
   height: 1080px;
   width: 1920px;
   position: relative;
@@ -18,7 +18,7 @@
 /*  top: 0px;*/
 /*}*/
 .testName {
-  color: #fcfcfc;
+  color: #0e0e0e;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 36px;
@@ -30,7 +30,7 @@
   height: 45px;
 }
 .task {
-  color: #fcfcfc;
+  color: #0e0e0e;
   text-align: center;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 16px;
@@ -41,10 +41,10 @@
   width: 858px;
 }
 .distance {
-  color: #fcfcfc;
-  text-align: left;
+  color: #0e0e0e;
+  text-align: center;
   font-family: "TtInterfaces-Medium", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   position: absolute;
   left: calc(50% - 59px); /* 59 */
@@ -52,15 +52,15 @@
   width: 118px;
 }
 .lineUnderTestName {
-  background: #fcfcfc;
+  background: #0e0e0e;
   width: 1822px;
-  height: 1px;
+  height: 2px;
   position: absolute;
   left: calc(4% - 36px);
   top: calc(50% - 367px);
 }
 .div2 {
-  color: #ffffff;
+  color: #0e0e0e;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 15px;
@@ -73,7 +73,7 @@
   height: 24px;
 }
 .div3 {
-  color: #ffffff;
+  color: #0e0e0e;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 15px;
@@ -87,13 +87,13 @@
 }
 .startButton {
   border-style: solid;
-  border-color: #fcfcfc;
-  border-width: 1px;
+  border-color: #0e0e0e;
+  border-width: 2px;
   width: 650px;
   height: 50px;
   text-align: center;
   line-height: 45px;
-  color: white;
+  color: black;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -121,7 +121,7 @@
 /*  height: 31px;*/
 /*!*}*! от текста, который больше не используется*/
 .testDuration {
-  color: #fcfcfc;
+  color: #0e0e0e;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 15px;
@@ -133,10 +133,10 @@
   height: 24px;
 }
 .min {
-  color: #fcfcfc;
+  color: #0e0e0e;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   position: absolute;
   left: calc(50% - 95px);
@@ -145,10 +145,10 @@
   height: 24px;
 }
 .sec {
-  color: #fcfcfc;
+  color: #0e0e0e;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   position: absolute;
   left: calc(50% + 22px);
@@ -157,9 +157,10 @@
   height: 24px;
 }
 .minutesRectangle {
-  color: white;
+  color: black;
   border-style: solid;
   border-color: #c0c0c0; /* #c0c0c0 */
+  background: white;
   border-width: 2px;
   width: 44px;
   height: 27px;
@@ -169,9 +170,10 @@
   top: calc(50% + -18px);
 }
 .secondsRectangle {
-  color: white;
+  color: black;
   border-style: solid;
   border-color: #c0c0c0;
+  background: white;
   border-width: 2px;
   width: 44px;
   height: 27px;
@@ -182,8 +184,8 @@
 }
 .mainRect {
   border-style: solid;
-  border-color: #fcfcfc;
-  border-width: 1px;
+  border-color: #0e0e0e;
+  border-width: 2px;
   width: 1361px;
   height: 23px;
   position: absolute;
@@ -192,7 +194,7 @@
 }
 .mainRectCenter{
   border-style: solid;
-  border-color: #fcfcfc;
+  border-color: #0e0e0e;
   border-width: 1px;
   width: 2px;
   height: 23px;
@@ -222,15 +224,15 @@
 /*  height: 24px;*/
 /*}*/
 .timeLeft {
-  color: #fcfcfc;
+  color: #0e0e0e;
   text-align: center;
   font-family: "TtInterfaces-Medium", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   position: absolute;
   left: calc(50% - 65px);
   top: calc(50% - -117px);
-  width: 140px;
+  width: 145px;
   height: 24px;
 }
 .vector {
