@@ -26,14 +26,14 @@
   position: absolute;
   left: calc(50% - 236px);
   top: calc(50% - 410px);
-  width: 483px;
+  width: 520px;
   height: 45px;
 }
 .task {
   color: #fcfcfc;
-  text-align: left;
+  text-align: center;
   font-family: "TtInterfaces-Medium", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   position: absolute;
   left: calc(50% - 429px);
@@ -105,7 +105,6 @@
 .startButton:hover {
   background-color: #f0f0f0;
 }
-
 .startButton:active {
   background-color: #c0c0c0;
 }
@@ -158,7 +157,7 @@
   height: 24px;
 }
 .minutesRectangle {
-  color: black;
+  color: white;
   border-style: solid;
   border-color: #c0c0c0; /* #c0c0c0 */
   border-width: 2px;
@@ -170,7 +169,7 @@
   top: calc(50% + -18px);
 }
 .secondsRectangle {
-  color: black;
+  color: white;
   border-style: solid;
   border-color: #c0c0c0;
   border-width: 2px;
@@ -189,6 +188,16 @@
   height: 23px;
   position: absolute;
   left: calc(0% - -280px);
+  top: calc(50% - 129px);
+}
+.mainRectCenter{
+  border-style: solid;
+  border-color: #fcfcfc;
+  border-width: 1px;
+  width: 2px;
+  height: 23px;
+  position: absolute;
+  left: calc(0% - -960px);
   top: calc(50% - 129px);
 }
 .redEllipse {
