@@ -12,14 +12,14 @@ export const AttentionAndConcentrationTest = ({ className, ...props }) => {
     const [numbers, setNumbers] = useState([]); // Массив чисел для отображения
     const [selectedNumbers, setSelectedNumbers] = useState([]); // Выбранные пользователем числа
     const [correctAnswers, setCorrectAnswers] = useState(0); // Количество правильных ответов
-    const [result, setResult] = useState(0);
+    const [result, setResult] = useState(0); // Итоговый результат
     const [examplesLeft, setExamplesLeft] = useState(9); // Количество оставшихся примеров
     const [initialExamplesLeft] = useState(9); // Изначальное количество оставшихся примеров
     const [concentrationChecking, setConcentrationChecking] = useState(false); // Проверка концентрации
     const [concCheckCount, setConcCheckCount] = useState(0); // Количество проверок концентрации
     const [concentrationNumber, setConcentrationNumber] = useState(0); // Число для проверки концентрации
-    const [concentrationInput, setConcentrationInput] = useState(0); // ввод от пользователя
-    const [correctConcentrationAnswers, setCorrectConcentrationAnswers] = useState(0); // забыл для чего
+    const [concentrationInput, setConcentrationInput] = useState(''); // Ввод от пользователя
+    const [correctConcentrationAnswers, setCorrectConcentrationAnswers] = useState(0); // Количество правильных ответов при проверке концентрации
 
     const updateResult = (value) => {
         setResult(prevResult => prevResult + value);
@@ -36,33 +36,33 @@ export const AttentionAndConcentrationTest = ({ className, ...props }) => {
     }, [isTestRunning, difficulty]);
 
     const handleCheckingButtonClick = () => {
-        setExamplesLeft(prevExamplesLeft => prevExamplesLeft - 1);
+        const remainingExamples = examplesLeft - 1;
+        setExamplesLeft(remainingExamples);
 
-        const correctAnswers = numbers.filter((number) => String(number).startsWith(targetDigit));
+        const correctAnswersArray = numbers.filter((number) => String(number).startsWith(targetDigit));
 
         const allSelectedAreCorrect = selectedNumbers.every((number) =>
-            correctAnswers.includes(number)
+            correctAnswersArray.includes(number)
         );
 
         let res = 0;
-        if ((selectedNumbers.length === 0 && correctAnswers.length === 0) || (allSelectedAreCorrect)) {
+        if ((selectedNumbers.length === 0 && correctAnswersArray.length === 0) || (allSelectedAreCorrect)) {
             res = 1;
         }
 
         updateResult(res);
 
-        concentrationCheckStart()
-
-        const digit = Math.floor(Math.random() * 9) + 1; // От 1 до 9
-        setTargetDigit(digit);
-        const generatedNumbers = Array.from({ length: difficulty === "Простой" ? 10 : 20 }, () => Math.floor(Math.random() * 90) + 10); // От 10 до 99
-        setNumbers(generatedNumbers);
-
-        setSelectedNumbers([]);
-
-        if (examplesLeft === 0) {
-            updateResult(res);
+        if (remainingExamples === 0) {
             finishTest();
+        } else {
+            concentrationCheckStart();
+
+            const digit = Math.floor(Math.random() * 9) + 1; // От 1 до 9
+            setTargetDigit(digit);
+            const generatedNumbers = Array.from({ length: difficulty === "Простой" ? 10 : 20 }, () => Math.floor(Math.random() * 90) + 10); // От 10 до 99
+            setNumbers(generatedNumbers);
+
+            setSelectedNumbers([]);
         }
     };
 
@@ -91,9 +91,8 @@ export const AttentionAndConcentrationTest = ({ className, ...props }) => {
 
     const finishTest = () => {
         setIsTestRunning(false);
-        resetExamplesLeft()
-        setCorrectAnswers(result)
-        alert(`Тест завершен!\nРезультат: ${correctAnswers}\nПрошедшее время: ${elapsedTime} сек.\nОчков концентрации: ${correctConcentrationAnswers}`);
+        resetExamplesLeft();
+        alert(`Тест завершен!\nРезультат: ${result}\nПрошедшее время: ${elapsedTime} сек.\nОчков концентрации: ${correctConcentrationAnswers}`);
     };
 
     const resetExamplesLeft = () => {
@@ -110,17 +109,10 @@ export const AttentionAndConcentrationTest = ({ className, ...props }) => {
     };
 
     const handleConfirmationButtonClick = () => {
-        if (difficulty === "Простой") {
-            setShowDifficultyOptions(false);
-            setShowConfirmationButton(false);
-            setExamplesLeft(prevExamplesLeft => prevExamplesLeft - 1);
-            startTest();
-        } else if (difficulty === "Сложный") {
-            setShowDifficultyOptions(false);
-            setShowConfirmationButton(false);
-            setExamplesLeft(prevExamplesLeft => prevExamplesLeft - 1);
-            startTest();
-        }
+        setShowDifficultyOptions(false);
+        setShowConfirmationButton(false);
+        setExamplesLeft(prevExamplesLeft => prevExamplesLeft - 1);
+        startTest();
     };
 
     const handleConcentrationCheckingClick = () => {
@@ -130,28 +122,25 @@ export const AttentionAndConcentrationTest = ({ className, ...props }) => {
             return acc + countInNumber;
         }, 0);
 
-        if (countInGeneratedNumbers === concentrationInput) {
+        if (countInGeneratedNumbers === parseInt(concentrationInput)) {
             setCorrectConcentrationAnswers(prevCorrectConcentrationAnswers => prevCorrectConcentrationAnswers + 1);
-            setConcentrationInput(0);
-            setConcentrationChecking(false);
-        } else {
-            setConcentrationInput(0);
-            setConcentrationChecking(false);
-            setCorrectConcentrationAnswers(prevCorrectConcentrationAnswers => prevCorrectConcentrationAnswers);
         }
+
+        setConcentrationInput('');
+        setConcentrationChecking(false);
     }
 
     const updateConcCheckCount = () => {
-        setConcCheckCount(prevConcCheckCount => prevConcCheckCount + 1)
+        setConcCheckCount(prevConcCheckCount => prevConcCheckCount + 1);
     }
 
     const concentrationCheckStart = () => {
         if (examplesLeft <= initialExamplesLeft && Math.random() < 0.5 && concCheckCount < 2) {
-            updateConcCheckCount()
-            setConcentrationNumber(Math.floor(Math.random() * 10))
-            setConcentrationChecking(true)
+            updateConcCheckCount();
+            setConcentrationNumber(Math.floor(Math.random() * 10));
+            setConcentrationChecking(true);
         } else {
-            setConcentrationChecking(false)
+            setConcentrationChecking(false);
         }
     }
 
@@ -168,8 +157,8 @@ export const AttentionAndConcentrationTest = ({ className, ...props }) => {
 
             {(!isTestRunning && !concentrationChecking) && (
                 <div className={styles.testDescription}>
-                    Выберите все числа, начинающиеся на заданную цифру. Запоминайте
-                    демонстрируемые числа.</div>
+                    Выберите все числа, начинающиеся на заданную цифру. Запоминайте демонстрируемые числа.
+                </div>
             )}
 
             {(isTestRunning && concentrationChecking) && (
@@ -185,15 +174,19 @@ export const AttentionAndConcentrationTest = ({ className, ...props }) => {
 
             {isTestRunning && <div className={styles.timer}>Прошедшее время: {elapsedTime} сек.</div>}
 
-            {isTestRunning && !concentrationChecking && (<div className={styles.numbersContainer}>
-                {numbers.map((number, index) => (
-                    <div
-                        key={index}
-                        className={`${styles.numberSquare} ${selectedNumbers.includes(number) ? styles.selected : ""}`}
-                        onClick={() => handleNumberClick(number)}
-                    >
-                        {number}
-                    </div>))}</div>)}
+            {isTestRunning && !concentrationChecking && (
+                <div className={styles.numbersContainer}>
+                    {numbers.map((number, index) => (
+                        <div
+                            key={index}
+                            className={`${styles.numberSquare} ${selectedNumbers.includes(number) ? styles.selected : ""}`}
+                            onClick={() => handleNumberClick(number)}
+                        >
+                            {number}
+                        </div>
+                    ))}
+                </div>
+            )}
 
             {!isTestRunning && (
                 <div>
