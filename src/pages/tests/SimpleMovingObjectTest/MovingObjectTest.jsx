@@ -84,7 +84,8 @@ export const MovingObjectTest = ({ className, ...props }) => {
                 className={styles.redEllipse}
                 style={{ left: `${redCirclePosition.x}px`, top: `${redCirclePosition.y}px` }}
             ></div>
-            <div className={styles.timeLeft}>Осталось времени: {Math.floor(timeLeft / 60)} мин {timeLeft % 60} сек</div>
+            <div className={styles.timeLeft}>Осталось времени:<br></br>
+                {Math.floor(timeLeft / 60)} мин {timeLeft % 60} сек</div>
         </div>
     );
 };
