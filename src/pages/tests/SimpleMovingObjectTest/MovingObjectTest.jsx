@@ -7,10 +7,10 @@ export const MovingObjectTest = ({ className, ...props }) => {
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
     const [distance, setDistance] = useState(0);
     const [isTestRunning, setIsTestRunning] = useState(false);
-    const [redCirclePosition, setRedCirclePosition] = useState({ x: window.innerWidth / 2, y: window.innerHeight / 2.6 });
+    const [redCirclePosition, setRedCirclePosition] = useState({ x: window.innerWidth / 1.66, y: window.innerHeight / 1.94 });
     const [redCircleDirection, setRedCircleDirection] = useState(1);
     const [timeLeft, setTimeLeft] = useState(0);
-    const mainRectCenter = { x: window.innerWidth / 2, y: window.innerHeight / 2.6 };
+    const mainRectCenter = { x: window.innerWidth / 1.66, y: window.innerHeight / 1.94 };
 
     const handleMouseMove = (e) => {
         setCursorPosition({ x: e.clientX, y: e.clientY });
@@ -84,7 +84,8 @@ export const MovingObjectTest = ({ className, ...props }) => {
                 className={styles.redEllipse}
                 style={{ left: `${redCirclePosition.x}px`, top: `${redCirclePosition.y}px` }}
             ></div>
-            <div className={styles.timeLeft}>Осталось времени: {Math.floor(timeLeft / 60)} мин {timeLeft % 60} сек</div>
+            <div className={styles.timeLeft}>Осталось времени:<br></br>
+                {Math.floor(timeLeft / 60)} мин {timeLeft % 60} сек</div>
         </div>
     );
 };
