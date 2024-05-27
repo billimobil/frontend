@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const WhatProfession = ({ user }) => {
     const [pvkScores, setPvkScores] = useState({});
@@ -9,32 +9,32 @@ const WhatProfession = ({ user }) => {
     useEffect(() => {
         const calculatePVKScores = async () => {
             try {
-                const response = await axios
-                    .get("/api/v1/getUserTestResults", {
-                        params: {
-                            session_token: user.session_token,
-                            test_id: test_id,
-                        },
-                    })
-                    .then((resp) => {
-                        // Обработка данных
-                    })
-                    .catch((e) => {
-                        console.error("Ошибка при получении данных:", e);
-                    }
-                );
+                const response = await axios.get("/api/v1/getUserTestResults", {
+                    params: {
+                        session_token: user.session_token,
+                        test_id: test_id,
+                    },
+                });
 
                 const testResults = response.data.data;
+                const testStatistics = response.data.statistics; // Предполагаем, что статистика включена в API-ответ
+
                 const pvkScores = {};
 
                 testResults.forEach((result) => {
-                    const testScore = calculateTestScore(result);
-                    const testPVK = getTestPVK(result.TestID);
-                    if (testPVK) {
-                        if (!pvkScores[testPVK]) {
-                            pvkScores[testPVK] = 0;
+                    const { score, TestID } = result;
+                    const { mean, stdDev } = testStatistics[TestID]; // Получаем среднее значение и стандартное отклонение для текущего теста
+                    const zScore = calculateZScore(score, mean, stdDev);
+                    const threshold = getThreshold(TestID);
+
+                    if (zScore > threshold) {
+                        const testPVK = getTestPVK(TestID);
+                        if (testPVK) {
+                            if (!pvkScores[testPVK]) {
+                                pvkScores[testPVK] = 0;
+                            }
+                            pvkScores[testPVK] += zScore;
                         }
-                        pvkScores[testPVK] += testScore;
                     }
                 });
 
@@ -47,10 +47,26 @@ const WhatProfession = ({ user }) => {
         calculatePVKScores();
     }, [user]);
 
-    const calculateTestScore = (result) => {
-        const testScore = result.score;
-        const pvkScore = (testScore / 100) * 9 + 1; // Преобразуем оценку в диапазоне от 0 до 100 в диапазон от 1 до 10
-        return pvkScore;
+    const calculateZScore = (score, mean, stdDev) => {
+        return (score - mean) / stdDev;
+    };
+
+    const getThreshold = (testID) => {
+        // Здесь задаются пороговые значения для каждого теста
+        switch (testID) {
+            case 1:
+                return 0; // Пороговое значение для "Реакция на свет"
+            case 2:
+                return 0; // Пороговое значение для "Простой звук"
+            case 3:
+                return 0; // Пороговое значение для "Цветовой тест"
+            case 29:
+                return 0; // Пороговое значение для "Сложные звуки"
+            case 10:
+                return 0; // Пороговое значение для "Визуальное сложение"
+            default:
+                return 0; // Пороговое значение по умолчанию
+        }
     };
 
     const getTestPVK = (testID) => {
@@ -74,10 +90,9 @@ const WhatProfession = ({ user }) => {
         <div>
             <h2>Баллы профессиональных компетенций:</h2>
             <ul>
-                {/* Отображаем баллы ПВК */}
                 {Object.entries(pvkScores).map(([pvk, score]) => (
                     <li key={pvk}>
-                        {pvk}: {score}
+                        {pvk}: {score.toFixed(2)}
                     </li>
                 ))}
             </ul>
