@@ -104,14 +104,6 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
             {/* поля для ввода минут и секунд */}
             <div className={styles.durationOfTest}>Выберите длительность теста</div>
             <div className={styles.min}>мин:</div>
-            {/*<div>*/}
-            {/*    <Input*/}
-            {/*        type="number"*/}
-            {/*        className={styles.minutesRectangle}*/}
-            {/*        value={minutes}*/}
-            {/*        onChange={(e) => setMinutes(e.target.value)}*/}
-            {/*    ></Input>*/}
-            {/*</div>*/}
             <input
                 type="number"
                 className={styles.minutesRectangle}
@@ -125,11 +117,9 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
                 value={seconds}
                 onChange={(e) => setSeconds(e.target.value)}
             />
-            {/* eсловный рендеринг для кнопки запуска теста */}
-            {/*{!isTestRunning && (*/}
-            {/*    <button className={styles.startButton} onClick={startTest}>Нажмите чтобы начать тестирование</button>*/}
-            {/*)}*/}
-            <div className={styles.startButton} onClick={startTest}>Нажмите чтобы начать тестирование</div>
+            {!isTestRunning && (
+                <div className={styles.startButton} onClick={startTest}>Нажмите чтобы начать тестирование</div>
+            )}
             {/* отображение красного и зеленого кружков */}
             <div className={styles.redEllipse}
                  style={{left: `${redCirclePosition.x}px`, top: `${redCirclePosition.y}px`}}></div>
