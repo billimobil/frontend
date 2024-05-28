@@ -20,7 +20,7 @@ const LightReactionTest = ({user}) => {
         }
     }
 
-    let i = 3
+    let i = 15
     const [signalsCount, setSignalsCount] = useState(i)
     function startTest() { // TODO fix bug that appears when start button is pressed few times
         if (i <= 0) {
