@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import styles from "./MovingObjectFollowing.module.css";
-import Input from "../../../components/UI/Input/Input";
+import axios from "axios";
 
-export const MovingObjectWithFollowing = ({ className, ...props }) => {
+export const MovingObjectWithFollowing = ({ user }) => {
     const testID = 5;
     const [speed, setSpeed] = useState(5); // увеличили скорость красного кружка
     const [isTestRunning, setIsTestRunning] = useState(false); // флаг запуска теста
@@ -12,8 +13,10 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
     const [redCircleDirection, setRedCircleDirection] = useState(1); // направление движения красного кружка (1 - вправо, -1 - влево)
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(15);
-    const [distanceHistory, setDistanceHistory] = useState([]); // массив для сохранения истории дистанций TODO: отправлять на бек
+    const [distanceHistory, setDistanceHistory] = useState([]); // массив для сохранения истории дистанций
     const [lastRecordedTime, setLastRecordedTime] = useState(0); // последнее записанное время
+    const navigate = useNavigate();
+    const reactionsMS = [true]
 
     useEffect(() => {
         // обновляем позиции кругов по центру после отрисовки компонента
@@ -22,6 +25,13 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
         setRedCirclePosition({ x: centerX, y: centerY });
         setGreenCirclePosition({ x: centerX, y: centerY });
     }, []);
+
+    useEffect(() => {
+        if (timeLeft === 0) {
+            sendResultsToBackend();
+        }
+    }, [timeLeft]);
+
 
     useEffect(() => {
         // таймер обновляется каждую секунду, если тест запущен
@@ -58,7 +68,7 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
                 });
                 // записываем дистанцию каждые 2 секунды (можно сменить)
                 const currentTime = (minutes * 60 + seconds) - timeLeft;
-                if (currentTime - lastRecordedTime >= 2) { // массив стрингами заполнен todo: сделать интовым
+                if (currentTime - lastRecordedTime >= 2) { // массив стрингами заполнен
                     const distance = Number(Math.abs(redCirclePosition.x - greenCirclePosition.x).toFixed(2));
                     setDistanceHistory(prevHistory => [...prevHistory, distance]);
                     setLastRecordedTime(currentTime);
@@ -89,8 +99,26 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
         setTimeLeft(minutes * 60 + seconds);
     };
 
+    const sendResultsToBackend =  () => {
+        try {
+            axios.get("http://188.225.74.17:8080/api/v1/saveUserTestResult", {
+                params: {
+                    user_id: user.id,
+                    session_token: user.session_token,
+                    test_id: testID,
+                    attempts: JSON.stringify(reactionsMS),
+                    reactions: JSON.stringify(distanceHistory)
+                }
+            }).then(resp=>{
+                navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
+            })
+        } catch (error) {
+            console.log("Error sending results: ", error);
+        }
+    }
+
     return (
-        <div className={styles.div + " " + className} onMouseMove={handleMouseMove}>
+        <div className={styles.div + " "} onMouseMove={handleMouseMove}>
             <div className={styles.testName}>Оценка слежения с преследованием</div>
             <div className={styles.lineUnderTestName}></div>
             <div className={styles.testDescription}>
