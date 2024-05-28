@@ -35,6 +35,7 @@ const Profession = () => {
                                 <img className={cs.profession__pic} alt={"image"} src={img1}/>
                                 <div className={cs.left}>
                                     <h1>{profession.name}</h1>
+                                    <p>Вы подходите этой профессии на {profession.your_match}%</p>
                                     <p>{profession.description}</p>
                                     <h3>Профессионально важные качества по убыванию степени важности</h3>
                                     <div className={cs.pvk__block}>
@@ -51,7 +52,6 @@ const Profession = () => {
                             </>
                             : <></>
                     }
-
                 </>
             }
 
