@@ -52,14 +52,13 @@ const SoundReactionTest = ({user}) => {
                 params: {
                     user_id: user.id,
                     session_token: user.session_token,
-                    test_id: 29,
+                    test_id: testID,
                     attempts: JSON.stringify(answers),
                     reactions: JSON.stringify(reactionsMs)
                 }
             }).then(resp=>{
-                navigate("/results");
+                navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
             })
-            navigate("/results");
             setReactionsMs([]);
             return;
         }

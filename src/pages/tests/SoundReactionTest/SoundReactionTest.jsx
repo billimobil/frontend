@@ -3,8 +3,9 @@ import cs from "../LightReactionTest/LightReactionTest.module.css";
 import Button from "../../../components/UI/Button/Button";
 import {useAudio} from "../../../hooks/useAudio";
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
-const SoundReactionTest = ({setResult}) => {
+const SoundReactionTest = ({user}) => {
     const testID = 9
 
     const navigate = useNavigate();
@@ -25,8 +26,17 @@ const SoundReactionTest = ({setResult}) => {
     const [signalsCount, setSignalsCount] = useState(i)
     function startTest() { // TODO fix bug that appears when start button is pressed few times
         if (i <= 0) {
-            // TODO тут отправляем результаты на бэк, ждем их сохранения и идем смотреть результаты
-            navigate("/results");
+            axios.get("http://188.225.74.17:8080/api/v1/saveUserTestResult", {
+                params: {
+                    user_id: user.id,
+                    session_token: user.session_token,
+                    test_id: testID,
+                    attempts: JSON.stringify(answers),
+                    reactions: JSON.stringify(reactionsMs)
+                }
+            }).then(resp=>{
+                navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
+            })
             setReactionsMs([]);
             return;
         }
