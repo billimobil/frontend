@@ -13,9 +13,9 @@
     display: block;
 }
 
-.input {
-    width: 800px;
-    height: 100px;
+input {
+    width: 1000px;
+    height: 5px;
 }
 
 .buttonContainer {
