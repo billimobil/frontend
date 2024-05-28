@@ -234,7 +234,7 @@
   background-color: #c0c0c0;
 }
 .lineUnderTestName {
-  background: #0e0e0e;
+  /*background: #0e0e0e;*/
   width: 1822px;
   height: 2px;
   position: absolute;

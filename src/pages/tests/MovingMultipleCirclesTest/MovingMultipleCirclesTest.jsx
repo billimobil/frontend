@@ -118,18 +118,23 @@ const MovingMultipleCirclesTest = ({user}) => {
                 68: cs.color3, // green
             }
 
-            let distance = getDistancePx(map2[e.keyCode])
+            let distance = getDistancePx(map2[e.keyCode]) - 25;
+            if (distance <= 0) {
+                distance = 0;
+            }
+            distance = -distance
+            var result = distance == 0 ? "OK" : distance;
             switch (e.keyCode) {
                 case 65:
-                    setResult1(distance);
+                    setResult1(result);
                     setTimeout(()=>{setResult1()}, 1000)
                     break;
                 case 83:
-                    setResult2(distance);
+                    setResult2(result);
                     setTimeout(()=>{setResult2()}, 1000)
                     break;
                 case 68:
-                    setResult3(distance);
+                    setResult3(result);
                     setTimeout(()=>{setResult3()}, 1000)
                     break;
             }
@@ -147,17 +152,17 @@ const MovingMultipleCirclesTest = ({user}) => {
                 <div className={cs.circle}>
                     <div className={[cs.object, cs.object1, cs.color1].join(" ")} style={{animationPlayState: testStarted ? "running" : "paused"}}></div>
                     <div className={[cs.crossline, cs.crossline1, cs.color1].join(" ")}></div>
-                    <div className={cs.center}>{result1 ? "Результат: -"+result1 : ""}</div>
+                    <div className={cs.center}>{result1 ? "Результат: "+result1 : ""}</div>
                 </div>
                 <div className={cs.circle}>
                     <div className={[cs.object, cs.object2, cs.color2].join(" ")} style={{animationPlayState: testStarted ? "running" : "paused"}}></div>
                     <div className={[cs.crossline, cs.crossline2, cs.color2].join(" ")}></div>
-                    <div className={cs.center}>{result2 ? "Результат: -"+result2 : ""}</div>
+                    <div className={cs.center}>{result2 ? "Результат: "+result2 : ""}</div>
                 </div>
                 <div className={cs.circle}>
                     <div className={[cs.object, cs.object3, cs.color3].join(" ")} style={{animationPlayState: testStarted ? "running" : "paused"}}></div>
                     <div className={[cs.crossline, cs.crossline3, cs.color3].join(" ")}></div>
-                    <div className={cs.center}>{result3 ? "Результат: -"+result3 : ""}</div>
+                    <div className={cs.center}>{result3 ? "Результат: "+result3 : ""}</div>
                 </div>
             </div>
 

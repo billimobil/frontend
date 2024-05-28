@@ -32,6 +32,7 @@ import ResultsOfPersonTests from "./pages/ResultsOfPersonTests/ResultsOfPersonTe
 import AttentionAndConcentrationTest from "./pages/tests/AttentionAndConcentrationTest/AttentionAndConcentrationTest";
 import EasyTest from "./pages/tests/ThinkingTest/EasyTest/EasyTest";
 import HardTest from "./pages/tests/ThinkingTest/HardTest/HardTest";
+import MemoryTest from "./pages/tests/ShortTermMemoryTest/memotyTest";
 function App() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
     useEffect(()=>{
@@ -72,7 +73,7 @@ function App() {
                             <Route path="/attention-and-concentration-test"  element={<AttentionAndConcentrationTest user={user} />}/>
                             <Route path="/easy-thinking-test" element={<EasyTest user={user} />}/>
                             <Route path="/hard-thinking-test" element={<HardTest user={user} />}/>
-                            {/*<Route path="/short-term-memory-test"  element={<MemoryTest user={user} />}/>*/}
+                            <Route path="/short-term-memory-test"  element={<MemoryTest user={user} />}/>
 
                             <Route path="/results"  element={<Results/>}/>
                             <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>

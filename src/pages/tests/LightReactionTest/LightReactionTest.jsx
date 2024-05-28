@@ -53,24 +53,25 @@ const LightReactionTest = ({user}) => {
 
     function react(callback) {
         var colorDisplayed = false;
+        var start;
         setTimeout(()=>{
+            start = performance.now();
             setColor('red')
             colorDisplayed = true
         }, getRandomInt(1000, 3000));
 
-        var start = performance.now();
         document.addEventListener('keydown', onKeyHandler); // TODO считать слишком ранние ответы неправильными
         function onKeyHandler(e) {
             if (e.keyCode === 87) {
+                var end = performance.now();
                 answers.push(colorDisplayed);
                 setAnswers(answers);
-                console.log(answers);
                 if (!colorDisplayed) {
                     return;
                 }
 
                 setColor('');
-                let timeSpent = Number((performance.now() - start).toFixed(0));
+                let timeSpent = Number((end - start).toFixed(0));
                 callback(timeSpent);
                 document.removeEventListener('keydown', onKeyHandler);
             }
