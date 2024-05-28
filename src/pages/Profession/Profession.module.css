@@ -18,7 +18,7 @@
 }
 
 .profession__pic {
-    min-height: 400px;
+    min-height: 300px;
 }
 
 .pvk__block {
@@ -26,7 +26,27 @@
 }
 
 .pvk__item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    gap: 1em;
+}
+
+.pvk__item > p {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid black;
+}
+
+.pvk__item__input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+    max-height: 30px;
+    max-width: 30px;
+    padding-left: 8px;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    pointer-events:none;
 }

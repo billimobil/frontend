@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import cs from './ResultsOfTests.module.css';
 import { Link } from "react-router-dom";
 
-const ResultsOfTests = ({}) => {
+const ResultsOfTests = () => {
     const {user_id} = useParams();
     const testData = [
         { test_id: 1, name: 'Реакция на свет', path: '/ResultsOfPersonTests' },
@@ -16,9 +16,6 @@ const ResultsOfTests = ({}) => {
         { test_id: 5, name: 'Тест мышления простой', path: '/ResultsOfPersonTests' },
         { test_id: 6, name: 'Тест мышления сложный', path: '/ResultsOfPersonTests' }
     ];
-
-
-    
 
     return (
         <div className={cs.wrapper}>

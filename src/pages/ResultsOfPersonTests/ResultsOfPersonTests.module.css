@@ -24,4 +24,10 @@
   .resultsOfItemBtn:hover {
     background: #45a049;
   }
+
+  .resultBlock {
+    margin-bottom: 1em;
+    border: 1px solid black;
+    padding: 1em
+  }
   

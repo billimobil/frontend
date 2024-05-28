@@ -3,6 +3,7 @@ import cs from './Profession.module.css'
 import {useParams} from "react-router-dom";
 import img1 from "../../assets/images/1.jpg";
 import axios from "axios";
+import Input from "../../components/UI/Input/Input";
 const Profession = () => {
     const {id} = useParams()
     const [profession, setProfession] = useState()
@@ -18,6 +19,7 @@ const Profession = () => {
            setError(e.response.data.error)
        })
     }, [])
+
     return (
         <div className={cs.wrapper}>
             {
@@ -37,7 +39,10 @@ const Profession = () => {
                                     <div className={cs.pvk__block}>
                                         {
                                             profession.attached_pvk.map(elem=>
-                                                <p key={elem.id} className={cs.pvk__item}>{elem.name}</p>
+                                                <div key={elem.id} className={cs.pvk__item}>
+                                                    <p>{elem.name}</p>
+                                                    <Input className={cs.pvk__item__input} value={getRandomInt(1, 10)}/>
+                                                </div>
                                             )
                                         }
                                     </div>
@@ -52,5 +57,11 @@ const Profession = () => {
         </div>
     );
 };
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 export default Profession;

@@ -27,17 +27,14 @@
     width: 100%;
     margin-bottom: 1em;
     cursor: pointer;
+    border: 1px solid black;
+    padding: 1em;
 }
 
 .pvk__name {
-
+    color: black;
 }
 
-.pvk > p {
-    max-height: 50px;
-    border: 1px black solid;
-    padding: 1em;
-}
 
 .pvk__name {
     width: 650px;

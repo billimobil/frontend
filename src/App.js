@@ -77,8 +77,8 @@ function App() {
 
                             <Route path="/results"  element={<Results/>}/>
                             <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>
-                            <Route path="/ResultsOfTests" element={<ResultsOfTests user={user}/>}/>
-                            <Route path="/ResultsOfPersonTests/:test_id" element={<ResultsOfPersonTests user={user}/>}/>
+                            <Route path="/ResultsOfTests/:user_id" element={<ResultsOfTests user={user}/>}/>
+                            <Route path="/ResultsOfPersonTests/:user_id/:test_id" element={<ResultsOfPersonTests user={user}/>}/>
                             <Route path="/admin/user-tests-results"  element={<UserTestsResults/>}/>
                             <Route path="/admin/graph" element={<InfoGraphPage/>}/>
                             <Route path="/admin/graph/:id" element={<GraphPage/>}/>
