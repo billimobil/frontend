@@ -91,9 +91,9 @@ const UpdateProfession = ({ user }) => {
                 ))}
             </select>
             <p>Изменить название профессии</p>
-            <Input value={name} setValue={setName} />
+            <input value={name} setValue={setName} />
             <p>Изменить описание профессии</p>
-            <Input value={description} setValue={setDescription} />
+            <input value={description} setValue={setDescription} />
 
             <div className={cs.buttonContainer}>
                 <Button type="button" onClick={submit} className={cs.button}>Сохранить</Button>
