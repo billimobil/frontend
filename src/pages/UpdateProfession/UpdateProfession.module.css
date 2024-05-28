@@ -1,12 +1,39 @@
-.input{
-    width:800px;
+.wrapper {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.selectProfession {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.input {
+    width: 800px;
     height: 100px;
 }
-.button{
-    padding: 10px 20px;
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 5px 10px;
     background-color: #292c37;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 0 10px;
+}
+
+.error {
+    color: red;
 }
