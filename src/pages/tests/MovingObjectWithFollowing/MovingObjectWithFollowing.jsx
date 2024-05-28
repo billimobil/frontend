@@ -3,6 +3,7 @@ import styles from "./MovingObjectFollowing.module.css";
 import Input from "../../../components/UI/Input/Input";
 
 export const MovingObjectWithFollowing = ({ className, ...props }) => {
+    const testID = 5;
     const [speed, setSpeed] = useState(5); // увеличили скорость красного кружка
     const [isTestRunning, setIsTestRunning] = useState(false); // флаг запуска теста
     const [timeLeft, setTimeLeft] = useState(15); // время, оставшееся до окончания теста

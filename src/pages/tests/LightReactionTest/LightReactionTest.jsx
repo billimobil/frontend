@@ -4,6 +4,7 @@ import Button from "../../../components/UI/Button/Button";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 const LightReactionTest = ({user}) => {
+    const testID = 1;
     const navigate = useNavigate();
 
     const [color, setColor] = useState('grey')
@@ -27,12 +28,12 @@ const LightReactionTest = ({user}) => {
                 params: {
                     user_id: user.id,
                     session_token: user.session_token,
-                    test_id: 1,
+                    test_id: testID,
                     attempts: JSON.stringify(answers),
                     reactions: JSON.stringify(reactionsMs)
                 }
             }).then(resp=>{
-                navigate("/results");
+                navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
             })
 
             setReactionsMs([]);

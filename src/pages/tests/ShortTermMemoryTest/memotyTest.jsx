@@ -17,6 +17,8 @@ const getRandomElements = (array, numElements) => {
 };
 
 function MemoryTest() {
+  const testID = 6;
+
   const [memorizeImages, setMemorizeImages] = useState([]);
   const [testImages, setTestImages] = useState([]);
   const [selectedImages, setSelectedImages] = useState([]);

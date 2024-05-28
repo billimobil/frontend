@@ -27,6 +27,7 @@ function getDistancePx(color) {
 }
 
 const MovingMultipleCirclesTest = ({user}) => {
+    const testID = 4;
     const navigate = useNavigate();
     const [distances, setDistances] = useState([]); // px
     const [answers, setAnswers] = useState([]); // true/false
@@ -62,12 +63,12 @@ const MovingMultipleCirclesTest = ({user}) => {
             params: {
                 user_id: user.id,
                 session_token: user.session_token,
-                test_id: 28,
+                test_id: testID,
                 attempts: JSON.stringify(answers),
                 reactions: JSON.stringify(distances)
             }
         }).then(resp=>{
-            navigate("/results");
+            navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
         })
     }
 

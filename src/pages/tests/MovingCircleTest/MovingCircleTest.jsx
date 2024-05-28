@@ -18,6 +18,7 @@ function getCurrentTimestamp() {
 }
 
 const MovingCircleTest = ({user}) => {
+    const testID = 3;
     const navigate = useNavigate();
     const [distances, setDistances] = useState([]); // px
     const [answers, setAnswers] = useState([]); // true/false
@@ -63,6 +64,18 @@ const MovingCircleTest = ({user}) => {
             setTestStarted(true);
             endTime = getCurrentTimestamp() + Number(minutesLeft) * 60 + Number(secondsLeft);
             intervalID = setInterval(countSecond, 1000)
+
+            axios.get("http://188.225.74.17:8080/api/v1/saveUserTestResult", {
+                params: {
+                    user_id: user.id,
+                    session_token: user.session_token,
+                    test_id: testID,
+                    attempts: JSON.stringify(answers),
+                    reactions: JSON.stringify(distances)
+                }
+            }).then(resp=>{
+                navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
+            })
         }
 
         react((distance)=>{ // waiting for reaction

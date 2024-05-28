@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import styles from "./MovingObjectTest.module.css";
+import styles from "./SimpleMovingObjectTest.module.css";
 
 export const MovingObjectTest = ({ className, ...props }) => {
+    const testID = 7;
+
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(15);
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });

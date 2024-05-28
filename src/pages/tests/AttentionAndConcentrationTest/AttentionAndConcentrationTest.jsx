@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styles from "./AACT.module.css";
 
 export const AttentionAndConcentrationTest = ({ className, ...props }) => {
+    const testID = 11;
+
     const [difficulty, setDifficulty] = useState("Простой");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [showDifficultyOptions, setShowDifficultyOptions] = useState(true);

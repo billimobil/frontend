@@ -5,6 +5,8 @@ import {useAudio} from "../../../hooks/useAudio";
 import {useNavigate} from "react-router-dom";
 
 const SoundReactionTest = ({setResult}) => {
+    const testID = 9
+
     const navigate = useNavigate();
     var [playing, setPlaying] = useAudio(require('../../../assets/sounds/sound.wav'))
 
