@@ -90,9 +90,6 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
 
     return (
         <div className={styles.div + " " + className} onMouseMove={handleMouseMove}>
-            {/*<div className={styles.rectangle47}></div>*/}
-            {/*<div className={styles.experts}>Эксперты</div>*/}
-            {/*<div className={styles.div2}>Выйти</div>*/}
             <div className={styles.testName}>Оценка слежения с преследованием</div>
             <div className={styles.lineUnderTestName}></div>
             <div className={styles.testDescription}>
@@ -138,7 +135,6 @@ export const MovingObjectWithFollowing = ({ className, ...props }) => {
             <div className={styles.greenEllipse}
                  style={{left: `${greenCirclePosition.x}px`, top: `${greenCirclePosition.y}px`}}></div>
             <div className={styles.timeLasts}>Осталось секунд: {timeLeft}</div>
-            {/*<img className={styles.vector} src="vector0.svg"/>*/}
         </div>
     );
 };

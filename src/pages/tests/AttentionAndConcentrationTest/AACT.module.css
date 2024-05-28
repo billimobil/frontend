@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 .div {
-  background: #0e0e0e;
+  background: #fcfcfc; /* #0e0e0e */
   /*padding-top: 404px;*/
   width: 1920px; /* 1920px */
   height: 1080px; /* 1080px */
@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 .testName {
-  color: #fcfcfc;
+  color: #0e0e0e;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 36px;
@@ -23,10 +23,10 @@
   height: 45px;
 }
 .testDescription {
-  color: #fcfcfc;
+  color: #0e0e0e;
   text-align: center;
   font-family: "TtInterfaces-Medium", sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   width: calc(50% - 190px);
   position: absolute;
@@ -34,12 +34,12 @@
   top: calc(10% + 59px);
 }
 .numberSquareDescription {
-  color: white;
+  color: black;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 18px;
   width: 40px;
   height: 40px;
-  border: 2px solid white;
+  border: 2px solid black;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -47,22 +47,22 @@
   cursor: pointer;
 }
 .lineUnderTestName {
-  background: #fcfcfc;
+  background: #0e0e0e;
   width: calc(50% + 380px);
-  height: 1px;
+  height: 2px;
   position: absolute;
   left: calc(50% - 680px);
   top: 138px;
 }
 .startAndCheckButton {
-  color: white;
+  color: black;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 22px;
   text-align: center;
   line-height: 48px;
   border-style: solid;
-  border-color: #fcfcfc;
-  border-width: 1px;
+  border-color: #0e0e0e;
+  border-width: 2px;
   width: 650px;
   height: 50px;
   position: absolute;
@@ -74,7 +74,7 @@
   background: rgba(240, 240, 240, 0.6);
 }
 .textChooseDiff {
-  color: #fcfcfc;
+  color: #0e0e0e;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 18px;
@@ -86,14 +86,14 @@
   height: 24px;
 }
 .chooseDifficult {
-  color: white;
+  color: black;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 22px;
   text-align: center;
   line-height: 55px;
   border-style: solid;
-  border-color: #fcfcfc;
-  border-width: 1px;
+  border-color: #0e0e0e;
+  border-width: 2px;
   width: 394px;
   height: 59px;
   position: absolute;
@@ -107,7 +107,7 @@
 .dropdown {
   position: absolute;
   font-family: "TtInterfaces-Medium", sans-serif;
-  color: white;
+  color: black;
   text-align: center;
   line-height: 55px;
   font-size: 22px;
@@ -116,18 +116,18 @@
   height: 59px;
   width: 394px;
   border-style: solid;
-  border-color: #fcfcfc;
+  border-color: #0e0e0e;
   border-width: 1px;
   cursor: pointer;
 }
 .dropdownItem {
-  color: white;
+  color: black;
   font-family: "TtInterfaces-Medium", sans-serif;
   text-align: center;
   line-height: 55px;
   font-size: 22px;
   border-style: solid;
-  border-color: #fcfcfc;
+  border-color: #0e0e0e;
   border-width: 1px;
   cursor: pointer;
 }
@@ -136,19 +136,19 @@
   background-color: rgba(240, 240, 240, 0.6);
 }
 .examplesLeft {
-  color: #fcfcfc;
+  color: #0e0e0e;
   text-align: left;
   font-family: "TtInterfaces-Medium", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   position: absolute;
   left: calc(50% - 80px);
   top: calc(50% + 235px);
 }
 .timer {
-  color: white;
+  color: black;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-weight: 500;
   position: absolute;
@@ -156,7 +156,7 @@
   top: calc(50% + 265px);
 }
 .numberSquare {
-  color: white;
+  color: black;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 19px;
   display: inline-flex;
@@ -165,7 +165,7 @@
   width: 50px;
   height: 50px;
   margin: 8px;
-  border: 2px solid #ffffff;
+  border: 2px solid #0e0e0e;
   cursor: pointer;
 }
 .numberSquare:hover {
@@ -187,12 +187,13 @@
   /*border: 2px solid #ffffff;*/
 }
 .concentrationInput {
-  color: white;
+  color: black;
   font-family: "TtInterfaces-Medium", sans-serif;
   font-size: 22px;
   text-align: center;
   border-style: solid;
-  border-color: #fcfcfc;
+  border-color: #0e0e0e;
+  background: white;
   border-width: 2px;
   width: 394px;
   height: 59px;
