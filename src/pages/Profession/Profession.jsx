@@ -20,6 +20,7 @@ const Profession = () => {
        })
     }, [])
 
+
     return (
         <div className={cs.wrapper}>
             {
