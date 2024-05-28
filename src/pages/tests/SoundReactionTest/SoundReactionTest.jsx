@@ -43,7 +43,6 @@ const SoundReactionTest = ({setResult}) => {
 
     function react(callback) {
         document.addEventListener('keydown', onKeyHandler);
-
         var start;
         var songPlayed = false;
         setTimeout(()=>{
@@ -55,6 +54,9 @@ const SoundReactionTest = ({setResult}) => {
             if (e.keyCode === 87) {
                 answers.push(songPlayed)
                 setAnswers(answers)
+                if (!songPlayed) {
+                    return
+                }
 
                 setPlaying(false)
                 var timeSpent = performance.now() - start

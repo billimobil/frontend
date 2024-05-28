@@ -32,20 +32,20 @@
     0% {
         transform: rotate(0deg) translateY(100px);
     }
-    0% {
-        transform: rotate(50deg) translateY(100px);
-    }
-    30% {
-        transform: rotate(0deg) translateY(100px);
-    }
-    50% {
-        transform: rotate(200deg) translateY(100px);
-    }
-    80% {
-        transform: rotate(360deg) translateY(100px);
-    }
+    /*0% {*/
+    /*    transform: rotate(50deg) translateY(100px);*/
+    /*}*/
+    /*30% {*/
+    /*    transform: rotate(0deg) translateY(100px);*/
+    /*}*/
+    /*50% {*/
+    /*    transform: rotate(200deg) translateY(100px);*/
+    /*}*/
+    /*80% {*/
+    /*    transform: rotate(360deg) translateY(100px);*/
+    /*}*/
     100% {
-        transform: rotate(250deg) translateY(100px);
+        transform: rotate(360deg) translateY(100px);
     }
 }
 
@@ -112,17 +112,17 @@
 }
 
 .object1  {
-    animation: GFG1 5s infinite cubic-bezier(0.47, -0.44, 0.49, 1.46) alternate-reverse;
+    animation: GFG1 5s infinite ;
     animation-play-state: paused;
 }
 
 .object2 {
-    animation: GFG2 5s infinite cubic-bezier(0.47, -0.44, 0.49, 1.46) alternate-reverse;
+    animation: GFG1 7s infinite ;
     animation-play-state: paused;
 }
 
 .object3 {
-    animation: GFG3 5s infinite cubic-bezier(0.47, -0.44, 0.49, 1.46) alternate-reverse;
+    animation: GFG1 10s infinite;
     animation-play-state: paused;
 }
 
