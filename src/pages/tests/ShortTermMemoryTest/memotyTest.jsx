@@ -45,29 +45,41 @@ const getRandomElements = (array, numElements) => {
 
 function MemoryTest() {
   const testID = 6;
-
+  const [difficulty, setDifficulty] = useState(null);
   const [memorizeImages, setMemorizeImages] = useState([]);
   const [testImages, setTestImages] = useState([]);
   const [selectedImages, setSelectedImages] = useState([]);
   const [errors, setErrors] = useState(0);
-  const [testStatus, setTestStatus] = useState('memorize'); // memorize, test, success, fail
+  const [testStatus, setTestStatus] = useState('choose'); // choose, memorize, test, success, fail
 
   const [startTime, setStartTime] = useState(null);
   const [responseTimes, setResponseTimes] = useState([]);
-  
-  useEffect(() => {
+
+  const handleStartTest = (selectedDifficulty) => {
+    setDifficulty(selectedDifficulty);
+    setTestStatus('memorize');
+
+    let numImages;
+    if (selectedDifficulty === 'easy') {
+      numImages = 3;
+    } else if (selectedDifficulty === 'medium') {
+      numImages = 5;
+    } else if (selectedDifficulty === 'hard') {
+      numImages = 8;
+    }
+
     // Create a copy of imageSources to ensure no duplicates are selected
     let availableImages = [...imageSources];
 
-    // Select random images to memorize (5-8 images)
-    const selectedMemorizeImages = getRandomElements(availableImages, 5);
+    // Select random images to memorize
+    const selectedMemorizeImages = getRandomElements(availableImages, numImages);
     setMemorizeImages(selectedMemorizeImages);
 
     // Remove the selected memorize images from the available images
     availableImages = availableImages.filter(img => !selectedMemorizeImages.includes(img));
 
-    // Prepare test images (20-30 images) including the ones to memorize
-    const additionalTestImages = getRandomElements(availableImages, 20);
+    // Prepare test images including the ones to memorize
+    const additionalTestImages = getRandomElements(availableImages, 22); // до 30 изображений
     const allTestImages = shuffleArray([...selectedMemorizeImages, ...additionalTestImages]);
     setTestImages(allTestImages);
 
@@ -76,7 +88,7 @@ function MemoryTest() {
       setTestStatus('test');
       setStartTime(Date.now());
     }, 5000); // Adjust the timing as needed
-  }, []);
+  };
 
   const handleImageClick = (src) => {
     if (testStatus !== 'test') return;
@@ -114,6 +126,15 @@ function MemoryTest() {
   };
 
   return (
+    <div className={cs.memoryTestContainer}>
+      {testStatus === 'choose' && (
+        <div>
+          <h1>Выберите сложность</h1>
+          <Button onClick={() => handleStartTest('easy')}>Простой</Button>
+          <Button onClick={() => handleStartTest('medium')}>Средний</Button>
+          <Button onClick={() => handleStartTest('hard')}>Сложный</Button>
+        </div>
+      )}
     <div>
       {testStatus === 'memorize' && (
         <div>
