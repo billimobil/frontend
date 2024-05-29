@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import cs from '../LightReactionTest/LightReactionTest.module.css'
+import cs from 'src/pages/tests/ShortTermMemoryTest/memoryTest.css'
 import Button from "../../../components/UI/Button/Button";
 // Example image sources
 // Примерные пути к изображениям (24 изображения)
