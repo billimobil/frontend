@@ -13,7 +13,7 @@ function GraphPage() {
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/v1/getGraph/${id}`);
-        const data = response.data;
+        const data = response.data.data;
         
         if (data && data.male && data.female) {
           const maleData = data.male;
