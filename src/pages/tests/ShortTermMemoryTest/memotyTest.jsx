@@ -2,10 +2,37 @@ import React, { useState, useEffect } from 'react';
 import cs from '../LightReactionTest/LightReactionTest.module.css'
 import Button from "../../../components/UI/Button/Button";
 // Example image sources
-const imageSources = [
-  '../src/assets/images/..'
-];
+// Примерные пути к изображениям (24 изображения)
+import img1 from '../../../assets/images/MemoryTest/image1.jpg';
+import img2 from '../../../assets/images/MemoryTest/image2.jpg';
+import img3 from '../../../assets/images/MemoryTest/image3.jpg';
+import img4 from '../../../assets/images/MemoryTest/image4.jpg';
+import img5 from '../../../assets/images/MemoryTest/image5.jpg';
+import img6 from '../../../assets/images/MemoryTest/image6.jpg';
+import img7 from '../../../assets/images/MemoryTest/image7.jpg';
+import img8 from '../../../assets/images/MemoryTest/image8.jpg';
+import img9 from '../../../assets/images/MemoryTest/image9.jpg';
+import img10 from '../../../assets/images/MemoryTest/image10.jpg';
+import img11 from '../../../assets/images/MemoryTest/image11.jpg';
+import img12 from '../../../assets/images/MemoryTest/image12.jpg';
+import img13 from '../../../assets/images/MemoryTest/image13.jpg';
+import img14 from '../../../assets/images/MemoryTest/image14.jpg';
+import img15 from '../../../assets/images/MemoryTest/image15.jpg';
+import img16 from '../../../assets/images/MemoryTest/image16.jpg';
+import img17 from '../../../assets/images/MemoryTest/image17.jpg';
+import img18 from '../../../assets/images/MemoryTest/image18.jpg';
+import img19 from '../../../assets/images/MemoryTest/image19.jpg';
+import img20 from '../../../assets/images/MemoryTest/image20.jpg';
+import img21 from '../../../assets/images/MemoryTest/image21.jpg';
+import img22 from '../../../assets/images/MemoryTest/image22.jpg';
+import img23 from '../../../assets/images/MemoryTest/image23.jpg';
+import img24 from '../../../assets/images/MemoryTest/image24.jpg';
 
+const imageSources = [
+  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
+  img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
+  img21, img22, img23, img24,
+];
 const shuffleArray = (array) => {
   return array.sort(() => Math.random() - 0.5);
 };
