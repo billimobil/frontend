@@ -125,7 +125,7 @@ function MemoryTest() {
     return averageInterval / 1000;
   };
 
-  return (
+ return (
     <div className={cs.memoryTestContainer}>
       {testStatus === 'choose' && (
         <div>
@@ -135,13 +135,12 @@ function MemoryTest() {
           <Button onClick={() => handleStartTest('hard')}>Сложный</Button>
         </div>
       )}
-    <div>
       {testStatus === 'memorize' && (
         <div>
           <h1>Запомните эти изображения</h1>
-          <div className="images">
+          <div className={cs.images}>
             {memorizeImages.map((src, index) => (
-              <img key={index} src={src} alt="" />
+              <img key={index} src={src} alt="" className={cs.image} />
             ))}
           </div>
         </div>
@@ -149,18 +148,14 @@ function MemoryTest() {
       {testStatus === 'test' && (
         <div>
           <h1>Выберите запомнившиеся изображения</h1>
-          <div className="images">
+          <div className={cs.images}>
             {testImages.map((src, index) => (
               <img
                 key={index}
                 src={src}
                 alt=""
                 onClick={() => handleImageClick(src)}
-                style={{
-                  border: selectedImages.includes(src)
-                    ? '3px solid green'
-                    : ''
-                }}
+                className={`${cs.image} ${selectedImages.includes(src) ? cs.selected : ''}`}
               />
             ))}
           </div>
