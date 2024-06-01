@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import cs from '../LightReactionTest/LightReactionTest.module.css'
+import cs from 'src/pages/tests/ShortTermMemoryTest/memoryTest.css'
 import Button from "../../../components/UI/Button/Button";
 // Example image sources
 // Примерные пути к изображениям (24 изображения)
@@ -27,11 +27,12 @@ import img21 from '../../../assets/images/MemoryTest/image21.jpg';
 import img22 from '../../../assets/images/MemoryTest/image22.jpg';
 import img23 from '../../../assets/images/MemoryTest/image23.jpg';
 import img24 from '../../../assets/images/MemoryTest/image24.jpg';
-const imageSources = [
-  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12,
-  img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24
-];
 
+const imageSources = [
+  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
+  img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
+  img21, img22, img23, img24,
+];
 const shuffleArray = (array) => {
   return array.sort(() => Math.random() - 0.5);
 };
@@ -42,7 +43,7 @@ const getRandomElements = (array, numElements) => {
   return shuffled.slice(0, numElements);
 };
 
-export function MemoryTest() {
+function MemoryTest() {
   const testID = 6;
   const [difficulty, setDifficulty] = useState(null);
   const [memorizeImages, setMemorizeImages] = useState([]);
@@ -125,59 +126,62 @@ export function MemoryTest() {
   };
 
   return (
-      <div className="memoryTestContainer">
-        {testStatus === 'choose' && (
-            <div>
-              <h1>Выберите сложность</h1>
-              <Button onClick={() => handleStartTest('easy')}>Простой</Button>
-              <Button onClick={() => handleStartTest('medium')}>Средний</Button>
-              <Button onClick={() => handleStartTest('hard')}>Сложный</Button>
-            </div>
-        )}
-        {testStatus === 'memorize' && (
-            <div>
-              <h1>Запомните эти изображения</h1>
-              <div className="images">
-                {memorizeImages.map((src, index) => (
-                    <img key={index} src={src} alt="" />
-                ))}
-              </div>
-            </div>
-        )}
-        {testStatus === 'test' && (
-            <div>
-              <h1>Выберите запомнившиеся изображения</h1>
-              <div className="images">
-                {testImages.map((src, index) => (
-                    <img
-                        key={index}
-                        src={src}
-                        alt=""
-                        onClick={() => handleImageClick(src)}
-                        style={{
-                          border: selectedImages.includes(src) ? '3px solid green' : ''
-                        }}
-                    />
-                ))}
-              </div>
-              {errors > 0 && <p>Ошибок: {errors}</p>}
-            </div>
-        )}
-        {testStatus === 'success' && (
-            <div>
-              <h1>Тест пройден!</h1>
-              <p>Общее время: {calculateTotalTime()} секунд</p>
-              <p>Среднее время между ответами: {calculateAverageResponseTime()} секунд</p>
-            </div>
-        )}
-        {testStatus === 'fail' && (
-            <div>
-              <h1>Тест не пройден. Попробуйте снова.</h1>
-              <p>Общее время: {calculateTotalTime()} секунд</p>
-              <p>Среднее время между ответами: {calculateAverageResponseTime()} секунд</p>
-            </div>
-        )}
-      </div>
+    <div className={cs.memoryTestContainer}>
+      {testStatus === 'choose' && (
+        <div>
+          <h1>Выберите сложность</h1>
+          <Button onClick={() => handleStartTest('easy')}>Простой</Button>
+          <Button onClick={() => handleStartTest('medium')}>Средний</Button>
+          <Button onClick={() => handleStartTest('hard')}>Сложный</Button>
+        </div>
+      )}
+    <div>
+      {testStatus === 'memorize' && (
+        <div>
+          <h1>Запомните эти изображения</h1>
+          <div className="images">
+            {memorizeImages.map((src, index) => (
+              <img key={index} src={src} alt="" />
+            ))}
+          </div>
+        </div>
+      )}
+      {testStatus === 'test' && (
+        <div>
+          <h1>Выберите запомнившиеся изображения</h1>
+          <div className="images">
+            {testImages.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt=""
+                onClick={() => handleImageClick(src)}
+                style={{
+                  border: selectedImages.includes(src)
+                    ? '3px solid green'
+                    : ''
+                }}
+              />
+            ))}
+          </div>
+          {errors > 0 && <p>Ошибок: {errors}</p>}
+        </div>
+      )}
+      {testStatus === 'success' && (
+        <div>
+          <h1>Тест пройден!</h1>
+          <p>Общее время: {calculateTotalTime()} секунд</p>
+          <p>Среднее время между ответами: {calculateAverageResponseTime()} секунд</p>
+        </div>
+      )}
+      {testStatus === 'fail' && (
+        <div>
+          <h1>Тест не пройден. Попробуйте снова.</h1>
+          <p>Общее время: {calculateTotalTime()} секунд</p>
+          <p>Среднее время между ответами: {calculateAverageResponseTime()} секунд</p>
+        </div>
+      )}
+    </div>
   );
 }
 
