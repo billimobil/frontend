@@ -4,7 +4,8 @@ import styles from "./MovingObjectFollowing.module.css";
 import axios from "axios";
 
 export const MovingObjectWithFollowing = ({ user }) => {
-    const testID = 5;
+    const testID = 7;
+    
     const [speed, setSpeed] = useState(5); // увеличили скорость красного кружка
     const [isTestRunning, setIsTestRunning] = useState(false); // флаг запуска теста
     const [timeLeft, setTimeLeft] = useState(15); // время, оставшееся до окончания теста

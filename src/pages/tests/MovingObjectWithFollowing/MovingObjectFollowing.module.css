@@ -234,12 +234,12 @@
   background-color: #c0c0c0;
 }
 .lineUnderTestName {
-  /*background: #0e0e0e;*/
+  background: #0e0e0e;
   width: 1822px;
   height: 2px;
   position: absolute;
-  left: calc(40px);
-  top: calc(50% - 394px);
+  left: calc(4% - 36px);
+  top: calc(50% - 397px);
 }
 .vector {
   width: 153px;

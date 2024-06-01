@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const MovingObjectTest = ({ user }) => {
-    const testID = 7;
+    const testID = 4;
     const navigate = useNavigate();
 
     const [minutes, setMinutes] = useState(0);
@@ -61,13 +61,6 @@ export const MovingObjectTest = ({ user }) => {
     }, [isTestRunning, timeLeft]);
 
     useEffect(() => {
-        console.log("isTestRunning:", isTestRunning);
-        console.log("timeLeft:", timeLeft);
-        console.log("lastRecordedTime:", lastRecordedTime);
-        console.log("cursorPosition:", cursorPosition);
-        console.log("redCirclePosition:", redCirclePosition);
-        console.log("minutes:", minutes);
-        console.log("seconds:", seconds);
         if (isTestRunning) {
             const logInterval = setInterval(() => {
                 const currentTime = (minutes * 60 + seconds) - timeLeft;
@@ -98,8 +91,6 @@ export const MovingObjectTest = ({ user }) => {
         if (isTestFinished) {
             console.log("Attempts:", answers);
             console.log("Reactions:", distanceLog);
-            sendResultsToBackend();
-            alert(`Answers: ${JSON.stringify(answers)}\nDistances: ${JSON.stringify(distanceLog)}`);
         }
     }, [isTestFinished]);
 

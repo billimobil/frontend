@@ -12,51 +12,50 @@ function GraphPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const maleResponse = await axios.get(`/api/v1/gettest/male/${id}`);
-        const femaleResponse = await axios.get(`/api/v1/gettest/female/${id}`);
+        const response = await axios.get(`/api/v1/getGraph/${id}`);
+        const data = response.data.data;
 
-        const maleData = maleResponse.data;
-        const femaleData = femaleResponse.data;
+        if (data && data.male && data.female) {
+          const maleData = data.male;
+          const femaleData = data.female;
 
-        if (Array.isArray(maleData) && Array.isArray(femaleData)) {
-          const labels = Array.from({ length: maleData.length }, (_, i) => `Точка ${i + 1}`);
-
+          const labels = Array.from({ length: Math.max(maleData.length, femaleData.length) }, (_, i) => `Точка ${i + 1}`);
+          
           const maleAccuracies = maleData.map(item => item.avg_reaction_time_ms);
           const maleColors = maleData.map(item => item.color);
-
+          
           const femaleAccuracies = femaleData.map(item => item.avg_reaction_time_ms);
           const femaleColors = femaleData.map(item => item.color);
-
+          
           setChartData({
             labels,
             datasets: [
               {
                 label: 'Мужчины',
                 data: maleAccuracies,
-                borderColor: 'transparent', // Hide the line
-                backgroundColor: 'transparent', // Hide the line background
+                borderColor: 'transparent', // Скрыть линию
+                backgroundColor: 'transparent', // Скрыть фон линии
                 pointBackgroundColor: maleColors,
                 pointBorderColor: maleColors,
-                showLine: false, // Ensure only points are shown
+                showLine: false, // Показать только точки
               },
               {
                 label: 'Женщины',
                 data: femaleAccuracies,
-                borderColor: 'transparent', // Hide the line
-                backgroundColor: 'transparent', // Hide the line background
+                borderColor: 'transparent', // Скрыть линию
+                backgroundColor: 'transparent', // Скрыть фон линии
                 pointBackgroundColor: femaleColors,
                 pointBorderColor: femaleColors,
-                showLine: false, // Ensure only points are shown
+                showLine: false, // Показать только точки
               }
             ]
           });
 
-          // Optionally, log additional fields for debugging or further use
-          console.log('Male Data:', maleData);
-          console.log('Female Data:', femaleData);
+          console.log('Данные мужчин:', maleData);
+          console.log('Данные женщин:', femaleData);
 
         } else {
-          console.error('Неверный формат данных:', maleData, femaleData);
+          console.error('Неверный формат данных:', data);
         }
       } catch (error) {
         console.error('Ошибка получения данных:', error);
@@ -69,10 +68,10 @@ function GraphPage() {
   }, [id]);
 
   return (
-      <div>
-        <h1>Тест {id}</h1>
-        {loading ? <p>Загрузка данных...</p> : <Line data={chartData} />}
-      </div>
+    <div>
+      <h1>Тест {id}</h1>
+      {loading ? <p>Загрузка данных...</p> : <Line data={chartData} />}
+    </div>
   );
 }
 
