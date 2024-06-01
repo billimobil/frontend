@@ -29,7 +29,7 @@ const Tests = () => {
                     <div className={cs.tests__block}>Три движущихся круга</div>
                 </NavLink>
                 <NavLink to="/moving-object-test">
-                    <div className={cs.tests__block}>Слежение за кругом</div>
+                    <div className={cs.tests__block}>Простой трекинг</div>
                 </NavLink>
                 <NavLink to="/moving-object-with-following">
                     <div className={cs.tests__block}>Преследование круга</div>
@@ -42,6 +42,9 @@ const Tests = () => {
                 </NavLink>
                 <NavLink to={"/attention-and-concentration-test"}>
                     <div className={cs.tests__block}>Внимание</div>
+                </NavLink>
+                <NavLink to={"/memory-test"}>
+                    <div className={cs.tests__block}>Кратковременная память</div>
                 </NavLink>
             </div>
         </div>
