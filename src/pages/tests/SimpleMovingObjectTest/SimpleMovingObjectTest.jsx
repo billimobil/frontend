@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const MovingObjectTest = ({ user }) => {
-    const testID = 4;
+    const testID = 9;
     const navigate = useNavigate();
 
     const [minutes, setMinutes] = useState(0);
