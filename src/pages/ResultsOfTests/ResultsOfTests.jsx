@@ -6,18 +6,18 @@ import { Link } from "react-router-dom";
 const ResultsOfTests = () => {
     const {user_id} = useParams();
     const testData = [
-        { test_id: 1, name: 'Реакция на свет', path: '/ResultsOfPersonTests' },
-        { test_id: 2, name: 'Простой звук', path: '/ResultsOfPersonTests' },
-        { test_id: 3, name: 'Цветовой тест', path: '/ResultsOfPersonTests' },
-        { test_id: 29, name: 'Сложные звуки', path: '/ResultsOfPersonTests' },
-        { test_id: 10, name: 'Визуальное сложение', path: '/ResultsOfPersonTests' },
-        { test_id: 28, name: 'Движущийся круг', path: '/ResultsOfPersonTests'},
-        { test_id: 7, name: 'Три движущийхся круга', path: '/ResultsOfPersonTests'},
-        { test_id: 5, name: 'Тест мышления простой', path: '/ResultsOfPersonTests' },
-        { test_id: 6, name: 'Тест мышления сложный', path: '/ResultsOfPersonTests' },
-        { test_id: 4, name: 'Простой трекинг', path: '/ResultsOfPersonTests'},
-        { test_id: 7, name: 'Преследование круга', path: '/ResultsOfPersonTests'},
-        { test_id: 8, name: 'Тест на память', path: '/ResultsOfPersonTests' }
+        { test_id: 1, name: 'Реакция на свет'},
+        { test_id: 2, name: 'Простой звук' },
+        { test_id: 3, name: 'Цветовой тест' },
+        { test_id: 4, name: 'Три движущийхся круга'},
+        { test_id: 5, name: 'Тест мышления простой' },
+        { test_id: 6, name: 'Тест мышления сложный' },
+        { test_id: 7, name: 'Преследование круга'},
+        { test_id: 8, name: 'Тест на память'},
+        { test_id: 9, name: 'Простой трекинг'},
+        { test_id: 10, name: 'Визуальное сложение' },
+        { test_id: 28, name: 'Движущийся круг'},
+        { test_id: 29, name: 'Сложные звуки' }
     ];
 
     return (
@@ -26,7 +26,7 @@ const ResultsOfTests = () => {
             <div className={cs.tests}>
                 {testData.map((test) => (
                     <Link 
-                      to={`${test.path}/${test.test_id}/${user_id}`} 
+                      to={`/ResultsOfPersonTests/${user_id}/${test.test_id}`}
                       key={test.id} 
                       className={cs.buttonResultsLink}
                     >
