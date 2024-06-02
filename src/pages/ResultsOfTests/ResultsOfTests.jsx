@@ -16,7 +16,8 @@ const ResultsOfTests = () => {
         { test_id: 5, name: 'Тест мышления простой', path: '/ResultsOfPersonTests' },
         { test_id: 6, name: 'Тест мышления сложный', path: '/ResultsOfPersonTests' },
         { test_id: 4, name: 'Простой трекинг', path: '/ResultsOfPersonTests'},
-        { test_id: 7, name: 'Преследование круга', path: '/ResultsOfPersonTests'}
+        { test_id: 7, name: 'Преследование круга', path: '/ResultsOfPersonTests'},
+        { test_id: 8, name: 'Тест на память', path: '/ResultsOfPersonTests' }
     ];
 
     return (
