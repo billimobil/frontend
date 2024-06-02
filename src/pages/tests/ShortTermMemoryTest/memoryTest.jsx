@@ -1,188 +1,181 @@
 import React, { useState, useEffect } from 'react';
-import cs from 'src/pages/tests/ShortTermMemoryTest/memoryTest.css'
-import Button from "../../../components/UI/Button/Button";
-// Example image sources
-// Примерные пути к изображениям (24 изображения)
-import img1 from '../../../assets/images/MemoryTest/image1.jpg';
-import img2 from '../../../assets/images/MemoryTest/image2.jpg';
-import img3 from '../../../assets/images/MemoryTest/image3.jpg';
-import img4 from '../../../assets/images/MemoryTest/image4.jpg';
-import img5 from '../../../assets/images/MemoryTest/image5.jpg';
-import img6 from '../../../assets/images/MemoryTest/image6.jpg';
-import img7 from '../../../assets/images/MemoryTest/image7.jpg';
-import img8 from '../../../assets/images/MemoryTest/image8.jpg';
-import img9 from '../../../assets/images/MemoryTest/image9.jpg';
-import img10 from '../../../assets/images/MemoryTest/image10.jpg';
-import img11 from '../../../assets/images/MemoryTest/image11.jpg';
-import img12 from '../../../assets/images/MemoryTest/image12.jpg';
-import img13 from '../../../assets/images/MemoryTest/image13.jpg';
-import img14 from '../../../assets/images/MemoryTest/image14.jpg';
-import img15 from '../../../assets/images/MemoryTest/image15.jpg';
-import img16 from '../../../assets/images/MemoryTest/image16.jpg';
-import img17 from '../../../assets/images/MemoryTest/image17.jpg';
-import img18 from '../../../assets/images/MemoryTest/image18.jpg';
-import img19 from '../../../assets/images/MemoryTest/image19.jpg';
-import img20 from '../../../assets/images/MemoryTest/image20.jpg';
-import img21 from '../../../assets/images/MemoryTest/image21.jpg';
-import img22 from '../../../assets/images/MemoryTest/image22.jpg';
-import img23 from '../../../assets/images/MemoryTest/image23.jpg';
-import img24 from '../../../assets/images/MemoryTest/image24.jpg';
+import cs from "./MemoryTest.module.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const imageSources = [
-  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
-  img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
-  img21, img22, img23, img24,
-];
-const shuffleArray = (array) => {
-  return array.sort(() => Math.random() - 0.5);
-};
+export const MemoryTest = ({ user }) => {
+    const testID = 8;
 
-// Utility function to get random elements from an array without duplicates
-const getRandomElements = (array, numElements) => {
-  const shuffled = shuffleArray([...array]);
-  return shuffled.slice(0, numElements);
-};
+    const [examplesLeft, setExamplesLeft] = useState(15);
+    const [isTestRunning, setIsTestRunning] = useState(false);
+    const [isRemember, setIsRemember] = useState(false);
+    const [isReversedOrder, setIsReversedOrder] = useState(false);
+    const [numbersToRemember, setNumbersToRemember] = useState([]);
+    const [userInput, setUserInput] = useState("");
+    const [timeToRemember, setTimeToRemember] = useState(5); // время на запоминание
+    const [timeToEnter, setTimeToEnter] = useState(9); // время на ввод ответа
+    const [countdown, setCountdown] = useState(timeToRemember); // обратный отсчет для запоминания и ввода
+    const navigate = useNavigate();
+    const [attempts, setAttempts] = useState([]); // boolean (правильно ли запомнил числа)
+    const [reactions, setReactions] = useState([]); // number (количество времени на ввод)
+    const [inputStartTime, setInputStartTime] = useState(null);
 
-function MemoryTest() {
-  const testID = 6;
-  const [difficulty, setDifficulty] = useState(null);
-  const [memorizeImages, setMemorizeImages] = useState([]);
-  const [testImages, setTestImages] = useState([]);
-  const [selectedImages, setSelectedImages] = useState([]);
-  const [errors, setErrors] = useState(0);
-  const [testStatus, setTestStatus] = useState('choose'); // choose, memorize, test, success, fail
-
-  const [startTime, setStartTime] = useState(null);
-  const [responseTimes, setResponseTimes] = useState([]);
-
-  const handleStartTest = (selectedDifficulty) => {
-    setDifficulty(selectedDifficulty);
-    setTestStatus('memorize');
-
-    let numImages;
-    if (selectedDifficulty === 'easy') {
-      numImages = 3;
-    } else if (selectedDifficulty === 'medium') {
-      numImages = 5;
-    } else if (selectedDifficulty === 'hard') {
-      numImages = 8;
+    const sendResultsToBackend = () => {
+        try {
+            axios.get("http://188.225.74.17:8080/api/v1/saveUserTestResult", {
+                params: {
+                    user_id: user.id,
+                    session_token: user.session_token,
+                    test_id: testID,
+                    attempts: JSON.stringify(attempts),
+                    reactions: JSON.stringify(reactions)
+                }
+            }).then(resp => {
+                navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
+            })
+        } catch (error) {
+            console.log("Error sending results: ", error);
+        }
     }
 
-    // Create a copy of imageSources to ensure no duplicates are selected
-    let availableImages = [...imageSources];
+    useEffect(() => {
+        if (!isTestRunning) return;
 
-    // Select random images to memorize
-    const selectedMemorizeImages = getRandomElements(availableImages, numImages);
-    setMemorizeImages(selectedMemorizeImages);
+        const timer = setInterval(() => {
+            setCountdown(prev => prev - 1);
+        }, 1000);
 
-    // Remove the selected memorize images from the available images
-    availableImages = availableImages.filter(img => !selectedMemorizeImages.includes(img));
+        return () => clearInterval(timer);
+    }, [isTestRunning]);
 
-    // Prepare test images including the ones to memorize
-    const additionalTestImages = getRandomElements(availableImages, 22); // до 30 изображений
-    const allTestImages = shuffleArray([...selectedMemorizeImages, ...additionalTestImages]);
-    setTestImages(allTestImages);
+    useEffect(() => {
+        if (!isTestRunning) return;
 
-    // Show memorize images for 5 seconds
-    setTimeout(() => {
-      setTestStatus('test');
-      setStartTime(Date.now());
-    }, 5000); // Adjust the timing as needed
-  };
+        if (countdown <= 0) {
+            if (!isRemember) {
+                setIsRemember(true);
+                setCountdown(timeToEnter);
+                setInputStartTime(Date.now());
+            } else {
+                checkUserInput();
+                setExamplesLeft(prev => prev - 1);
+                if (examplesLeft > 1) {
+                    setIsRemember(false);
+                    setNumbersToRemember(generateRandomNumbers(getNumberCountByPhase(examplesLeft - 1), 0, 99));
+                    setIsReversedOrder(Math.random() > 0.5);
+                    setCountdown(timeToRemember);
+                    setUserInput("");
+                } else {
+                    finishTest();
+                }
+            }
+        }
+    }, [countdown]);
 
-  const handleImageClick = (src) => {
-    if (testStatus !== 'test') return;
+    const generateRandomNumbers = (count, min, max) => {
+        return Array.from({ length: count }, () => Math.floor(Math.random() * (max - min + 1)) + min);  // генерация n чисел от min до max
+    };
 
-    const currentTime = Date.now();
-    setResponseTimes([...responseTimes, currentTime]);
+    const getNumberCountByPhase = (examplesLeft) => {
+        if (examplesLeft > 10) return 2;
+        if (examplesLeft > 5) return 4;
+        return 6;
+    };
 
-    const isCorrect = memorizeImages.includes(src);
+    const startTest = () => {
+        setIsTestRunning(true);
+        setIsRemember(false);
+        setExamplesLeft(15);
+        setNumbersToRemember(generateRandomNumbers(2, 0, 99));
+        setIsReversedOrder(Math.random() > 0.5);
+        setCountdown(timeToRemember);
+        setUserInput("");
+        setAttempts([]);
+        setReactions([]);
+    };
 
-    if (isCorrect) {
-      if (!selectedImages.includes(src)) {
-        setSelectedImages([...selectedImages, src]);
-      }
-      if (selectedImages.length + 1 === memorizeImages.length) {
-        setTestStatus('success');
-      }
-    } else {
-      setErrors(errors + 1);
-      if (errors + 1 >= 3) {
-        setTestStatus('fail');
-      }
-    }
-  };
+    const finishTest = () => {
+        setIsTestRunning(false);
+        sendResultsToBackend();
+    };
 
-  const calculateTotalTime = () => {
-    if (responseTimes.length === 0) return 0;
-    return (responseTimes[responseTimes.length - 1] - startTime) / 1000;
-  };
+    const handleRememberButtonClick = () => {
+        checkUserInput();
+        setExamplesLeft(prev => prev - 1);
+        if (examplesLeft > 1) {
+            setIsRemember(false);
+            setNumbersToRemember(generateRandomNumbers(getNumberCountByPhase(examplesLeft - 1), 0, 99));
+            setIsReversedOrder(Math.random() > 0.5);
+            setCountdown(timeToRemember);
+            setUserInput("");
+        } else {
+            finishTest();
+        }
+    };
 
-  const calculateAverageResponseTime = () => {
-    if (responseTimes.length < 2) return 0;
-    const timeIntervals = responseTimes.slice(1).map((time, index) => time - responseTimes[index]);
-    const averageInterval = timeIntervals.reduce((acc, interval) => acc + interval, 0) / timeIntervals.length;
-    return averageInterval / 1000;
-  };
+    const handleUserInputChange = (e) => {
+        setUserInput(e.target.value);
+    };
 
-  return (
-    <div className={cs.memoryTestContainer}>
-      {testStatus === 'choose' && (
-        <div>
-          <h1>Выберите сложность</h1>
-          <Button onClick={() => handleStartTest('easy')}>Простой</Button>
-          <Button onClick={() => handleStartTest('medium')}>Средний</Button>
-          <Button onClick={() => handleStartTest('hard')}>Сложный</Button>
+    const checkUserInput = () => {
+        const inputNumbers = userInput.split(' ').map(Number);
+        const correctNumbers = isReversedOrder ? [...numbersToRemember].reverse() : numbersToRemember;
+
+        const isCorrect = inputNumbers.join(' ') === correctNumbers.join(' ');
+        const reactionTime = (Date.now() - inputStartTime) / 1000; // тут хуйня для ввода в секах
+
+        setAttempts(prev => [...prev, isCorrect ? 1 : 0]);
+        setReactions(prev => [...prev, reactionTime]);
+
+        // if (isCorrect) {
+        //     alert("Правильно!");
+        // } else {
+        //     alert("Неправильно. Правильный ответ: " + correctNumbers.join(' '));
+        // }
+    };
+
+    return (
+        <div className={cs.wrapper + " "}>
+            <div className={cs.testName}>Тест на память </div>
+            {!isRemember ?
+                <>
+                    <div className={cs.testDescription}>Запоминайте числа, появляющиеся на экране.</div>
+                </> :
+                <>
+                    <div className={cs.testDescription}>Введите числа в {isReversedOrder ? "обратном" : "том же"} порядке через пробел.</div>
+                </>
+            }
+            <div className={cs.lineUnderTestName}></div>
+            {isTestRunning && !isRemember ?
+                <>
+                    <div className={cs.numbersContainer}>
+                        {numbersToRemember.map((number, index) => (
+                            <div className={cs.numberSquare} key={index}>
+                                {number}
+                            </div>
+                        ))}
+                    </div>
+                </> : (isTestRunning && isRemember) ?
+                    <>
+                        <input type="text" placeholder="Введите числа" className={cs.input} value={userInput} onChange={handleUserInputChange} />
+                    </> :
+                    <></>
+            }
+            {!isTestRunning && !isRemember ?
+                <>
+                    <div className={cs.startButton} onClick={startTest}>Начать тестирование</div>
+                </> : (isTestRunning && isRemember) ?
+                    <>
+                        <div className={cs.startButton} onClick={handleRememberButtonClick}>Подтвердить</div>
+                    </> :
+                    <></>
+            }
+            <div className={cs.examplesLeft}>Осталось примеров: {examplesLeft}</div>
+            {isTestRunning && (
+                <div className={cs.timer}>Обратный отсчет: {countdown}</div>)
+            }
         </div>
-      )}
-    <div>
-      {testStatus === 'memorize' && (
-        <div>
-          <h1>Запомните эти изображения</h1>
-          <div className="images">
-            {memorizeImages.map((src, index) => (
-              <img key={index} src={src} alt="" />
-            ))}
-          </div>
-        </div>
-      )}
-      {testStatus === 'test' && (
-        <div>
-          <h1>Выберите запомнившиеся изображения</h1>
-          <div className="images">
-            {testImages.map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt=""
-                onClick={() => handleImageClick(src)}
-                style={{
-                  border: selectedImages.includes(src)
-                    ? '3px solid green'
-                    : ''
-                }}
-              />
-            ))}
-          </div>
-          {errors > 0 && <p>Ошибок: {errors}</p>}
-        </div>
-      )}
-      {testStatus === 'success' && (
-        <div>
-          <h1>Тест пройден!</h1>
-          <p>Общее время: {calculateTotalTime()} секунд</p>
-          <p>Среднее время между ответами: {calculateAverageResponseTime()} секунд</p>
-        </div>
-      )}
-      {testStatus === 'fail' && (
-        <div>
-          <h1>Тест не пройден. Попробуйте снова.</h1>
-          <p>Общее время: {calculateTotalTime()} секунд</p>
-          <p>Среднее время между ответами: {calculateAverageResponseTime()} секунд</p>
-        </div>
-      )}
-    </div>
-  );
-}
+    );
+};
 
 export default MemoryTest;
