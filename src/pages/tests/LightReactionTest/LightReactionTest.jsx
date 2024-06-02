@@ -36,6 +36,8 @@ const LightReactionTest = ({user}) => {
                 }
             }).then(resp=>{
                 navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
+            }).catch(error => {
+                console.log(error.response.data.error);
             })
             return;
         }

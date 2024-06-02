@@ -12,7 +12,6 @@ import PVK from "./pages/PVK/PVK";
 import Tests from "./pages/TestsList/Tests";
 import LightReactionTest from "./pages/tests/LightReactionTest/LightReactionTest";
 import SoundReactionTest from "./pages/tests/SoundReactionTest/SoundReactionTest";
-import Results from "./pages/Results/Results";
 import LightComplexReactionTest from "./pages/tests/LightComplexReactionTest/LightComplexReactionTest";
 import VisualAdditionTest from "./pages/tests/VisualAdditionTest/VisualAdditionTest";
 import SoundAdditionTest from "./pages/tests/SoundAdditionTest/SoundAdditionTest";
@@ -32,7 +31,6 @@ import ResultsOfPersonTests from "./pages/ResultsOfPersonTests/ResultsOfPersonTe
 import AttentionAndConcentrationTest from "./pages/tests/AttentionAndConcentrationTest/AttentionAndConcentrationTest";
 import EasyTest from "./pages/tests/ThinkingTest/EasyTest/EasyTest";
 import HardTest from "./pages/tests/ThinkingTest/HardTest/HardTest";
-import MemoryTest from "./pages/tests/ShortTermMemoryTest/memoryTest"
 import Pulse from "./pages/Pulse/Pulse"
 function App() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
@@ -74,9 +72,7 @@ function App() {
                             <Route path="/attention-and-concentration-test"  element={<AttentionAndConcentrationTest user={user} />}/>
                             <Route path="/easy-thinking-test" element={<EasyTest user={user} />}/>
                             <Route path="/hard-thinking-test" element={<HardTest user={user} />}/>
-                            <Route path="/short-term-memory-test"  element={<MemoryTest user={user} />}/>
 
-                            <Route path="/results"  element={<Results/>}/>
                             <Route path="/Pulse" element={<Pulse/>}/>
                             <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>
                             <Route path="/ResultsOfTests/:user_id" element={<ResultsOfTests user={user}/>}/>

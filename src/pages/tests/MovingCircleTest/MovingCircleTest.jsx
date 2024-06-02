@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import cs from "./MovingCircleTest.module.css"
 import Button from "../../../components/UI/Button/Button";
 import axios from "axios";
@@ -55,7 +55,9 @@ const MovingCircleTest = ({user}) => {
                 reactions: JSON.stringify(distances)
             }
         }).then(resp=>{
-            navigate("/results");
+            navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
+        }).catch(error => {
+            console.log(error.response.data.error);
         })
     }
 
@@ -64,7 +66,8 @@ const MovingCircleTest = ({user}) => {
             setTestStarted(true);
             endTime = getCurrentTimestamp() + Number(minutesLeft) * 60 + Number(secondsLeft);
             intervalID = setInterval(countSecond, 1000)
-
+        }
+        if (i === 0) {
             axios.get("http://188.225.74.17:8080/api/v1/saveUserTestResult", {
                 params: {
                     user_id: user.id,
@@ -75,6 +78,8 @@ const MovingCircleTest = ({user}) => {
                 }
             }).then(resp=>{
                 navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
+            }).catch(error => {
+                console.log(error.response.data.error);
             })
         }
 

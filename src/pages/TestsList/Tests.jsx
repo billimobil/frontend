@@ -43,9 +43,6 @@ const Tests = () => {
                 <NavLink to={"/attention-and-concentration-test"}>
                     <div className={cs.tests__block}>Внимание</div>
                 </NavLink>
-                <NavLink to={"/memory-test"}>
-                    <div className={cs.tests__block}>Кратковременная память</div>
-                </NavLink>
             </div>
         </div>
     );
