@@ -118,3 +118,18 @@ hr {
     height: 30px;
     width: 50px;
 }
+
+.resultBlock {
+    align-self: flex-start;
+    margin-top: 1em;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+.result {
+    border: 1px solid black;
+    padding: 1em;
+    min-width: 10em;
+    max-width: 20em;
+}

@@ -85,7 +85,7 @@ const LightReactionTest = ({user}) => {
 
     return (
         <div className={cs.wrapper}>
-            <h1>Оценка простых сенсомоторных реакций &nbsp;<div className={cs.underline}>на свет</div></h1>
+            <h1 style={{marginTop: 150}}>Оценка простых сенсомоторных реакций &nbsp;<div className={cs.underline}>на свет</div></h1>
             <hr/>
             <p>Ваша задача: максимально быстро нажать кнопку после появления светового сигнала</p>
             <div style={{marginBottom: 15, width: 608, height: 253, background: color}}></div>

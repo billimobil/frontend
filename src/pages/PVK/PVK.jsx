@@ -7,56 +7,14 @@ import { useParams } from 'react-router-dom';
 const Pvk = ({user}) => {
     const { id } = useParams();
     // const [profession, setProfession] = useState(null);
-    const [pvk, setPVK] = useState([]);
     const [error, setError] = useState('');
     const [clicked, setClicked] = useState([]);
-
-    useEffect(() => {
-        // console.log(id);
-        // axios.get(`http://188.225.74.17:8080/api/v1/getProfession`, {
-        //         params: {
-        //             id: id,
-        //             session_token: user.session_token,
-        //         },
-        //     })
-        //     .then((resp) => {
-        //         setProfession(resp.data.data);
-        //     })
-        //     .catch((e) => {
-        //         setError(e.response.data.error);
-        //     });
-
-        axios
-            .get('http://188.225.74.17:8080/api/v1/getPVKList')
-            .then((response) => {
-                setPVK(response.data.data);
-            })
-            .catch((err) => {
-                setError(err);
-            });
-    }, [id]);
-
-    // function clickPvk(event, key) {
-    //     console.log(event.target.style.background, key);
-    //     if (event.target.style.background !== '') {
-    //         // colored
-    //         setClicked(clicked.filter((v) => v !== key));
-    //         event.target.style.background = '';
-    //         return;
-    //     }
-    //     if (clicked.length === 10) {
-    //         return;
-    //     }
-    //     setClicked([...clicked, key]);
-    //
-    //     const updatedPVK = pvk.map((elem) =>
-    //         elem.id === key ? { ...elem, order: 0 } : { ...elem, order: elem.order + 1 }
-    //     );
-    //     updatedPVK.sort((a, b) => a.order - b.order);
-    //     setPVK(updatedPVK);
-    //
-    //     event.target.style.background = 'red';
-    // }
+    var pvk = ["Креативность", "Способность к зрительным представлениям",
+        "Умственная работоспособность", "Аккуратность", "Глазомер: линейный, угловой, объемный", "Переключаемость внимания", "Образность",
+        "Предусмотрительность", "Умение подмечать незначительные изменения", "Способность к распознаванию небольших отклонений параметров по визуальным признакам",
+        "Оперативность", "Способность к переводу образа в словесное состояние", "Способность планировать свою деятельность во времени",
+        "Зрительная оценка размеров предметов", "Способность к пространственному воображению", "Способность к воссозданию образа по словесному описанию",
+        "Способность к распределению внимания между несколькими видами деятельность", "Предметность"]
 
     return (
         <div className={cs.wrapper}>
@@ -64,21 +22,42 @@ const Pvk = ({user}) => {
                 <div className="error">{error}</div>
             ) : (
                 <>
-                    <div className={cs.head}>
-                        {/*<h2>{profession ? profession.name : 'Загружаем данные....'}</h2>*/}
-                        <p>Список ПВК</p>
+                    <h1 className={cs.head}>Результаты вашего тестирования</h1>
+
+                    <div className={cs.match}>
+                        <div className={cs.match__block}>
+                            <div className={cs.match__block__item}>Ваша совместимость с профессией: Веб-дизайнер</div>
+                            <b><div className={cs.match__block__item}>{getRandomInt(30, 80)}%</div></b>
+                        </div>
+                        <div className={cs.match__block}>
+                            <div className={cs.match__block__item}>Ваша совместимость с профессией: Веб-дизайнер</div>
+                            <b><div className={cs.match__block__item}>{getRandomInt(30, 80)}%</div></b>
+                        </div>
+                        <div className={cs.match__block}>
+                            <div className={cs.match__block__item}>Ваша совместимость с профессией: Веб-дизайнер</div>
+                            <b><div className={cs.match__block__item}>{getRandomInt(30, 80)}%</div></b>
+                        </div>
                     </div>
 
-                    {pvk.map((elem) => (
-                        <div key={elem.id} className={cs.pvk}>
-                            <p className={`${cs.pvk__name} ${cs.border}`}>{elem.name}</p>
-                        </div>
-                    ))}
-                    <Button>Сохранить результат</Button>
+
+                    <div className={cs.pvk__block}>
+                        {pvk.map((elem) => (
+                            <div className={cs.pvk}>
+                                <p className={`${cs.pvk__name} ${cs.border}`}>{elem}</p>
+                                <p>{getRandomInt(50, 70)}%</p>
+                            </div>
+                        ))}
+                    </div>
                 </>
             )}
         </div>
     );
 };
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 export default Pvk;

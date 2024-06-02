@@ -17,12 +17,17 @@ function getCurrentTimestamp() {
     return Number(Math.floor(new Date().getTime() / 1000))
 }
 
+function getDistance(x2, x1, y2, y1) {
+    return Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2))
+}
+
 function getDistancePx(color) {
     let elements = document.getElementsByClassName(color);
     let object = getOffset(elements[0]);
     let line = getOffset(elements[1]);
-
-    let distancePx = Math.abs(line.x - object.x) + Math.abs(line.y - object.y);
+    
+    var distancePx = getDistance(line.x, object.x, line.y, object.y)
+    distancePx = Number(distancePx.toFixed(0) * 0.75);
     return Number(distancePx.toFixed(0));
 }
 

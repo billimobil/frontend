@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import cs from "../LightReactionTest/LightReactionTest.module.css";
 import Button from "../../../components/UI/Button/Button";
 import {useAudio} from "../../../hooks/useAudio";
@@ -15,6 +15,7 @@ const SoundReactionTest = ({user}) => {
     const [reactionsMs, setReactionsMs] = useState([]);
     const [avgReactionMs, setAvgReactionMs] = useState(0)
     const [testStarted, setTestStarted] = useState(false);
+
     function recalculateAvgReactionTime() {
         let length = reactionsMs.length;
         if (length !== 0) {
@@ -82,7 +83,7 @@ const SoundReactionTest = ({user}) => {
     }
     return (
         <div className={cs.wrapper}>
-            <h1>Оценка простых сенсомоторных реакций&nbsp;<div className={cs.underline}>на простой звук</div></h1>
+            <h1 style={{marginTop: 150}}>Оценка простых сенсомоторных реакций&nbsp;<div className={cs.underline}>на простой звук</div></h1>
             <hr/>
             <p>Ваша задача: максимально быстро нажать кнопку после звукового сигнала</p>
             <div className={cs.helper}>

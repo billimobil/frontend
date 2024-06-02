@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import cs from "./MovingCircleTest.module.css"
 import Button from "../../../components/UI/Button/Button";
 import axios from "axios";
@@ -17,6 +17,10 @@ function getCurrentTimestamp() {
     return Number(Math.floor(new Date().getTime() / 1000))
 }
 
+function getDistance(x2, x1, y2, y1) {
+    return Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2))
+}
+
 const MovingCircleTest = ({user}) => {
     const testID = 3;
     const navigate = useNavigate();
@@ -29,6 +33,7 @@ const MovingCircleTest = ({user}) => {
 
     const [minutesLeft, setMinutesLeft] = useState(1);
     const [secondsLeft, setSecondsLeft] = useState(0);
+
 
     var i = 15;
     let endTime = -1;
@@ -84,6 +89,7 @@ const MovingCircleTest = ({user}) => {
         }
 
         react((distance)=>{ // waiting for reaction
+            console.log(distance)
             // Saving received distance
             distances.push(distance);
             setDistances(distances);
@@ -115,11 +121,10 @@ const MovingCircleTest = ({user}) => {
                 document.removeEventListener('keydown', onKeyHandler);
 
                 // Calculating distance between circle and the crossline
-                let lineRect = document.getElementsByClassName(cs.crossline)[0];
-                let objectRect = document.getElementsByClassName(cs.object)[0];
-                var distancePx = Math.abs(getOffset(lineRect).x - getOffset(objectRect).x) + Math.abs(getOffset(lineRect).y - getOffset(objectRect).y);
-                distancePx = Number(distancePx.toFixed(0));
-
+                let line = getOffset(document.getElementsByClassName(cs.crossline)[0]);
+                let object = getOffset(document.getElementsByClassName(cs.object)[0]);
+                var distancePx = getDistance(line.x, object.x, line.y, object.y)
+                distancePx = Number(distancePx.toFixed(0) * 0.75);
                 if (distancePx < 50) { // color display
                     setKeyColor('#59fe20')
                 } else {
@@ -136,7 +141,7 @@ const MovingCircleTest = ({user}) => {
 
     return (
         <div className={cs.wrapper}>
-            <h1>Оценка простых сенсомоторных реакций &nbsp;<div className={cs.underline}>на движущийся объект</div></h1>
+            <h1 style={{marginTop: 150}}>Оценка простых сенсомоторных реакций &nbsp;<div className={cs.underline}>на движущийся объект</div></h1>
             <hr/>
             <p>Ваша задача: следить за движующимся объекта, стремясь нажимать кнопку (W) как можно ближе к отмеченной риске</p>
             <div className={cs.circle}>
@@ -184,7 +189,6 @@ const MovingCircleTest = ({user}) => {
                 <p>Средний промах: {avgDistances.toFixed(0)} px</p>
                 <p>Осталось сигналов: {signalsCount}</p>
             </div>
-
         </div>
     );
 };

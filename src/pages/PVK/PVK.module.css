@@ -5,36 +5,39 @@
     justify-content: center;
     align-items: center;
     align-self: center;
-    width: 750px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.underline {
+
 }
 
 .head {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    color: blue;
-    margin-top: 3em;
-    margin-bottom: 3em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    /*font-size: inherit;*/
+    border-bottom: 2px solid black;
 }
 
 .pvk__block {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     width: 100%;
-    /*overflow-y: scroll;*/
 }
 .pvk {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     margin-bottom: 1em;
     cursor: pointer;
     border: 1px solid black;
     padding: 1em;
+    max-width: 20em;
 }
 
 .pvk__name {
     color: black;
 }
-
 
 .pvk__name {
     width: 650px;
@@ -44,4 +47,29 @@ input {
     max-width: 50px;
     max-height: 50px;
     padding: 1.4em;
+}
+
+.match {
+    display: flex;
+    padding-right: 6em;
+    /*display: grid;*/
+    /*grid-template-columns: repeat(3, 1fr);*/
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.match__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    padding: 1em;
+    max-width: 24em;
+    /*gap: 1em;*/
+}
+
+.match__block__item {
+    color: white;
+    max-width: 15em;
 }
