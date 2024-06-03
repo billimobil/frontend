@@ -25,22 +25,25 @@ function ResultsOfPersons({ user }) {
 
     return (
         <div className={cs.wrapper}>
-            {/* Каждый человек будет в своем отдельном блоке */}
-            {users.map((person) => (
-                <div className={cs.resultsPerson_block} key={person.id}>
-                    <div className={cs.contentTopLeft}>
-                    <div >Имя: {person.first_name}</div>
-                    <div >Фамилия: {person.last_name}</div>
-                    <div >Email: {person.email}</div>
-                    <div >Группа: {person.group}</div>
-                    <div >ИСУ: {person.isu}</div>
+            <h1 className={cs.head}>Результаты тестов</h1>
+            <div className={cs.users}>
+                {users.map((person) => (
+                    <div className={cs.resultsPerson_block} key={person.id}>
+                        <div className={cs.contentTopLeft}>
+                            <div >Имя: {person.first_name}</div>
+                            <div >Фамилия: {person.last_name}</div>
+                            <div >Email: {person.email}</div>
+                            <div >Группа: {person.group}</div>
+                            <div >ИСУ: {person.isu}</div>
+                        </div>
+
+                        <div className={cs.contentBottomRight}>
+                            <Link className={cs.buttonResult} to={`/ResultsOfTests/${person.id}`}>Результаты тестов</Link>
+                        </div>
                     </div>
-                    
-                    <div className={cs.contentBottomRight}>
-                        <Link className={cs.buttonResult} to={`/ResultsOfTests/${person.id}`}>Результаты тестов</Link>
-                    </div>
-                </div>
-            ))}
+                ))}
+            </div>
+
         </div>
     );
 }

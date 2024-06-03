@@ -32,6 +32,7 @@ import AttentionAndConcentrationTest from "./pages/tests/AttentionAndConcentrati
 import EasyTest from "./pages/tests/ThinkingTest/EasyTest/EasyTest";
 import HardTest from "./pages/tests/ThinkingTest/HardTest/HardTest";
 import Pulse from "./pages/Pulse/Pulse"
+import Footer from "./components/UI/Footer/Footer";
 function App() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
     useEffect(()=>{
@@ -88,6 +89,7 @@ function App() {
                     }
                 </Routes>
             </div>
+            <Footer/>
         </BrowserRouter>
     );
 }

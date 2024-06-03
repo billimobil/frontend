@@ -25,6 +25,8 @@ body {
   justify-self: flex-end;
   min-height: 92dvh;
   width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 u {
@@ -40,8 +42,7 @@ u {
   min-height: 100dvh;
   width: 100%;
 
-  padding-left: 40px;
-  padding-right: 40px;
+
 }
 
 h1 {

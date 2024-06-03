@@ -9,8 +9,10 @@
     justify-self: flex-start;
     align-self: flex-start;
     justify-content: space-between;
-    margin-bottom: 1em;
     width: 100%;
+    padding-right: 2em;
+    padding-left: 2em;
+    margin-top: 0.5em;
 }
 
 .logo {

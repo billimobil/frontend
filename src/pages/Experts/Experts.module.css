@@ -5,6 +5,7 @@
     justify-content: center;
     height: 100%;
     width: 100%;
+    margin-top: 3em;
 }
 
 .title {
@@ -13,6 +14,11 @@
 
 .experts {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px #0E0E0E solid;
 }
 
 .expert {
@@ -21,9 +27,33 @@
     align-items: center;
     width: 100%;
     min-height: 7vh;
-    border-bottom: 1px #0E0E0E solid;
+    /*border-bottom: 1px #0E0E0E solid;*/
     border-top: 1px #0E0E0E solid;
+    /*padding-top: 0.5em;*/
+    /*padding-bottom: 0.5em;*/
 }
-.expert > p {
-    margin: 0;
+
+.expert__child {
+    display: flex;
+    align-items: center;
+    max-width: 10em;
+    gap: 1em;
+}
+
+.expert__child__name {
+    position: absolute;
+    left: 120px;
+}
+
+.expert__child__avatar {
+    max-width: 50px;
+    border-radius: 50%;
+}
+
+.pink {
+    border: 2px solid hotpink;
+}
+
+.blue {
+    border: 2px solid deepskyblue;
 }

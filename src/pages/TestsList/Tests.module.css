@@ -5,12 +5,17 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-    gap: 4em;
+    /*gap: 4em;*/
+    /*margin: 5em;*/
+    margin-top: 3em;
 }
 
 .tests {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 2em;
     flex-wrap: wrap;
+    width: 100%;
     gap: 1em;
 }
 

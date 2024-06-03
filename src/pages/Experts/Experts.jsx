@@ -16,14 +16,21 @@ const Experts = () => {
     return (
         <div className={cs.wrapper}>
             <h1 className={cs.title}>Эксперты</h1>
+            {error
+                ? <div className="error">{error}</div>
+                : <></>
+            }
             <div className={cs.experts}>
                 {
                     experts ?
-                    experts.map(elem=>(
-                        <div className={cs.expert}>
-                            <p>{elem.first_name} {elem.last_name}</p>
-                            <p>{elem.group}</p>
-                            <p>ISU:{elem.isu}</p>
+                    experts.map((elem, index)=>(
+                        <div key={index} className={cs.expert}>
+                            <div className={cs.expert__child} style={{display: "flex"}}>
+                                <img className={elem.male ? cs.expert__child__avatar + " " + cs.blue : cs.expert__child__avatar + " " + cs.pink} alt={`${elem.first_name} ${elem.last_name}`} src={"http://188.225.74.17:8080"+elem.avatar_url}/>
+                                <p className={cs.expert__child__name}>{elem.first_name} {elem.last_name}</p>
+                            </div>
+                            <p className={cs.expert__child}>{elem.group}</p>
+                            <p className={cs.expert__child}>ISU:{elem.isu}</p>
                         </div>
                     ))
                     : <></>
