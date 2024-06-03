@@ -40,7 +40,7 @@ const ResultsOfPersonTests = ({ user }) => {
                     <div key={index} className={cs.resultBlock}>
                         <div>Название теста: {getTestName(result.TestID)}</div>
                         <div>Попытки: {result.Attempts.map((a) => (a ? "1" : "0")).join(", ")}</div>
-                        <div>Реакции: {result.Reactions.map((r) => r).join(", ")}</div>
+                        <div>Реакции: {result.Reactions.map((r) => Math.abs(r)).join(", ")} </div>
                         <div>Время: {new Date(result.Time * 1000).toLocaleString()}</div>
                     </div>
                 ))

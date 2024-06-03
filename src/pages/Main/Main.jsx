@@ -29,9 +29,9 @@ const Main = ({user}) => {
                     <>
                         <NavLink to={`/professions/`+elem.id}>
                             <div className={cs.profession}>
-                                <h2>{elem.name}</h2>
-                                <p>{elem.description}</p>
-                                <img src={img1}/>
+                                <h2 className={cs.profession__child}>{elem.name}</h2>
+                                <p className={cs.profession__child}>{elem.description}</p>
+                                <img className={cs.profession__child} src={"http://188.225.74.17:8080" + elem.photo_url}/>
                             </div></NavLink>
                         <NavLink to={"/updateProfession/"+elem.id}><Button>Редактировать</Button></NavLink>
                     </>

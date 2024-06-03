@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 4em;
 }
 
 .wrapper > h1 {
@@ -14,7 +15,8 @@
     display: flex;
     flex-direction: column;
     border-top: 3px solid black;
-    border-bottom: 3px solid black;
+    /*border-bottom: 3px solid black;*/
+    gap: 1em;
 }
 
 .profession {
@@ -24,7 +26,7 @@
     column-gap: 3em;
     margin-top: 2em;
     padding-bottom: 1em;
-    border-bottom: 1px solid black;
+    /*border-bottom: 1px solid black;*/
 }
 
 .profession > h2 {
@@ -36,5 +38,11 @@
 }
 
 .profession > img {
-    max-height: 10em;
+    overflow: hidden;
+    max-width: 19em;
+    /*height: 13em;*/
+}
+
+.profession__child {
+    /*width: 4em;*/
 }
