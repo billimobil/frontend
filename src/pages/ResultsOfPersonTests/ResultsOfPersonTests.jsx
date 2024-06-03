@@ -32,7 +32,7 @@ const ResultsOfPersonTests = ({ user }) => {
 
     return (
         <div className={cs.wrapper}>
-            <h1>Результаты тестов для пользователя с ID: {user_id}</h1> {/* Используем полученный user_id */}
+            <h1 className={cs.head}>Результаты тестов для пользователя с ID: {user_id}</h1> {/* Используем полученный user_id */}
             {results.length === 0 ? (
                 <p>Нет результатов для данного пользователя и теста.</p> // Если нет данных
             ) : (

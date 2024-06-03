@@ -38,6 +38,11 @@
     align-items: center;
     max-width: 10em;
     gap: 1em;
+    margin-top: 0.3em;
+}
+
+.expert__child > p {
+    color: black;
 }
 
 .expert__child__name {
