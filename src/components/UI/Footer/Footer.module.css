@@ -7,11 +7,12 @@
     color: white;
     margin-top: 2em;
     padding-top: 2em;
-    gap: 0.5em;
+    /*gap: 0.5em;*/
 }
 
 .text {
     color: white;
+    margin: 0.5em;
 }
 
 .avatars {
@@ -22,7 +23,6 @@
 .avatars__item {
     border-radius: 50%;
     max-width: 70px;
-    /*border: 2px dashed pink;*/
 }
 
 .pink {
