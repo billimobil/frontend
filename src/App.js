@@ -18,7 +18,6 @@ import VisualAdditionTest from "./pages/tests/VisualAdditionTest/VisualAdditionT
 import SoundAdditionTest from "./pages/tests/SoundAdditionTest/SoundAdditionTest";
 import MovingObjectTest from "./pages/tests/SimpleMovingObjectTest/SimpleMovingObjectTest";
 import MovingObjectWithFollowing from "./pages/tests/MovingObjectWithFollowing/MovingObjectWithFollowing";
-import UserTestsResults from "./pages/adminPanel/UserTestsResults/UserTestsResults";
 import AddProfession from "./pages/AddProfession/AddProfession";
 import Profession from "./pages/Profession/Profession";
 import ResultsOfPerson from "./pages/ResultsOfPerson/ResultsOfPerson";
@@ -84,7 +83,6 @@ function App() {
                             <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>
                             <Route path="/ResultsOfTests/:user_id" element={<ResultsOfTests user={user}/>}/>
                             <Route path="/ResultsOfPersonTests/:user_id/:test_id" element={<ResultsOfPersonTests user={user}/>}/>
-                            <Route path="/admin/user-tests-results"  element={<UserTestsResults/>}/>
                             <Route path="/admin/graph" element={<InfoGraphSelection/>}/>
                         </>
                         :
