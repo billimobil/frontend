@@ -12,7 +12,6 @@ const Main = ({user}) => {
     useEffect(()=>{
         axios.get("http://188.225.74.17:8080/api/v1/getProfessions").then(response=>{
             setProfessions(response.data.data)
-            console.log(professions)
         }).catch(err=>setError(error.response.data.error))
     }, [])
 

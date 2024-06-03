@@ -3,7 +3,6 @@ import {useNavigate} from "react-router-dom";
 
 const Exit = ({setUser}) => {
     setUser(null)
-
     const navigate = useNavigate();
     navigate("/");
 };
