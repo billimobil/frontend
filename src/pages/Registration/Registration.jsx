@@ -34,15 +34,7 @@ const Registration = ({setUser}) => {
             }
         }).then(response=>{
             setError('')
-            setUser({
-                'email': response.data.email,
-                'id': response.data.id,
-                'first_name': response.data.first_name,
-                'last_name': response.data.last_name,
-                'session_token': response.data.session_token,
-                'birth_year': response.data.birth_year,
-                'male': response.data.male,
-            })
+            setUser(response.data)
             navigate("/")
             console.log(response)
         }).catch(error=>{

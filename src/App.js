@@ -22,8 +22,6 @@ import UserTestsResults from "./pages/adminPanel/UserTestsResults/UserTestsResul
 import AddProfession from "./pages/AddProfession/AddProfession";
 import Profession from "./pages/Profession/Profession";
 import ResultsOfPerson from "./pages/ResultsOfPerson/ResultsOfPerson";
-import InfoGraphPage from "./pages/InfoGraph/InfoGraphPage";
-import GraphPage from "./pages/Graph/GraphPage";
 import UpdateProfession from "./pages/UpdateProfession/UpdateProfession";
 import MovingCircleTest from "./pages/tests/MovingCircleTest/MovingCircleTest";
 import MovingMultipleCirclesTest from "./pages/tests/MovingMultipleCirclesTest/MovingMultipleCirclesTest";
@@ -35,6 +33,8 @@ import EasyTest from "./pages/tests/ThinkingTest/EasyTest/EasyTest";
 import HardTest from "./pages/tests/ThinkingTest/HardTest/HardTest";
 import Pulse from "./pages/Pulse/Pulse"
 import Footer from "./components/UI/Footer/Footer";
+import InfoGraphSelection from "./pages/InfoGraphSelection/InfoGraphSelection";
+import InfoGraphPage from "./pages/InfoGraphPage/InfoGraphPage";
 function App() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
     useEffect(()=>{
@@ -79,12 +79,13 @@ function App() {
 
                             <Route path="/results"  element={<Results/>}/>
                             <Route path="/Pulse" element={<Pulse/>}/>
+                            <Route path="/infograph" element={<InfoGraphSelection/>}/>
+                            <Route path="/infograph/:id" element={<InfoGraphPage/>}/>
                             <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>
                             <Route path="/ResultsOfTests/:user_id" element={<ResultsOfTests user={user}/>}/>
                             <Route path="/ResultsOfPersonTests/:user_id/:test_id" element={<ResultsOfPersonTests user={user}/>}/>
                             <Route path="/admin/user-tests-results"  element={<UserTestsResults/>}/>
-                            <Route path="/admin/graph" element={<InfoGraphPage/>}/>
-                            <Route path="/admin/graph/:id" element={<GraphPage/>}/>
+                            <Route path="/admin/graph" element={<InfoGraphSelection/>}/>
                         </>
                         :
                         <>

@@ -20,13 +20,7 @@ const Login = ({setUser}) => {
             }
         }).then(response=>{
             setError('')
-            setUser({
-                'id': response.data.id,
-                'email': response.data.email,
-                'first_name': response.data.first_name,
-                'last_name': response.data.last_name,
-                'session_token': response.data.session_token
-            })
+            setUser(response.data)
             navigate("/")
             console.log(response)
         }).catch(error=>{
