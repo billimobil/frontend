@@ -28,7 +28,7 @@ const SoundReactionTest = ({user}) => {
     var i = 15
     const [signalsCount, setSignalsCount] = useState(i)
 
-    const startTest = () => { // TODO fix bug that appears when start button is pressed few times
+    const startTest = () => {
         setAColor('')
         setDColor('')
 
@@ -44,9 +44,7 @@ const SoundReactionTest = ({user}) => {
         setTimeout(()=>{audio2.play()}, 1200)
         setTimeout(()=>{audio3.play()}, 1600)
 
-        // TODO: звуки не перестают играть, и нажатия W/D не перестают считываться после выхода из этой страницы
         if (i <= 0) {
-            // TODO тут отправляем результаты на бэк, ждем их сохранения и идем смотреть результаты
             setTestStarted(false);
             axios.get("http://188.225.74.17:8080/api/v1/saveUserTestResult", {
                 params: {

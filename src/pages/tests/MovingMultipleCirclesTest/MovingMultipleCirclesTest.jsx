@@ -104,7 +104,7 @@ const MovingMultipleCirclesTest = ({user}) => {
 
     function react(callback) {
         // Starting listening for keypress
-        document.addEventListener('keydown', onKeyHandler); // TODO считать слишком ранние ответы неправильными
+        document.addEventListener('keydown', onKeyHandler);
         function onKeyHandler(e) {
             // Filtering keycodes
             if (![65, 83, 68].includes(e.keyCode)) {
@@ -142,7 +142,6 @@ const MovingMultipleCirclesTest = ({user}) => {
             callback(distance);
         }
     }
-    // TODO select test duration
 
     return (
         <div className={cs.wrapper}>

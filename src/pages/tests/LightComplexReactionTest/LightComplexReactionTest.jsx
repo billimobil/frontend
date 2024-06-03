@@ -25,7 +25,7 @@ const LightReactionTest = ({user}) => {
 
     var i = 15
     const [signalsCount, setSignalsCount] = useState(i)
-    function startTest() { // TODO fix bug that appears when start button is pressed few times
+    function startTest() {
         if (i <= 0) {
             setReactionsMs([]);
             axios.get("http://188.225.74.17:8080/api/v1/saveUserTestResult", {

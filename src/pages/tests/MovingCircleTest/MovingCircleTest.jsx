@@ -103,7 +103,7 @@ const MovingCircleTest = ({user}) => {
 
     function react(callback) {
         // Starting listening for keypress
-        document.addEventListener('keydown', onKeyHandler); // TODO считать слишком ранние ответы неправильными
+        document.addEventListener('keydown', onKeyHandler);
         function onKeyHandler(e) {
             if (e.keyCode === 87) {
                 // Stopping listening
@@ -127,7 +127,6 @@ const MovingCircleTest = ({user}) => {
             }
         }
     }
-    // TODO select test duration
 
     return (
         <div className={cs.wrapper}>

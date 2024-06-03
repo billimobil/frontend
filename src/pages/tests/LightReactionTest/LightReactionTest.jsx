@@ -22,7 +22,7 @@ const LightReactionTest = ({user}) => {
 
     let i = 15
     const [signalsCount, setSignalsCount] = useState(i)
-    function startTest() { // TODO fix bug that appears when start button is pressed few times
+    function startTest() {
         if (i <= 0) {
             setReactionsMs([]);
 
@@ -61,7 +61,7 @@ const LightReactionTest = ({user}) => {
             colorDisplayed = true
         }, getRandomInt(1000, 3000));
 
-        document.addEventListener('keydown', onKeyHandler); // TODO считать слишком ранние ответы неправильными
+        document.addEventListener('keydown', onKeyHandler);
         function onKeyHandler(e) {
             if (e.keyCode === 87) {
                 var end = performance.now();
