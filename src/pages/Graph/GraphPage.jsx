@@ -14,7 +14,7 @@ function GraphPage() {
       try {
         const response = await axios.get(`/api/v1/getGraph/${id}`);
         const data = response.data.data;
-        
+
         if (data && data.male && data.female) {
           const maleData = data.male;
           const femaleData = data.female;

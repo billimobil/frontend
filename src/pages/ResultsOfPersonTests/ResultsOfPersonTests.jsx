@@ -10,19 +10,22 @@ const ResultsOfPersonTests = ({ user }) => {
     const [results, setResults] = useState([]);
 
     useEffect(() => {
-        axios.get("http://188.225.74.17:8080/api/v1/getUserTestResults", {
+        axios
+            .get("http://188.225.74.17:8080/api/v1/getUserTestResults", {
                 params: {
                     session_token: user.session_token,
                     test_id,
                     user_id,
                 },
-            }).then((resp) => {
+            })
+            .then((resp) => {
                 if (resp.data.ok) {
                     setResults(resp.data.data);
                 } else {
                     console.error("Ошибка при получении результатов тестов");
                 }
-            }).catch((e) => {
+            })
+            .catch((e) => {
                 console.error("Ошибка при запросе данных:", e);
             });
     }, [user.session_token, user_id, test_id]);

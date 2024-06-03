@@ -12,6 +12,7 @@ import PVK from "./pages/PVK/PVK";
 import Tests from "./pages/TestsList/Tests";
 import LightReactionTest from "./pages/tests/LightReactionTest/LightReactionTest";
 import SoundReactionTest from "./pages/tests/SoundReactionTest/SoundReactionTest";
+import Results from "./pages/Results/Results";
 import LightComplexReactionTest from "./pages/tests/LightComplexReactionTest/LightComplexReactionTest";
 import VisualAdditionTest from "./pages/tests/VisualAdditionTest/VisualAdditionTest";
 import SoundAdditionTest from "./pages/tests/SoundAdditionTest/SoundAdditionTest";
@@ -29,6 +30,7 @@ import MovingMultipleCirclesTest from "./pages/tests/MovingMultipleCirclesTest/M
 import ResultsOfTests from "./pages/ResultsOfTests/ResultsOfTests"
 import ResultsOfPersonTests from "./pages/ResultsOfPersonTests/ResultsOfPersonTests";
 import AttentionAndConcentrationTest from "./pages/tests/AttentionAndConcentrationTest/AttentionAndConcentrationTest";
+import MemoryTest from "./pages/tests/ShortTermMemoryTest/MemoryTest";
 import EasyTest from "./pages/tests/ThinkingTest/EasyTest/EasyTest";
 import HardTest from "./pages/tests/ThinkingTest/HardTest/HardTest";
 import Pulse from "./pages/Pulse/Pulse"
@@ -73,7 +75,9 @@ function App() {
                             <Route path="/attention-and-concentration-test"  element={<AttentionAndConcentrationTest user={user} />}/>
                             <Route path="/easy-thinking-test" element={<EasyTest user={user} />}/>
                             <Route path="/hard-thinking-test" element={<HardTest user={user} />}/>
+                            <Route path="/memory-test" element={<MemoryTest user={user} />}/>
 
+                            <Route path="/results"  element={<Results/>}/>
                             <Route path="/Pulse" element={<Pulse/>}/>
                             <Route path="/ResultsOfPerson" element={<ResultsOfPerson user={user}/>}/>
                             <Route path="/ResultsOfTests/:user_id" element={<ResultsOfTests user={user}/>}/>

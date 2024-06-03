@@ -179,7 +179,6 @@ const HardTest = (user) => {
   const currentTest = tests[currentTestIndex]; // Текущий тест
   
   const handlePieceClick = (piece) => {
-    const testID = 6;
     if (piece.isCorrect) {
       setResult('Правильно!');
       setCorrectAnswers(correctAnswers + 1); // Увеличиваем правильные ответы
@@ -198,7 +197,6 @@ const HardTest = (user) => {
             })
             .then(() => {
               navigate("/results"); // Переход на страницу результатов
-              navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
             })
             .catch((error) => {
               console.error("Ошибка при отправке данных:", error); // Обработка ошибок

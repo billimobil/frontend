@@ -17,10 +17,6 @@ function getCurrentTimestamp() {
     return Number(Math.floor(new Date().getTime() / 1000))
 }
 
-function getDistance(x2, x1, y2, y1) {
-    return Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2))
-}
-
 const MovingCircleTest = ({user}) => {
     const testID = 3;
     const navigate = useNavigate();
@@ -33,7 +29,6 @@ const MovingCircleTest = ({user}) => {
 
     const [minutesLeft, setMinutesLeft] = useState(1);
     const [secondsLeft, setSecondsLeft] = useState(0);
-
 
     var i = 15;
     let endTime = -1;
@@ -60,9 +55,7 @@ const MovingCircleTest = ({user}) => {
                 reactions: JSON.stringify(distances)
             }
         }).then(resp=>{
-            navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
-        }).catch(error => {
-            console.log(error.response.data.error);
+            navigate("/results");
         })
     }
 
@@ -71,8 +64,7 @@ const MovingCircleTest = ({user}) => {
             setTestStarted(true);
             endTime = getCurrentTimestamp() + Number(minutesLeft) * 60 + Number(secondsLeft);
             intervalID = setInterval(countSecond, 1000)
-        }
-        if (i === 0) {
+
             axios.get("http://188.225.74.17:8080/api/v1/saveUserTestResult", {
                 params: {
                     user_id: user.id,
@@ -83,13 +75,10 @@ const MovingCircleTest = ({user}) => {
                 }
             }).then(resp=>{
                 navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
-            }).catch(error => {
-                console.log(error.response.data.error);
             })
         }
 
         react((distance)=>{ // waiting for reaction
-            console.log(distance)
             // Saving received distance
             distances.push(distance);
             setDistances(distances);
@@ -121,10 +110,11 @@ const MovingCircleTest = ({user}) => {
                 document.removeEventListener('keydown', onKeyHandler);
 
                 // Calculating distance between circle and the crossline
-                let line = getOffset(document.getElementsByClassName(cs.crossline)[0]);
-                let object = getOffset(document.getElementsByClassName(cs.object)[0]);
-                var distancePx = getDistance(line.x, object.x, line.y, object.y)
-                distancePx = Number(distancePx.toFixed(0) * 0.75);
+                let lineRect = document.getElementsByClassName(cs.crossline)[0];
+                let objectRect = document.getElementsByClassName(cs.object)[0];
+                var distancePx = Math.abs(getOffset(lineRect).x - getOffset(objectRect).x) + Math.abs(getOffset(lineRect).y - getOffset(objectRect).y);
+                distancePx = Number(distancePx.toFixed(0));
+
                 if (distancePx < 50) { // color display
                     setKeyColor('#59fe20')
                 } else {
@@ -141,7 +131,7 @@ const MovingCircleTest = ({user}) => {
 
     return (
         <div className={cs.wrapper}>
-            <h1 style={{marginTop: 150}}>Оценка простых сенсомоторных реакций &nbsp;<div className={cs.underline}>на движущийся объект</div></h1>
+            <h1>Оценка простых сенсомоторных реакций &nbsp;<div className={cs.underline}>на движущийся объект</div></h1>
             <hr/>
             <p>Ваша задача: следить за движующимся объекта, стремясь нажимать кнопку (W) как можно ближе к отмеченной риске</p>
             <div className={cs.circle}>
@@ -189,6 +179,7 @@ const MovingCircleTest = ({user}) => {
                 <p>Средний промах: {avgDistances.toFixed(0)} px</p>
                 <p>Осталось сигналов: {signalsCount}</p>
             </div>
+
         </div>
     );
 };

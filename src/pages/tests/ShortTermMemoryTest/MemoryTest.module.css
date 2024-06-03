@@ -1,0 +1,142 @@
+/*.div,*/
+/*.div * {*/
+/*  box-sizing: border-box;*/
+/*}*/
+/*.div {*/
+/*  background: #0e0e0e;*/
+/*  height: 810px;*/
+/*  position: relative;*/
+/*  overflow: hidden;*/
+/*}*/
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.testName {
+  color: #0e0e0e;
+  text-align: left;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 135px);
+  top: calc(10% + 3px);
+}
+.testDescription {
+  color: #0e0e0e;
+  text-align: center;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  width: 500px;
+  height: 50px;
+  position: absolute;
+  left: calc(50% - 256px);
+  top: calc(50% - 302px);
+}
+.lineUnderTestName {
+  background: #0e0e0e;
+  width: 90vw;
+  height: 2px;
+  position: absolute;
+  left: calc(50% - 860px);
+  top: calc(50% - 338px);
+}
+.startButton {
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 19px;
+  color: #0E0E0E;
+  text-align: center;
+  line-height: 48px;
+  border-style: solid;
+  border-color: #0e0e0e;
+  border-width: 2px;
+  width: 650px;
+  height: 50px;
+  position: absolute;
+  left: calc(50% - 325px);
+  top: calc(50% + 130px);
+  cursor: pointer;
+}
+.startButton:hover {
+  background: rgba(213, 213, 213, 0.6);
+}
+.examplesLeft {
+  color: #0e0e0e;
+  text-align: center;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  position: absolute;
+  left: calc(50% - 100px);
+  top: calc(50% + 225px);
+}
+.numberSquare {
+  color: black;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 19px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 8px;
+  border: 2px solid #0e0e0e;
+  cursor: none;
+}
+.numbersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  position: absolute;
+  bottom: calc(50% + -150px);
+  left: calc(50% - 455px);
+  width: 900px;
+  height: 400px;
+  /*border: 2px solid #ffffff;*/
+}
+.timer {
+  color: black;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  position: absolute;
+  left: calc(50% - 80px);
+  top: calc(10% + 665px);
+}
+.userInput {
+  color: black;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  position: absolute;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  width: 450px;
+  height: 50px;
+  left: calc(50% - 225px);
+  top: calc(50% - 150px);
+}
+.input {
+  color: black;
+  font-family: "TtInterfaces-Medium", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  position: absolute;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  width: 450px;
+  height: 50px;
+  left: calc(50% - 205px);
+  top: calc(50% - -50px);
+}

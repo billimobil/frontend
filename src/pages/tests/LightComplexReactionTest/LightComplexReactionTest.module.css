@@ -4,16 +4,3 @@
     align-items: center;
     font-size: 30px;
 }
-
-.resultBlock {
-    align-self: flex-start;
-    margin-top: 1em;
-    display: flex;
-    gap: 1em;
-    flex-wrap: wrap;
-}
-.result {
-    border: 1px solid black;
-    padding: 1em;
-    min-width: 10em;
-}
