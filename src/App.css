@@ -41,8 +41,10 @@ u {
   height: 100%;
   min-height: 100dvh;
   width: 100%;
+}
 
-
+p {
+  margin: 0;
 }
 
 h1 {

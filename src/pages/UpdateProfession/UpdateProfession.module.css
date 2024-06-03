@@ -25,6 +25,10 @@ input {
     color: black;
 }
 
+p {
+    margin: 0;
+}
+
 .buttonContainer {
     display: flex;
     justify-content: center;
