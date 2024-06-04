@@ -90,151 +90,165 @@ const HardTest = (user) => {
       ],
     },
     {
-        id: 3,
-        image: img37,
-        pieces: [
-          { id: 1, image: img39, isCorrect: false },
-          { id: 3, image: img40, isCorrect: false },
-          { id: 4, image: img41, isCorrect: false },
-          { id: 2, image: img38, isCorrect: true },
-        ],
-      },
-      {
-        id: 4,
-        image: img42,
-        pieces: [
-          { id: 1, image: img43, isCorrect: true },
-          { id: 2, image: img44, isCorrect: false },
-          { id: 3, image: img45, isCorrect: false },
-          { id: 4, image: img46, isCorrect: false },
-        ],
-      },
-      {
-        id: 6,
-        image: img47,
-        pieces: [
-          { id: 1, image: img49, isCorrect: false },
-          { id: 2, image: img50, isCorrect: false },
-          { id: 3, image: img48, isCorrect: true },
-          { id: 4, image: img51, isCorrect: false },
-        ],
-      },
-      {
-        id: 6,
-        image: img52,
-        pieces: [
-          { id: 1, image: img54, isCorrect: false },
-          { id: 2, image: img55, isCorrect: false },
-          { id: 3, image: img56, isCorrect: false },
-          { id: 4, image: img53, isCorrect: true },
-        ],
-      },
-      {
-        id: 7,
-        image: img57,
-        pieces: [
-          { id: 1, image: img58, isCorrect: true },
-          { id: 2, image: img59, isCorrect: true },
-          { id: 3, image: img60, isCorrect: false },
-          { id: 4, image: img61, isCorrect: false },
-        ],
-      },
-      {
-        id: 8,
-        image: img62,
-        pieces: [
-          { id: 1, image: img63, isCorrect: false },
-          { id: 2, image: img65, isCorrect: false },
-          { id: 3, image: img64, isCorrect: true },
-          { id: 4, image: img66, isCorrect: false },
-        ],
-      },
-      {
-        id: 9,
-        image: img67,
-        pieces: [
-          { id: 1, image: img68, isCorrect: true },
-          { id: 2, image: img69, isCorrect: false },
-          { id: 3, image: img70, isCorrect: false },
-          { id: 4, image: img71, isCorrect: false },
-        ],
-      },
-      {
-        id: 10,
-        image: img72,
-        pieces: [
-          { id: 1, image: img74, isCorrect: false },
-          { id: 2, image: img75, isCorrect: true },
-          { id: 3, image: img76, isCorrect: false },
-          { id: 4, image: img73, isCorrect: true },
-        ],
-      },
+      id: 3,
+      image: img37,
+      pieces: [
+        { id: 1, image: img39, isCorrect: false },
+        { id: 3, image: img40, isCorrect: false },
+        { id: 4, image: img41, isCorrect: false },
+        { id: 2, image: img38, isCorrect: true },
+      ],
+    },
+    {
+      id: 4,
+      image: img42,
+      pieces: [
+        { id: 1, image: img43, isCorrect: true },
+        { id: 2, image: img44, isCorrect: false },
+        { id: 3, image: img45, isCorrect: false },
+        { id: 4, image: img46, isCorrect: false },
+      ],
+    },
+    {
+      id: 6,
+      image: img47,
+      pieces: [
+        { id: 1, image: img49, isCorrect: false },
+        { id: 2, image: img50, isCorrect: false },
+        { id: 3, image: img48, isCorrect: true },
+        { id: 4, image: img51, isCorrect: false },
+      ],
+    },
+    {
+      id: 6,
+      image: img52,
+      pieces: [
+        { id: 1, image: img54, isCorrect: false },
+        { id: 2, image: img55, isCorrect: false },
+        { id: 3, image: img56, isCorrect: false },
+        { id: 4, image: img53, isCorrect: true },
+      ],
+    },
+    {
+      id: 7,
+      image: img57,
+      pieces: [
+        { id: 1, image: img58, isCorrect: true },
+        { id: 2, image: img59, isCorrect: true },
+        { id: 3, image: img60, isCorrect: false },
+        { id: 4, image: img61, isCorrect: false },
+      ],
+    },
+    {
+      id: 8,
+      image: img62,
+      pieces: [
+        { id: 1, image: img63, isCorrect: false },
+        { id: 2, image: img65, isCorrect: false },
+        { id: 3, image: img64, isCorrect: true },
+        { id: 4, image: img66, isCorrect: false },
+      ],
+    },
+    {
+      id: 9,
+      image: img67,
+      pieces: [
+        { id: 1, image: img68, isCorrect: true },
+        { id: 2, image: img69, isCorrect: false },
+        { id: 3, image: img70, isCorrect: false },
+        { id: 4, image: img71, isCorrect: false },
+      ],
+    },
+    {
+      id: 10,
+      image: img72,
+      pieces: [
+        { id: 1, image: img74, isCorrect: false },
+        { id: 2, image: img75, isCorrect: false },
+        { id: 3, image: img76, isCorrect: false },
+        { id: 4, image: img73, isCorrect: true },
+      ],
+    },
   ];
   const navigate = useNavigate();
   const [currentTestIndex, setCurrentTestIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0); // Для отслеживания правильных ответов
   const [result, setResult] = useState(null);
   const [selectedPiece, setSelectedPiece] = useState(null);
-  
+  const [answersLog, setAnswersLog] = useState([]);
+  const react = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+  const testID = 6;
+
   const currentTest = tests[currentTestIndex]; // Текущий тест
-  
+
   const handlePieceClick = (piece) => {
+    const testID = 6;
     if (piece.isCorrect) {
       setResult('Правильно!');
       setCorrectAnswers(correctAnswers + 1); // Увеличиваем правильные ответы
-      setTimeout(() => {
+        setAnswersLog(prevAnswersLog => [...prevAnswersLog, 1]);
+        console.log(answersLog);
+        setTimeout(() => {
         setResult(null);
         if (currentTestIndex < tests.length - 1) {
           setCurrentTestIndex(currentTestIndex + 1); // Переход к следующему тесту
         } else {
           // Если это последний тест, отправляем результаты на сервер
-          axios
-            .post("http://188.225.74.17:8080/api/v1/saveUserTestResult", {
-              user_id: user.id,
-              test_id: 6,
-              session_token: user.session_token,
-              correct_answers: correctAnswers, // Количество правильных ответов
-            })
-            .then(() => {
-              navigate("/results"); // Переход на страницу результатов
-            })
-            .catch((error) => {
-              console.error("Ошибка при отправке данных:", error); // Обработка ошибок
-            });
+          sendResultsToBackend();
         }
       }, 1000); // Задержка перед переходом
     } else {
       setResult('Неправильно.'); // Неправильный выбор
+        setAnswersLog(prevAnswersLog => [...prevAnswersLog, 0]);
+        console.log(answersLog);
     }
   };
 
+    const sendResultsToBackend =  () => {
+        try {
+            axios.get("http://188.225.74.17:8080/api/v1/saveUserTestResult", {
+                params: {
+                    user_id: user.id,
+                    session_token: user.session_token,
+                    test_id: testID,
+                    attempts: JSON.stringify(answersLog),
+                    reactions: JSON.stringify(react)
+                }
+            }).then(resp=>{
+                navigate(`/ResultsOfPersonTests/${user.id}/${testID}`);
+            })
+        } catch (error) {
+            console.log("Error sending results: ", error);
+        }
+    }
+
   return (
-    <div className={cs.wrapper}>
-      <h1>Найди недостающую деталь</h1>
-      <div className={cs.imageBlock}>
-        <img
-          src={currentTest.image} // Изображение текущего теста
-          alt="Изображение с вырезанной областью"
-          className={cs.cutoutImage}
-        />
-      </div>
-      <div className={cs.pieces}>
-        {currentTest.pieces.map((piece) => (
+      <div className={cs.wrapper}>
+        <h1>Найди недостающую деталь</h1>
+        <div className={cs.imageBlock}>
           <img
-            key={piece.id}
-            src={piece.image}
-            alt={`Piece ${piece.id}`}
-            className={`${cs.piece} ${selectedPiece === piece ? cs.selected : ''}`} // Выделение выбранного элемента
-            onClick={() => handlePieceClick(piece)}
+              src={currentTest.image} // Изображение текущего теста
+              alt="Изображение с вырезанной областью"
+              className={cs.cutoutImage}
           />
-        ))}
-      </div>
-      {result && (
-        <div className={cs.result}>
-          <p>{result}</p> {/* Отображение результата правильного/неправильного выбора */}
         </div>
-      )}
-    </div>
+        <div className={cs.pieces}>
+          {currentTest.pieces.map((piece) => (
+              <img
+                  key={piece.id}
+                  src={piece.image}
+                  alt={`Piece ${piece.id}`}
+                  className={`${cs.piece} ${selectedPiece === piece ? cs.selected : ''}`} // Выделение выбранного элемента
+                  onClick={() => handlePieceClick(piece)}
+              />
+          ))}
+        </div>
+        {result && (
+            <div className={cs.result}>
+              <p>{result}</p> {/* Отображение результата правильного/неправильного выбора */}
+            </div>
+        )}
+      </div>
   );
 };
 
