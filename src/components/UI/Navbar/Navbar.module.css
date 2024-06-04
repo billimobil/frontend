@@ -57,8 +57,9 @@
     color: #fff;
     height: 100%;
     padding-top: 0.1em;
-    background: linear-gradient(to right, black 0, #fff 10%, black 20%);
-    background-position: 0;
+    /*background: linear-gradient(to right, black 0, #fff 10%, black 20%);*/
+    /*background-position: 0;*/
+    background: black;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 5s infinite linear;
