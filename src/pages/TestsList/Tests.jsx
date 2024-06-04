@@ -44,7 +44,7 @@ const Tests = () => {
                     <div className={cs.tests__block}>Внимание</div>
                 </NavLink>
                 <NavLink to={"/memory-test"}>
-                    <div className={cs.tests__block}>Кратковременная память</div>
+                    <div className={cs.tests__block}>Тест на память</div>
                 </NavLink>
             </div>
         </div>
