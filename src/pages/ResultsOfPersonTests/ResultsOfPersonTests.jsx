@@ -10,22 +10,19 @@ const ResultsOfPersonTests = ({ user }) => {
     const [results, setResults] = useState([]);
 
     useEffect(() => {
-        axios
-            .get("http://188.225.74.17:8080/api/v1/getUserTestResults", {
+        axios.get("http://188.225.74.17:8080/api/v1/getUserTestResults", {
                 params: {
                     session_token: user.session_token,
                     test_id,
                     user_id,
                 },
-            })
-            .then((resp) => {
+            }).then((resp) => {
                 if (resp.data.ok) {
                     setResults(resp.data.data);
                 } else {
                     console.error("Ошибка при получении результатов тестов");
                 }
-            })
-            .catch((e) => {
+            }).catch((e) => {
                 console.error("Ошибка при запросе данных:", e);
             });
     }, [user.session_token, user_id, test_id]);
@@ -58,6 +55,18 @@ function getTestName(test_id) {
             return "Простой звук";
         case 3:
             return "Цветовой тест";
+        case 4:
+            return "Три движущийся круга";
+        case 5:
+            return "Тест мышления простой";
+        case 6:
+            return "Тест мышления сложный";
+        case 7:
+            return "Преследование круга";
+        case 8:
+            return "Тест на память";
+        case 9:
+            return "Простой трекинг";
         case 29:
             return "Сложные звуки";
         case 10:
